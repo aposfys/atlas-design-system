@@ -3,6 +3,34 @@
 The interface language for Atlas. A fresh system — the Condos DS was the starting
 reference, not the model. Three things were taken from it and everything visual is new.
 
+**[Open the showcase →](showcase.html)** — the language applied across palette, type,
+readout, glass depth, controls, ledger, attention, iconography, geometry and motion, with a
+theme toggle. `showcase-standalone.html` is the same page with fonts and icons inlined; it
+opens offline with no network.
+
+![VANE, dark theme](docs/showcase-dark.png)
+![VANE, light theme](docs/showcase-light.png)
+
+### Coverage
+
+VANE is a product interface system, not a brand, so two of the sections a brand book
+carries do not apply to it — there is no logotype and no photography. Measured against the
+rest:
+
+| | Section | Status |
+|---|---|---|
+| 01 | [Philosophy](#the-language) — the three devices the system is built on | Documented |
+| 02 | Logotype | Not applicable |
+| 03 | [Colour](#token-structure) — semantic layer over per-theme primitives | Documented |
+| 04 | [Typography](#the-language) — Gabarito and Spline Sans Mono | Documented |
+| 05 | Photography / illustration | Not applicable |
+| 06 | [Iconography](#iconography) — Phosphor regular, six rules | Documented |
+| 07 | [Grid & layout](#token-structure) — the 1.75px unit, radii 6/10/14 | Documented |
+| 08 | Application — the component set | **Not built** |
+
+The component layer is the honest gap: this is the language and the token system, and the
+buttons, fields, table, tags, dialog and nav are the next pass. See [Open](#open).
+
 ## Taken from the reference
 
 - **Density.** 12–14px carries the interface. The reference is a dense enterprise system and that is the correct instinct for a data product; nothing here was inflated to a comfortable-looking 16px.

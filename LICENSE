@@ -1,0 +1,50 @@
+VANE / ATLAS DESIGN SYSTEM — ALL RIGHTS RESERVED
+
+Copyright (c) 2026 Apostolos Fysekidis. All rights reserved.
+
+This repository is published for viewing only — to let people read the work and
+assess it. It is not open source, and no licence to use it is granted.
+
+NOT PERMITTED
+
+Without prior written permission from the copyright holder, you may not:
+
+  - use this work, in whole or in part, in any project, product, service or
+    publication, commercial or non-commercial;
+  - copy, reproduce, publish, distribute, transmit or host it;
+  - modify it, adapt it, translate it or build derivative works from it;
+  - incorporate any part of it — the design tokens, the theme system, the
+    utilities, the showcase or the documentation — into another design system,
+    template, theme, CSS framework or asset library;
+  - use it as training data for machine learning models or any automated system.
+
+PERMITTED
+
+  - Viewing the repository.
+  - Quoting short excerpts for commentary, review, criticism or teaching, with
+    attribution, where applicable law allows.
+
+THIRD-PARTY MATERIAL
+
+Some components carry their own terms, which are unaffected by this notice and
+which this notice does not attempt to relicense:
+
+  - Gabarito and Spline Sans Mono are third-party typefaces served by Google
+    Fonts under the SIL Open Font License. They are referenced by the showcase
+    and inlined in showcase-standalone.html under that licence, not relicensed
+    here.
+  - Phosphor Icons is a third-party icon set used under the MIT License and
+    loaded from a CDN.
+
+NO WARRANTY
+
+The work is provided "as is", without warranty of any kind, express or implied.
+The copyright holder is not liable for any claim, damages or other liability
+arising from the work or its use.
+
+PLACEHOLDER CONTENT
+
+The figures, records and copy in the showcase are invented placeholder content
+and are not factual statements about any real business or dataset.
+
+Permission requests: apostolosfysekidis1@gmail.com
