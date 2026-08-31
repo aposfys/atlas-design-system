@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>VANE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<style>
+  .wrap { max-width: 1080px; margin: 0 auto; padding: var(--sp-8) var(--sp-6) var(--sp-9); display: flex; flex-direction: column; gap: var(--sp-8); }
+
+  /* ---------- masthead ---------- */
+  .mast { display: flex; align-items: flex-start; gap: var(--sp-6); padding: var(--sp-6); }
+  .mast .mark { font-size: var(--t-25); font-weight: var(--w-700); letter-spacing: -0.05em; line-height: 1; }
+  .mast .mark s { text-decoration: none; color: var(--ac-text); }
+  .mast p { font-size: var(--t-13); color: var(--ink-2); max-width: 46ch; line-height: 1.6; }
+  .stamp, .mast .stamp { font-family: var(--f-num); font-size: var(--t-10); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--ink-3); line-height: 1.9; white-space: nowrap; }
+
+  /* ---------- theme switch: a solid segmented control, never glass.
+     Glass inside glass is the one thing the system forbids. ---------- */
+  .themebar { display: inline-flex; gap: 2px; padding: 3px; background: var(--ground-deep); border: 1px solid var(--border-subtle); border-radius: var(--r-sm); }
+  .themebar button { font-family: var(--f-num); font-size: var(--t-10); font-weight: 500; letter-spacing: var(--ls-label); text-transform: uppercase; padding: var(--sp-2) var(--sp-3); border: 0; border-radius: 4px; background: transparent; color: var(--text-tertiary); cursor: pointer; transition: background-color var(--d-1) var(--ease), color var(--d-1) var(--ease); }
+  .themebar button:hover { color: var(--text-primary); }
+  .themebar button[aria-pressed="true"] { background: var(--fill-accent); color: var(--text-on-accent); }
+
+  /* ---------- iconography ---------- */
+  .icons { display: grid; grid-template-columns: repeat(8, 1fr); gap: 1px; background: var(--glass-line); border: 1px solid var(--glass-line); border-radius: var(--r); overflow: hidden; }
+  .icons > div { background: var(--glass-weak); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); padding: var(--sp-4) var(--sp-2); display: flex; flex-direction: column; align-items: center; gap: var(--sp-2); }
+  .icons > div > i { font-size: 20px; color: var(--ink); line-height: 1; }
+  .icons > div > span { font-family: var(--f-num); font-size: 9px; letter-spacing: .04em; color: var(--ink-3); text-align: center; word-break: break-word; line-height: 1.35; }
+  .isizes { display: flex; align-items: flex-end; gap: var(--sp-5); }
+  .isizes > div { display: flex; flex-direction: column; align-items: center; gap: var(--sp-2); }
+  .isizes i { color: var(--ink); line-height: 1; }
+  .isizes span { font-family: var(--f-num); font-size: var(--t-10); color: var(--ink-3); }
+  .ipair { display: flex; gap: var(--sp-4); flex-wrap: wrap; align-items: center; }
+  .ipair > div { display: flex; align-items: center; gap: var(--sp-2); padding: var(--sp-3) var(--sp-4); font-size: var(--t-13); }
+  .ipair i { font-size: 1.15em; line-height: 1; }
+
+  .block { display: flex; flex-direction: column; gap: var(--sp-4); }
+  .note { font-size: var(--t-12); color: var(--ink-2); max-width: 62ch; line-height: 1.65; }
+
+  /* ---------- palette ---------- */
+  .ramp { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1px; background: var(--glass-line); border: 1px solid var(--glass-line); border-radius: var(--r); overflow: hidden; }
+  .ramp > div { background: var(--glass-weak); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); padding: var(--sp-3); display: flex; flex-direction: column; gap: var(--sp-2); }
+  .ramp i {
+    display: block; height: 40px; border-radius: var(--r-sm);
+    border: 1px solid var(--border);
+    background:
+      linear-gradient(var(--sw, transparent), var(--sw, transparent)),
+      linear-gradient(90deg, var(--ground-deep) 0 50%, var(--text-primary) 50% 100%);
+  }
+  .ramp b { font-family: var(--f-num); font-size: var(--t-10); font-weight: 500; letter-spacing: .04em; color: var(--ink); }
+  .ramp span { font-family: var(--f-num); font-size: var(--t-10); color: var(--ink-3); }
+
+  /* ---------- type specimen ---------- */
+  .spec { display: flex; flex-direction: column; }
+  .spec > div { display: grid; grid-template-columns: 88px 1fr; gap: var(--sp-5); align-items: baseline; padding: var(--sp-4) 0; border-bottom: 1px solid var(--glass-line); }
+  .spec > div:last-child { border-bottom: 0; }
+  .spec dt { font-family: var(--f-num); font-size: var(--t-10); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--ink-3); }
+  .spec dd { margin: 0; letter-spacing: var(--ls-tight); color: var(--ink); }
+
+  /* ---------- readout: glass panel, ruled inside ---------- */
+  .readout { display: grid; grid-template-columns: repeat(4, 1fr); overflow: hidden; }
+  .readout > div { padding: var(--sp-5); border-right: 1px solid var(--glass-line); display: flex; flex-direction: column; gap: var(--sp-2); }
+  .readout > div:last-child { border-right: 0; }
+  .readout dt { font-family: var(--f-num); font-size: var(--t-10); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--ink-3); }
+  .readout dd { margin: 0; font-family: var(--f-num); font-variant-numeric: tabular-nums; font-size: var(--t-33); font-weight: 500; letter-spacing: -0.04em; line-height: 1; color: var(--ink); }
+  .readout em { font-style: normal; font-family: var(--f-num); font-size: var(--t-11); color: var(--ink-3); }
+  .readout em.up { color: var(--ok); }
+  .readout em.dn { color: var(--er); }
+
+  /* ---------- controls ---------- */
+  .row { display: flex; align-items: center; gap: var(--sp-3); flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-2); height: var(--h-md); padding: 0 var(--sp-4); white-space: nowrap; font-family: var(--f-ui); font-size: var(--t-13); font-weight: var(--w-500); letter-spacing: -0.01em; border-radius: var(--r); border: 1px solid transparent; cursor: pointer; transition: background-color var(--d-1) var(--ease), border-color var(--d-1) var(--ease), color var(--d-1) var(--ease), box-shadow var(--d-1) var(--ease); }
+  .btn-p { background: var(--ac); color: var(--ac-ink); font-weight: var(--w-600); box-shadow: 0 0 0 0 var(--ac-glow); }
+  .btn-p:hover { background: var(--ac-hover); box-shadow: 0 0 18px -2px var(--ac-glow); }
+  .btn-s { background: var(--glass-2); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); color: var(--ink); border-color: var(--glass-line-2); }
+  .btn-s:hover { background: var(--glass-3); border-color: var(--glass-line-3); }
+  .btn-g { background: transparent; color: var(--ink-2); }
+  .btn-g:hover { background: var(--glass); color: var(--ink); }
+  .btn-d { background: transparent; color: var(--er); border-color: var(--er-line); }
+  .btn-d:hover { background: var(--er-tint); }
+  .btn[disabled] { opacity: var(--disabled-opacity); cursor: not-allowed; }
+  .btn-sm { height: var(--h-sm); padding: 0 var(--sp-3); font-size: var(--t-12); }
+  .btn-lg { height: var(--h-lg); padding: 0 var(--sp-5); font-size: var(--t-14); }
+
+  .fld { display: flex; flex-direction: column; gap: var(--sp-2); }
+  .fld label { font-size: var(--t-12); font-weight: var(--w-500); color: var(--ink); }
+  .fld input, .fld select { height: var(--h-md); padding: 0 var(--sp-3); font-family: var(--f-ui); font-size: var(--t-13); color: var(--ink); background: var(--glass); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); border: 1px solid var(--glass-line-2); border-radius: var(--r); outline: none; transition: border-color var(--d-1) var(--ease), box-shadow var(--d-1) var(--ease), background-color var(--d-1) var(--ease); }
+  .fld input::placeholder { color: var(--ink-4); }
+  .fld input:focus, .fld select:focus { border-color: var(--ac-line); background: var(--glass-2); box-shadow: 0 0 0 3px var(--ac-tint); }
+  .fld input[aria-invalid] { border-color: var(--er); }
+  .fld small { font-size: var(--t-11); color: var(--ink-3); }
+  .fld small.err { color: var(--er); }
+  .fld select option { background: var(--g-lift); color: var(--ink); }
+
+  .tag { display: inline-flex; align-items: center; gap: var(--sp-2); height: 21px; padding: 0 var(--sp-3); font-family: var(--f-num); font-size: var(--t-10); font-weight: 500; letter-spacing: .07em; text-transform: uppercase; border-radius: var(--r-pill); border: 1px solid; }
+  .t-n { background: var(--glass-2); color: var(--ink-2); border-color: var(--glass-line-2); }
+  .t-a { background: var(--ac-tint); color: var(--ac-text); border-color: var(--ac-line); }
+  .t-o { background: var(--ok-tint); color: var(--ok); border-color: var(--ok-line); }
+  .t-w { background: var(--wa-tint); color: var(--wa); border-color: var(--wa-line); }
+  .t-e { background: var(--er-tint); color: var(--er); border-color: var(--er-line); }
+  .t-i { background: var(--tint-info); color: var(--text-info); border-color: var(--border-info); }
+
+  /* ---------- ledger, inside glass ---------- */
+  .ledger { overflow: hidden; }
+  table { width: 100%; border-collapse: collapse; }
+  thead th { text-align: left; padding: var(--sp-3) var(--sp-4); font-family: var(--f-num); font-size: var(--t-10); font-weight: 500; letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--ink-3); border-bottom: 1px solid var(--glass-line-2); white-space: nowrap; }
+  thead th.r, tbody td.r, tfoot td.r { text-align: right; }
+  tbody td { padding: var(--sp-3) var(--sp-4); font-size: var(--t-13); color: var(--ink); border-bottom: 1px solid var(--glass-line); vertical-align: middle; }
+  tbody td.m { font-family: var(--f-num); font-variant-numeric: tabular-nums; font-size: var(--t-12); color: var(--ink-2); letter-spacing: -0.02em; }
+  tbody tr:hover td { background: var(--ac-tint); }
+  tfoot td { padding: var(--sp-3) var(--sp-4); font-family: var(--f-num); font-variant-numeric: tabular-nums; font-size: var(--t-13); font-weight: 500; color: var(--ink); background: var(--glass-weak); }
+
+  /* ---------- attention ---------- */
+  .flag { display: flex; gap: var(--sp-3); align-items: flex-start; padding: var(--sp-4); border-left: 2px solid var(--er); }
+  .flag > i { color: var(--er); font-size: 15px; line-height: 1.4; }
+  .flag div { display: flex; flex-direction: column; gap: 2px; }
+  .flag strong { font-size: var(--t-13); font-weight: var(--w-600); }
+  .flag p { font-size: var(--t-12); color: var(--ink-2); }
+
+  /* ---------- glass depth demo ---------- */
+  .stack { position: relative; height: 190px; border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--glass-line); }
+  .stack .bg { position: absolute; inset: 0; background: var(--demo-field); }
+  .stack .p1, .stack .p2 { position: absolute; padding: var(--sp-4); display: flex; flex-direction: column; gap: var(--sp-1); }
+  .stack .p1 { left: 8%; top: 20%; width: 46%; }
+  .stack .p2 { left: 38%; top: 50%; width: 50%; }
+  .stack b { font-family: var(--f-num); font-size: var(--t-10); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--ac-text); font-weight: 500; }
+  .stack span { font-size: var(--t-12); color: var(--ink); }
+  .stack small { font-family: var(--f-num); font-size: var(--t-10); color: var(--ink-2); }
+
+  /* ---------- geometry + motion ---------- */
+  .duo { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-6); }
+  .swatchrow { display: flex; gap: var(--sp-4); align-items: flex-end; }
+  .swatchrow > div { display: flex; flex-direction: column; gap: var(--sp-2); align-items: center; }
+  .swatchrow i { display: block; width: 62px; height: 44px; background: var(--glass-2); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); border: 1px solid var(--glass-line-2); }
+  .swatchrow span { font-family: var(--f-num); font-size: var(--t-10); color: var(--ink-3); }
+  .bars { display: flex; flex-direction: column; gap: var(--sp-3); }
+  .bars > div { display: grid; grid-template-columns: 60px 1fr 132px; gap: var(--sp-4); align-items: center; }
+  .bars span { font-family: var(--f-num); font-size: var(--t-10); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); white-space: nowrap; }
+  .bars i { display: block; height: 4px; background: var(--ac); border-radius: var(--r-pill); animation: run 2.6s infinite var(--ease); }
+  @keyframes run { 0%, 8% { width: 6% } 60%, 100% { width: 100% } }
+
+  @media (max-width: 880px) {
+    .readout { grid-template-columns: repeat(2, 1fr); }
+    .readout > div:nth-child(2) { border-right: 0; }
+    .duo { grid-template-columns: 1fr; }
+    .mast { flex-wrap: wrap; }
+    .mast .stamp { margin-left: 0; text-align: left; }
+    .stack .p1 { width: 62%; }
+    .stack .p2 { left: 26%; width: 66%; }
+    .icons { grid-template-columns: repeat(6, 1fr); }
+  }
+  @media (max-width: 560px) {
+    .ramp { grid-template-columns: repeat(3, 1fr); }
+    .icons { grid-template-columns: repeat(4, 1fr); }
+    .isizes { gap: var(--sp-4); }
+  }
+</style>
+</head>
+<body>
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+    <rect width="160" height="160" fill="#0A1A2F"/>
+    <circle cx="34" cy="18" r="58" fill="#D4FF4F" opacity="0.18"/>
+    <circle cx="140" cy="36" r="52" fill="#4084FF" opacity="0.22"/>
+    <rect x="48" y="48" width="64" height="64" rx="14" fill="#FFFFFF" opacity="0.10" stroke="#FFFFFF" stroke-opacity="0.22"/>
+    <text x="80" y="89" font-family="Verdana, sans-serif" font-size="27" font-weight="700" fill="#D4FF4F" text-anchor="middle" letter-spacing="-1">V</text>
+  </svg>
+</template>
+<div class="wrap">
+
+  <header class="mast v-glass v-glass-lg v-glass-frame">
+    <div style="display:flex;flex-direction:column;gap:var(--sp-3)">
+      <span class="mark">VANE<s>.</s></span>
+      <p>A dense, rounded interface language built on glass, in two themes. Panels are translucent and blurred; the light catches their top edge instead of casting a shadow. One chartreuse carries every action.</p>
+    </div>
+    <div style="margin-left:auto;display:flex;flex-direction:column;align-items:flex-end;gap:var(--sp-3)">
+      <div class="stamp" style="text-align:right">
+        Draft 04<br />
+        Chartreuse &middot; two themes<br />
+        Gabarito &middot; Spline Sans Mono
+      </div>
+      <div class="themebar" role="group" aria-label="Theme">
+        <button type="button" data-theme-set="dark" aria-pressed="true">Dark</button>
+        <button type="button" data-theme-set="light" aria-pressed="false">Light</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="block">
+    <span class="v-idx"><b>01</b> Palette</span>
+    <p class="note">These are the semantic roles, not the raw values &mdash; every swatch is a <code style="font-family:var(--f-num);font-size:var(--t-11)">var()</code> that repoints when the theme flips. Components may only use this layer. Each chip sits on a light/dark split substrate, so translucent tokens read as translucent instead of vanishing into the panel. The accent is deliberately two tokens: <code style="font-family:var(--f-num);font-size:var(--t-11)">--fill-accent</code> for backgrounds and <code style="font-family:var(--f-num);font-size:var(--t-11)">--text-accent</code> for type, because chartreuse as type on a pale ground measures 1.3:1.</p>
+    <div class="ramp">
+      <div><i style="--sw:var(--ground)"></i><b>ground</b><span>page</span></div>
+      <div><i style="--sw:var(--ground-deep)"></i><b>deep</b><span>base</span></div>
+      <div><i style="--sw:var(--ground-raised)"></i><b>raised</b><span>solid panel</span></div>
+      <div><i style="--sw:var(--surface)"></i><b>surface</b><span>glass</span></div>
+      <div><i style="--sw:var(--surface-hover)"></i><b>hover</b><span>glass</span></div>
+      <div><i style="--sw:var(--border)"></i><b>border</b><span>hairline</span></div>
+      <div><i style="--sw:var(--fill-accent)"></i><b>fill</b><span>accent</span></div>
+      <div><i style="--sw:var(--text-accent)"></i><b>text</b><span>accent</span></div>
+      <div><i style="--sw:var(--text-primary)"></i><b>primary</b><span>text</span></div>
+      <div><i style="--sw:var(--text-secondary)"></i><b>secondary</b><span>text</span></div>
+      <div><i style="--sw:var(--text-tertiary)"></i><b>tertiary</b><span>labels</span></div>
+      <div><i style="--sw:var(--text-placeholder)"></i><b>placeholder</b><span>text</span></div>
+      <div><i style="--sw:var(--text-success)"></i><b>success</b><span>status</span></div>
+      <div><i style="--sw:var(--text-warning)"></i><b>warning</b><span>status</span></div>
+      <div><i style="--sw:var(--text-danger)"></i><b>danger</b><span>status</span></div>
+      <div><i style="--sw:var(--text-info)"></i><b>info</b><span>status</span></div>
+      <div><i style="--sw:var(--tint-accent)"></i><b>tint</b><span>accent</span></div>
+      <div><i style="--sw:var(--overlay)"></i><b>overlay</b><span>scrim</span></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <span class="v-idx"><b>02</b> Type</span>
+    <p class="note">Gabarito at 12&ndash;14px carries the interface; the density is inherited, not softened. Spline Sans Mono handles every number, label and identifier. The character of the system is the jump between 10px tracked labels and 46px tabular figures, with very little in between.</p>
+    <dl class="spec">
+      <div><dt>46 / 500</dt><dd class="v-num" style="font-size:var(--t-46);font-weight:500">1,284.00</dd></div>
+      <div><dt>33 / 600</dt><dd style="font-size:var(--t-33)">Rounded, dense, lit</dd></div>
+      <div><dt>19 / 600</dt><dd style="font-size:var(--t-19)">Section heading</dd></div>
+      <div><dt>13 / 400</dt><dd style="font-size:var(--t-13);letter-spacing:-0.01em;line-height:1.6;color:var(--ink-2);max-width:56ch">Body copy sits at 13px with 1.6 leading. It is small on purpose &mdash; this is an interface language for screens that hold a lot at once, not a reading environment.</dd></div>
+      <div><dt>10 / mono</dt><dd style="font-family:var(--f-num);font-size:var(--t-10);letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--ink-3)">Index label &middot; tracked 0.1em</dd></div>
+    </dl>
+  </section>
+
+  <section class="block">
+    <span class="v-idx"><b>03</b> Readout</span>
+    <p class="note">Figures sit in one glass panel divided by hairlines, not in separate tiles. Trend direction is carried by the sign and the colour together.</p>
+    <dl class="readout v-glass">
+      <div><dt>Volume</dt><dd>1,284</dd><em class="up">+12.4%</em></div>
+      <div><dt>Median</dt><dd>1:08</dd><em class="up">&minus;9s</em></div>
+      <div><dt>Failure</dt><dd>0.42<span style="font-size:var(--t-14);color:var(--ink-3)">%</span></dd><em class="dn">+0.1pt</em></div>
+      <div><dt>Capacity</dt><dd>92<span style="font-size:var(--t-14);color:var(--ink-3)">%</span></dd><em>18.4 / 20 GB</em></div>
+    </dl>
+  </section>
+
+  <section class="block">
+    <span class="v-idx"><b>04</b> Glass depth</span>
+    <p class="note">Two panels over a lit field, overlapping. Blur is 18px at panel level and 30px on the app frame; the 1px top sheen is the only highlight, and nothing casts a shadow downward.</p>
+    <div class="stack">
+      <div class="bg"></div>
+      <div class="p1 v-glass"><b>Panel &mdash; 18px</b><span>Refracts the field beneath it</span><small>surface &middot; border-subtle</small></div>
+      <div class="p2 v-glass v-glass-lg"><b>Frame &mdash; 30px</b><span>Overlaps and stays legible</span><small>surface &middot; sheen</small></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <span class="v-idx"><b>05</b> Controls</span>
+    <div class="row">
+      <button class="btn btn-p">Confirm</button>
+      <button class="btn btn-s">Save draft</button>
+      <button class="btn btn-g">Cancel</button>
+      <button class="btn btn-d">Delete</button>
+      <button class="btn btn-p btn-sm">Small</button>
+      <button class="btn btn-p btn-lg">Large</button>
+      <button class="btn btn-s" disabled>Disabled</button>
+    </div>
+    <div class="row" style="gap:var(--sp-4);align-items:flex-start;margin-top:var(--sp-2)">
+      <div class="fld" style="width:190px"><label for="a">Reference</label><input id="a" value="RB-4482-19" /><small>Mono is not used for input text.</small></div>
+      <div class="fld" style="width:190px"><label for="b">Period</label><select id="b"><option>August 2026</option><option>July 2026</option></select><small>Native select, squared.</small></div>
+      <div class="fld" style="width:190px"><label for="c">Amount</label><input id="c" aria-invalid="true" placeholder="0.00" /><small class="err">Enter a value above zero.</small></div>
+    </div>
+    <div class="row" style="margin-top:var(--sp-2)">
+      <span class="tag t-n">Draft</span>
+      <span class="tag t-a">Active</span>
+      <span class="tag t-o">Cleared</span>
+      <span class="tag t-w">Pending</span>
+      <span class="tag t-e">Overdue</span>
+      <span class="tag t-i">Notice</span>
+    </div>
+  </section>
+
+  <section class="block">
+    <span class="v-idx"><b>06</b> Ledger</span>
+    <p class="note">The table is the primary surface and it lives inside glass. Rows are ruled, numeric columns are right-aligned tabular mono, and hover washes the row in accent tint.</p>
+    <div class="ledger v-glass">
+      <table>
+        <thead>
+          <tr><th>Entry</th><th>Reference</th><th class="r">Amount</th><th class="r">Balance</th><th>State</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Opening position</td><td class="m">RB-4482-01</td><td class="r m">&mdash;</td><td class="r m">18,400.00</td><td><span class="tag t-n">Base</span></td></tr>
+          <tr><td>Scheduled issuance</td><td class="m">RB-4482-14</td><td class="r m">&minus;2,140.00</td><td class="r m">16,260.00</td><td><span class="tag t-o">Cleared</span></td></tr>
+          <tr><td>Adjustment</td><td class="m">RB-4482-17</td><td class="r m">+380.50</td><td class="r m">16,640.50</td><td><span class="tag t-w">Pending</span></td></tr>
+          <tr><td>Reversal</td><td class="m">RB-4482-19</td><td class="r m">&minus;1,905.00</td><td class="r m">14,735.50</td><td><span class="tag t-e">Overdue</span></td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td colspan="3" style="font-family:var(--f-ui);font-size:var(--t-11);color:var(--ink-3);letter-spacing:var(--ls-label);text-transform:uppercase">Closing</td><td class="r">14,735.50</td><td></td></tr>
+        </tfoot>
+      </table>
+    </div>
+  </section>
+
+  <section class="block">
+    <span class="v-idx"><b>07</b> Attention</span>
+    <p class="note">One flagged item per view, at most. A 2px left edge in the status colour on a glass panel &mdash; no tinted fill, no icon in a circle.</p>
+    <div class="flag v-glass">
+      <i class="ph ph-warning-octagon"></i>
+      <div>
+        <strong>Reversal RB-4482-19 is unmatched</strong>
+        <p>The entry cleared against a closed period. Reopening the period will re-run reconciliation from the last checkpoint.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <span class="v-idx"><b>08</b> Iconography</span>
+    <p class="note">Phosphor, regular weight only &mdash; never mixed with bold, fill or duotone. Icons inherit <code style="font-family:var(--f-num);font-size:var(--t-11)">currentColor</code> and are sized in em so they track the label beside them. They never appear alone without an accessible name, and they never carry meaning on their own: a state is a tag plus a word, not a glyph.</p>
+    <div class="icons">
+      <div><i class="ph ph-house"></i><span>house</span></div>
+      <div><i class="ph ph-squares-four"></i><span>squares-four</span></div>
+      <div><i class="ph ph-receipt"></i><span>receipt</span></div>
+      <div><i class="ph ph-wallet"></i><span>wallet</span></div>
+      <div><i class="ph ph-chart-line"></i><span>chart-line</span></div>
+      <div><i class="ph ph-users-three"></i><span>users-three</span></div>
+      <div><i class="ph ph-gear-six"></i><span>gear-six</span></div>
+      <div><i class="ph ph-bell"></i><span>bell</span></div>
+      <div><i class="ph ph-magnifying-glass"></i><span>magnifying-glass</span></div>
+      <div><i class="ph ph-funnel"></i><span>funnel</span></div>
+      <div><i class="ph ph-plus"></i><span>plus</span></div>
+      <div><i class="ph ph-arrow-right"></i><span>arrow-right</span></div>
+      <div><i class="ph ph-caret-down"></i><span>caret-down</span></div>
+      <div><i class="ph ph-check"></i><span>check</span></div>
+      <div><i class="ph ph-x"></i><span>x</span></div>
+      <div><i class="ph ph-dots-three"></i><span>dots-three</span></div>
+      <div><i class="ph ph-download-simple"></i><span>download-simple</span></div>
+      <div><i class="ph ph-paperclip"></i><span>paperclip</span></div>
+      <div><i class="ph ph-calendar-blank"></i><span>calendar-blank</span></div>
+      <div><i class="ph ph-clock-counter-clockwise"></i><span>clock-counter-clockwise</span></div>
+      <div><i class="ph ph-warning-octagon"></i><span>warning-octagon</span></div>
+      <div><i class="ph ph-check-circle"></i><span>check-circle</span></div>
+      <div><i class="ph ph-info"></i><span>info</span></div>
+      <div><i class="ph ph-trash"></i><span>trash</span></div>
+    </div>
+    <div class="row" style="gap:var(--sp-7);align-items:flex-end;margin-top:var(--sp-2)">
+      <div style="display:flex;flex-direction:column;gap:var(--sp-3)">
+        <span class="stamp">Sizes</span>
+        <div class="isizes">
+          <div><i class="ph ph-receipt" style="font-size:14px"></i><span>14</span></div>
+          <div><i class="ph ph-receipt" style="font-size:16px"></i><span>16</span></div>
+          <div><i class="ph ph-receipt" style="font-size:20px"></i><span>20</span></div>
+          <div><i class="ph ph-receipt" style="font-size:24px"></i><span>24</span></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:var(--sp-3)">
+        <span class="stamp">In use</span>
+        <div class="ipair">
+          <div class="v-glass"><i class="ph ph-wallet"></i> Ledger</div>
+          <div class="v-glass" style="color:var(--ac-text);border-color:var(--ac-line);background:var(--ac-tint)"><i class="ph ph-chart-line"></i> Reserves</div>
+          <button class="btn btn-p"><i class="ph ph-plus" style="font-size:1.15em"></i> New entry</button>
+          <button class="btn btn-s"><i class="ph ph-download-simple" style="font-size:1.15em"></i> Export</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="duo">
+    <section class="block">
+      <span class="v-idx"><b>09</b> Geometry</span>
+      <p class="note">Rounded. Panels and controls at 10px, inner elements at 6px, the app frame at 14px. Pill is reserved for progress tracks and avatars.</p>
+      <div class="swatchrow">
+        <div><i style="border-radius:6px"></i><span>6</span></div>
+        <div><i style="border-radius:10px"></i><span>10</span></div>
+        <div><i style="border-radius:14px"></i><span>14</span></div>
+        <div><i style="border-radius:999px;width:44px"></i><span>pill</span></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <span class="v-idx"><b>10</b> Motion</span>
+      <p class="note">Two durations and one curve. Nothing bounces, nothing loops, nothing scales. Reduced-motion collapses both to 1ms.</p>
+      <div class="bars">
+        <div><span>90ms</span><i style="animation-duration:2.4s"></i><span>hover, press</span></div>
+        <div><span>170ms</span><i style="animation-duration:2.9s"></i><span>panels, overlays</span></div>
+      </div>
+    </section>
+  </div>
+
+</div>
+
+<script>
+  (function () {
+    var KEY = "vane.theme";
+    var bar = document.querySelector(".themebar");
+    function set(theme) {
+      document.documentElement.setAttribute("data-theme", theme);
+      Array.prototype.forEach.call(bar.children, function (b) {
+        b.setAttribute("aria-pressed", String(b.dataset.themeSet === theme));
+      });
+      try { localStorage.setItem(KEY, theme); } catch (e) {}
+    }
+    bar.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-theme-set]");
+      if (b) set(b.dataset.themeSet);
+    });
+    var saved = null;
+    try { saved = localStorage.getItem(KEY); } catch (e) {}
+    set(saved === "light" ? "light" : "dark");
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--text-primary);
+  font-family: var(--f-ui);
+  font-size: var(--t-13);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* The light behind the glass. Without it the blur has nothing to refract and
+   every translucent panel reads flat. Both themes paint it; the light theme
+   simply runs the same blooms at a lower amplitude. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: var(--bloom);
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-weight: var(--w-600);
+  letter-spacing: var(--ls-tight);
+  line-height: 1.14;
+  text-wrap: balance;
+}
+h1 { font-size: var(--t-33); }
+h2 { font-size: var(--t-25); }
+h3 { font-size: var(--t-16); }
+
+p { margin: 0; text-wrap: pretty; }
+
+a {
+  color: var(--text-link);
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+  text-decoration-color: color-mix(in oklab, currentColor 34%, transparent);
+  transition: color var(--d-1) var(--ease);
+}
+a:hover { color: var(--text-link-hover); text-decoration-color: currentColor; }
+
+:where(button, a, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+  border-radius: var(--r-sm);
+}
+
+::selection { background: var(--fill-accent); color: var(--text-on-accent); }
+
+/* ============ the three devices VANE is built on ============ */
+
+/* 1. The index label. Mono, tiny, tracked, with a running hairline. */
+.v-idx {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  font-family: var(--f-num);
+  font-size: var(--t-10);
+  font-weight: var(--w-500);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  white-space: nowrap;
+}
+.v-idx b { color: var(--text-accent); font-weight: var(--w-500); }
+.v-idx::after { content: ""; flex: 1; height: 1px; background: var(--border-subtle); }
+
+/* 2. Glass. Translucent, blurred, with a 1px top sheen standing in for a
+      shadow — the light catches the top edge, nothing is cast below. */
+.v-glass {
+  position: relative;
+  background: var(--surface);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--r);
+}
+.v-glass::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--surface-sheen) 22%, var(--surface-sheen) 78%, transparent);
+  border-radius: inherit;
+  pointer-events: none;
+}
+.v-glass-lg {
+  backdrop-filter: var(--blur-lg);
+  -webkit-backdrop-filter: var(--blur-lg);
+}
+.v-glass-frame { border-radius: var(--r-lg); }
+
+/* 3. The rule. Hairlines separate; nothing is boxed unless it is glass. */
+.v-rule { height: 1px; background: var(--border-subtle); border: 0; }
+
+/* numerics are always mono + tabular */
+.v-num {
+  font-family: var(--f-num);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* icons: Phosphor regular, sized in em so they track their label */
+.v-icon { font-size: 1.15em; line-height: 1; display: inline-flex; }
+
+@supports not (backdrop-filter: blur(1px)) {
+  .v-glass { background: var(--surface-active); }
+}
