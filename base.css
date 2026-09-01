@@ -110,3 +110,17 @@ a:hover { color: var(--text-link-hover); text-decoration-color: currentColor; }
 @supports not (backdrop-filter: blur(1px)) {
   .a-glass { background: var(--surface-active); }
 }
+
+/* Windows High Contrast / forced-colors: translucency reads as nothing, so the
+   glass goes solid and lets the system palette take over. Borders survive
+   because every panel and control already carries one. */
+@media (forced-colors: active) {
+  body::before { content: none; }
+  .a-glass, .a-glass-lg {
+    background: Canvas;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-color: CanvasText;
+  }
+  .a-glass::before { content: none; }
+}

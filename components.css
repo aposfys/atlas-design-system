@@ -28,12 +28,14 @@
 
 .a-btn--primary {
   background: var(--fill-accent);
-  border-color: transparent;
+  /* the fill alone measures 1.16:1 against the light ground — the border
+     carries the control's boundary (1.4.11) in both themes */
+  border-color: var(--border-accent);
   color: var(--text-on-accent);
 }
 .a-btn--primary:hover {
   background: var(--fill-accent-hover);
-  border-color: transparent;
+  border-color: var(--border-accent);
   /* the one box-shadow in the system */
   box-shadow: 0 0 0 4px var(--tint-accent), 0 0 18px var(--glow-accent);
 }

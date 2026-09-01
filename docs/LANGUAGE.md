@@ -17,7 +17,7 @@ do not apply to it — there is no logotype and no photography. Measured against
 | 05 | Photography / illustration | Not applicable |
 | 06 | Iconography — Phosphor regular, six rules | Documented |
 | 07 | Grid & layout — the 1.75px unit, radii 6/10/14 | Documented |
-| 08 | Application — the component set | **Not built** |
+| 08 | Application — the component set | Built — `components.css`, proven in the two case screens; behavior contract in [BEHAVIOR.md](BEHAVIOR.md) |
 
 ## Taken from the reference
 

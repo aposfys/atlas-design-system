@@ -86,4 +86,8 @@ Five rules worth keeping in front of you:
 ### More
 
 - [The language, token structure, themes and iconography](docs/LANGUAGE.md)
+- [The behavior contract — roles, states and keystrokes per component](docs/BEHAVIOR.md)
 - [Accessibility, glass caveats and what is still open](docs/NOTES.md)
+
+`tools/check_contrast.py` is the contrast gate: it re-measures every declared role pair
+in both themes against its WCAG bar and exits non-zero if a token edit reopens one.
