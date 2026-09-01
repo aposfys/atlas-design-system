@@ -8,6 +8,7 @@ one chartreuse for every action, 10px tracked labels against 46px tabular figure
 - **[Brand book (PDF)](docs/atlas-brand-book.pdf)** — the design language as one printable document
 - **[Showcase](showcase.html)** · [components](components.html) · [foundations](foundations.html)
 - **[The language](docs/LANGUAGE.md)** · [behavior contract](docs/BEHAVIOR.md) · [accessibility notes](docs/NOTES.md) · [repository overview](docs/OVERVIEW.md)
+- **[Figma library](https://www.figma.com/design/ayWVXqf7MA50EShkOda7IF)** — the language as a Figma file: true Dark/Light variable modes, mode-aware components, in-file documentation, the one-sheet, three UI proposals and the applications board
 
 ## Use it
 
