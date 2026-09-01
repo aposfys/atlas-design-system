@@ -175,6 +175,15 @@
   --overlay: rgba(6, 18, 32, 0.66);
   --disabled-opacity: 0.34;
 
+  /* data colour — series order is fixed; never reordered per chart */
+  --viz-1: #D4FF4F;
+  --viz-2: #7FC4FF;
+  --viz-3: #FF8A7A;
+  --viz-4: #C9A8FF;
+  --viz-5: #4FE3C1;
+  --viz-6: #FBBF24;
+  --viz-grid: rgba(255, 255, 255, 0.08);
+
   /* the lit field used to demonstrate glass depth */
   --demo-field:
     radial-gradient(400px 260px at 22% 30%, rgba(212, 255, 79, 0.42), transparent 60%),
@@ -282,6 +291,15 @@
 
   --overlay: rgba(12, 32, 51, 0.34);
   --disabled-opacity: 0.4;
+
+  /* data colour — the same six jobs, re-derived for the pale ground */
+  --viz-1: #6B8F0A;
+  --viz-2: #14568C;
+  --viz-3: #BE4B33;
+  --viz-4: #6D4FC1;
+  --viz-5: #0E7E68;
+  --viz-6: #8A5B04;
+  --viz-grid: rgba(12, 32, 51, 0.09);
 
   /* held well back: dark type sits on this field, so it cannot saturate */
   --demo-field:
