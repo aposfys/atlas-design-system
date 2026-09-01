@@ -34,8 +34,13 @@ first pass failed at 4.35:1, 4.06:1 and below.
 
 Backdrop blur is the whole visual premise, so two things matter. It needs light behind it —
 `body::before` paints the blooms, and a glass panel dropped onto a flat fill will read as
-grey mush. And it is GPU work: keep the number of simultaneously visible blurred layers low,
-and never nest a blurred panel inside another one.
+grey mush. And it is GPU work: the budget is **six simultaneously visible blurred panels
+per view, the app frame counted once** — beyond that, group content under one panel with
+hairlines rather than adding panels — and never nest a blurred panel inside another one.
+
+In forced-colors mode (Windows High Contrast) translucency reads as nothing, so `base.css`
+drops the blooms, sets glass to solid `Canvas` and hands the palette to the system; the
+1px borders every panel and control already carries are what keeps the structure legible.
 
 The light theme is the more fragile of the two — frosted white has far less contrast against
 its ground than tinted white has against navy, so a light-theme panel needs its hairline to
@@ -53,6 +58,14 @@ raises the fill opacity where blur is unavailable.
   `:focus-visible` rule, which snapped pill and frame-radius elements to 6px while
   focused — was fixed when the component layer landed: the rule now sets the outline
   alone, and outlines follow the element's own radius.
+- **Resolved.** The light-theme primary button had no perceivable boundary — the accent
+  fill measures 1.16:1 against the pale ground. `.a-btn--primary` now carries
+  `--border-accent` in both themes, and the boundary clears 3:1.
+- **Resolved.** The keyboard and ARIA contract the CSS always assumed is now written
+  down in [BEHAVIOR.md](BEHAVIOR.md), one section per interactive component.
+- **Resolved.** The measured claims above are now enforced: `tools/check_contrast.py`
+  re-measures every declared role pair in both themes and fails the build if a token
+  edit puts one under its bar.
 
 ## Not carried over
 
