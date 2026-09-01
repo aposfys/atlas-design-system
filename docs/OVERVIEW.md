@@ -20,6 +20,16 @@ The detail that used to live in the README, kept current here.
 | `cases/` | The three case screens; captures in `docs/`. |
 | `docs/atlas-brand-book.pdf` | The brand book as one printable document, built from `docs/book.html`. |
 
+## The Figma library
+
+The language also lives as a Figma file — [ATLAS Design System](https://www.figma.com/design/ayWVXqf7MA50EShkOda7IF)
+(access on request; it sits in the maintainer's Figma team). The semantic collection
+carries Dark and Light as true variable modes, so every bound component flips theme with
+one switch; the file also holds the measured 34-pair accessibility proof, the behavior
+contract as keystroke cards, button anatomy docs, a one-sheet of the whole language,
+three UI proposals and an applications board. The repository remains the source of
+truth; the Figma file is generated from it and follows it.
+
 ## Identity
 
 The mark is the system drawn small: a raised-navy tile at the frame radius, three contour
