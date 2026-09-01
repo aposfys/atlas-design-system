@@ -38,6 +38,17 @@ hairlines, and one chartreuse peak whose crossbar is the contour it crosses.
 currentColor, inline-only. Lockup: mark plus ATLAS in Gabarito 700 tracked 0.14em; the
 mark never appears without the name except as a favicon.
 
+## Loading it
+
+```html
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="components.css" />
+```
+
+Self-host the fonts and Phosphor before production.
+
 ## Five rules worth keeping in front of you
 
 - Use the **semantic** layer only — `--surface`, `--border`, `--text-primary`,
