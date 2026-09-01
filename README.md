@@ -1,54 +1,15 @@
 # ATLAS
-A dense, glass-based design system in two themes — language, tokens, components, and the cases that prove it.
 
-**[Open the showcase →](showcase.html)** — the language applied across palette, type, readout, glass depth, controls, ledger, attention, iconography, geometry and motion, with a theme toggle. **[components.html](components.html)** is the component layer built on it. `showcase-standalone.html` is the showcase with fonts and icons inlined; it opens offline.
+A dense, glass-based design system in two themes. Rounded glass over navy light blooms,
+one chartreuse for every action, 10px tracked labels against 46px tabular figures.
 
 ![ATLAS, dark theme](docs/showcase-dark.png)
-![ATLAS, light theme](docs/showcase-light.png)
 
-**Rounded glass, two themes.** Dark is navy (#0A1A2F over #061220) with soft chartreuse and blue light blooms behind it, so the blur has something real to refract. Light runs the same device at lower amplitude. One chartreuse (#D4FF4F) carries every action, link and active state. Type is **Gabarito** for the interface and **Spline Sans Mono** for anything numeric; the system's character is the jump between 10px tracked labels and 46px tabular figures with very little in between.
+- **[Brand book (PDF)](docs/atlas-brand-book.pdf)** — the design language as one printable document
+- **[Showcase](showcase.html)** · [components](components.html) · [foundations](foundations.html)
+- **[The language](docs/LANGUAGE.md)** · [behavior contract](docs/BEHAVIOR.md) · [accessibility notes](docs/NOTES.md) · [repository overview](docs/OVERVIEW.md)
 
-### Identity
-
-<img src="assets/mark.svg" width="60" alt="The ATLAS mark">
-
-The mark is the system drawn small: a raised-navy tile at the frame radius, three contour hairlines, and one chartreuse peak whose crossbar is the contour it crosses. `assets/mark.svg` is self-coloured and works on any ground; `assets/mark-mono.svg` is currentColor, inline-only. Lockup: mark plus ATLAS in Gabarito 700 tracked 0.14em; the mark never appears without the name except as a favicon.
-
-### Components
-
-Built from the semantic tokens only — any hex in `components.css` is a bug. Buttons, fields, selection, tags, the ledger table, tabs, segmented, dialog, flags, readouts and empty states. The same markup flips themes untouched.
-
-![Components, dark](docs/components-dark.png)
-![Components, light](docs/components-light.png)
-
-### In use
-
-Two case screens from deliberately different products, both composed only from `components.css` — the language is not product-specific. Four empty-state illustrations (`assets/illustrations/`) — hairline slate, one chartreuse accent each — cover no-entries, no-results, feed-interrupted and first-run.
-
-![Ops console case — dark](docs/cases/console.png)
-![Month close case — light](docs/cases/close.png)
-
-### Foundations
-
-Grid, breakpoints, density, elevation, motion and data colour, specified in
-**[foundations.html](foundations.html)**. Six data-series tokens re-derived per theme — every one
-clears 3:1 against its ground; order fixed, colour never the only carrier. Density is one switch
-(`.a-dense`) on a region, and it changes spacing, never type.
-
-![Foundations, dark](docs/foundations-dark.png)
-
-### Skinning another product
-
-The system is not tied to a product. To reskin: change the accent trio (`--lime-400/300/500`), the
-ground pair (`--navy-900/950` dark, `--pale-100/200` light) and re-derive `--text-accent` for the new
-accent against both grounds. The semantic layer and every component follow untouched — the two case
-screens were built exactly this way, from `components.css` alone.
-
-**`tokens.json`** carries every token machine-readably (colors, dimensions, durations, aliases as
-references), generated from `tokens.css` by `tools/build_tokens.py` — edit the CSS, regenerate, never
-edit the JSON.
-
-### Using it
+## Use it
 
 ```html
 <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -57,37 +18,23 @@ edit the JSON.
 <link rel="stylesheet" href="components.css" />
 ```
 
-Set `data-theme="dark"` or `"light"` on `<html>`. `styles.css` pulls in `tokens.css` then `base.css`; add `components.css` for the component layer.
+Set `data-theme="dark"` or `"light"` on `<html>`, then build from the semantic layer only:
 
-Five rules worth keeping in front of you:
+```html
+<div class="a-glass" style="padding:21px">
+  <div class="a-idx"><b>01</b> REVENUE · MARCH</div>
+  <div class="a-kpi"><span class="v a-num">48,210<small>EUR</small></span></div>
+  <button class="a-btn a-btn--primary">Close month</button>
+</div>
+```
 
-- Use the **semantic** layer only — `--surface`, `--border`, `--text-primary`, `--fill-accent`. Never a primitive.
-- `--fill-accent` for backgrounds, `--text-accent` for type. They are not interchangeable.
-- Never nest a blurred panel inside another blurred panel.
-- One signal per view: one flagged item, one primary button.
-- Icons never carry meaning alone and never appear without an accessible name.
+The same markup flips themes untouched. `tools/check_contrast.py` proves every colour
+role in both themes on every run.
 
-### Files
+## In use
 
-| File | What |
-| --- | --- |
-| `styles.css` | Entry point. Imports the two token files. |
-| `tokens.css` | Colour, type, spacing, geometry, motion. |
-| `base.css` | Resets, type defaults, and the `.a-idx` / `.a-glass` / `.a-num` utilities. |
-| `components.css` | The component layer. Semantic tokens only. |
-| `components.html` | The component specimen, with the theme toggle. |
-| `showcase.html` | The language applied, with the theme toggle. |
-| `showcase-standalone.html` | The showcase as one self-contained file. Compiled output; edit `showcase.html`, never this. |
-| `foundations.html` | Grid, breakpoints, density, elevation, motion, data colour. |
-| `tokens.json` | Machine-readable tokens, generated by `tools/build_tokens.py`. |
-| `assets/` | The mark and the four empty-state illustrations. |
-| `cases/` | The two case screens; captures in `docs/`. |
+Three case screens, composed only from `components.css` — an ops console, a month close,
+and a public status page:
 
-### More
-
-- [The language, token structure, themes and iconography](docs/LANGUAGE.md)
-- [The behavior contract — roles, states and keystrokes per component](docs/BEHAVIOR.md)
-- [Accessibility, glass caveats and what is still open](docs/NOTES.md)
-
-`tools/check_contrast.py` is the contrast gate: it re-measures every declared role pair
-in both themes against its WCAG bar and exits non-zero if a token edit reopens one.
+![Ops console case — dark](docs/cases/console.png)
+![Status page case — dark](docs/cases/status.png)
