@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ATLAS — foundations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="components.css" />
+<style>
+  .wrap { max-width: 1060px; margin: 0 auto; padding: var(--sp-6) var(--sp-5) var(--sp-9); }
+  .mast { display: flex; align-items: center; gap: var(--sp-4); padding: var(--sp-5); margin-bottom: var(--sp-6); }
+  .mast img { width: 44px; height: 44px; }
+  .mast h1 { font-size: var(--t-25); letter-spacing: 0.16em; }
+  .mast p { color: var(--text-secondary); font-size: var(--t-12); margin-top: 2px; }
+  .mast .end { margin-left: auto; }
+  section { margin-top: var(--sp-7); }
+  .a-idx { margin-bottom: var(--sp-4); }
+  .pad { padding: var(--sp-5); }
+  .demo-note { margin-top: var(--sp-3); font-size: var(--t-11); color: var(--text-tertiary); max-width: 78ch; }
+
+  /* grid demo */
+  .grid-demo { position: relative; padding: var(--sp-5); }
+  .gcols { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--sp-4); }
+  .gcols i { height: 120px; background: var(--tint-accent); border: 1px dashed var(--border-accent); border-radius: var(--r-sm); }
+  .span-demo { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--sp-4); margin-top: var(--sp-4); }
+  .span-demo div { background: var(--surface-active); border: 1px solid var(--border); border-radius: var(--r-sm); height: 44px; display: grid; place-content: center; font-family: var(--f-num); font-size: var(--t-10); letter-spacing: 0.08em; color: var(--text-tertiary); }
+
+  /* breakpoints */
+  .bp { width: 100%; border-collapse: collapse; font-size: var(--t-13); }
+  .bp th { font-family: var(--f-num); font-size: var(--t-10); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--text-tertiary); text-align: left; padding: 0 var(--sp-3) var(--sp-2); border-bottom: 1px solid var(--border); font-weight: var(--w-500); }
+  .bp td { padding: var(--sp-3); border-bottom: 1px solid var(--border-subtle); color: var(--text-secondary); }
+  .bp td:first-child { font-family: var(--f-num); color: var(--text-primary); }
+
+  /* elevation demo */
+  .elev { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-4); }
+  .elev > div { height: 150px; border-radius: var(--r); display: flex; align-items: flex-end; padding: var(--sp-3); }
+  .elev .a-idx { margin: 0; }
+
+  /* motion */
+  .motion-row { display: grid; grid-template-columns: 120px 90px 1fr; gap: var(--sp-4); align-items: baseline; padding: var(--sp-3) 0; border-bottom: 1px solid var(--border-subtle); font-size: var(--t-13); color: var(--text-secondary); }
+  .motion-row:last-child { border-bottom: 0; }
+  .motion-row .n { font-family: var(--f-num); color: var(--text-primary); }
+
+  /* viz demos */
+  .bars { display: flex; align-items: flex-end; gap: var(--sp-3); height: 150px; padding-top: var(--sp-4); border-bottom: 1px solid var(--viz-grid); }
+  .bars i { flex: 1; border-radius: var(--r-sm) var(--r-sm) 0 0; }
+  .lineplot { margin-top: var(--sp-5); }
+  .lineplot svg { width: 100%; height: 130px; display: block; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="mast a-glass a-glass-frame">
+    <img src="assets/mark.svg" alt="" aria-hidden="true">
+    <div>
+      <h1>ATLAS</h1>
+      <p>Foundations — grid, breakpoints, density, elevation, motion, data colour.</p>
+    </div>
+    <div class="end a-seg themebar" role="group" aria-label="Theme">
+      <button type="button" data-theme-set="dark" aria-pressed="true">Dark</button>
+      <button type="button" data-theme-set="light" aria-pressed="false">Light</button>
+    </div>
+  </header>
+
+  <section>
+    <div class="a-idx"><b>01</b> THE GRID</div>
+    <div class="a-glass grid-demo">
+      <div class="gcols"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="span-demo">
+        <div style="grid-column:span 8">SPAN 8 — PRIMARY</div>
+        <div style="grid-column:span 4">SPAN 4 — SIDE</div>
+        <div style="grid-column:span 3">3</div><div style="grid-column:span 3">3</div><div style="grid-column:span 3">3</div><div style="grid-column:span 3">3</div>
+      </div>
+    </div>
+    <p class="demo-note">Twelve columns, gutter <code>--sp-4</code> (14px — the grid's own unit, ×8). Reading surfaces cap at
+    1060px; application shells run to 1440px and then stop — a ledger wider than 1440 stops being scannable.
+    The canonical splits are 8/4 and 3×4; a 6/6 split is a smell, usually two views pretending to be one.</p>
+  </section>
+
+  <section>
+    <div class="a-idx"><b>02</b> BREAKPOINTS</div>
+    <div class="a-glass pad">
+      <table class="bp">
+        <thead><tr><th>From</th><th>Name</th><th>What changes</th></tr></thead>
+        <tbody>
+          <tr><td>0</td><td>Stack</td><td>One column. Side panels become sections below. Tables shed to three columns: identity, state, figure.</td></tr>
+          <tr><td>768</td><td>Split</td><td>Two columns. The 8/4 split arrives; KPI rows go 2×2.</td></tr>
+          <tr><td>1060</td><td>Full</td><td>The twelve-column grid, KPI rows in one line, side rail visible.</td></tr>
+          <tr><td>1440</td><td>Cap</td><td>Nothing new appears — margins absorb the rest. Density, not width, is how ATLAS scales up.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="a-idx"><b>03</b> DENSITY</div>
+    <div class="a-glass pad">
+      <div class="a-idx" style="margin-bottom:var(--sp-3)"><b>A</b> COMFORTABLE — DEFAULT</div>
+      <table class="a-table">
+        <thead><tr><th>Entry</th><th>State</th><th class="num">Amount</th></tr></thead>
+        <tbody>
+          <tr><td>TRX-014021</td><td><span class="a-tag a-tag--ok"><span class="a-dot"></span>Settled</span></td><td class="num">−1,240.00</td></tr>
+          <tr><td>TRX-014022</td><td><span class="a-tag a-tag--warn"><span class="a-dot"></span>Pending</span></td><td class="num">−96.20</td></tr>
+        </tbody>
+      </table>
+      <div class="a-dense" style="margin-top:var(--sp-5)">
+        <div class="a-idx" style="margin-bottom:var(--sp-3)"><b>B</b> DENSE — <code>.a-dense</code> ON THE REGION</div>
+        <table class="a-table">
+          <thead><tr><th>Entry</th><th>State</th><th class="num">Amount</th></tr></thead>
+          <tbody>
+            <tr><td>TRX-014021</td><td><span class="a-tag a-tag--ok"><span class="a-dot"></span>Settled</span></td><td class="num">−1,240.00</td></tr>
+            <tr><td>TRX-014022</td><td><span class="a-tag a-tag--warn"><span class="a-dot"></span>Pending</span></td><td class="num">−96.20</td></tr>
+            <tr><td>TRX-014023</td><td><span class="a-tag a-tag--ok"><span class="a-dot"></span>Settled</span></td><td class="num">−18,400.00</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="demo-note">One switch, applied to a region, never to a single control. Dense drops row padding one
+      step and controls to 28px. Type sizes never change — density is spacing, not shrinking. Dense is for
+      pointer surfaces; the 44px touch floor makes it unavailable on touch.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="a-idx"><b>04</b> ELEVATION</div>
+    <div class="elev">
+      <div style="background:var(--ground-deep)"><span class="a-idx"><b>0</b> GROUND-DEEP</span></div>
+      <div class="a-glass"><span class="a-idx"><b>1</b> GLASS</span></div>
+      <div class="a-glass a-glass-lg a-glass-frame"><span class="a-idx"><b>2</b> GLASS-LG · FRAME</span></div>
+      <div style="background:var(--surface-solid);border:1px solid var(--border);border-radius:var(--r-lg)"><span class="a-idx"><b>3</b> SOLID · OVERLAY</span></div>
+    </div>
+    <p class="demo-note">Four levels, and light does the work of shadow: each level catches more of the top-edge
+    sheen, none casts anything downward. Level 3 is opaque because dialogs and menus must be readable over
+    anything. There is no level 4 — anything above a dialog is a design error.</p>
+  </section>
+
+  <section>
+    <div class="a-idx"><b>05</b> MOTION</div>
+    <div class="a-glass pad">
+      <div class="motion-row"><span class="n">--d-1 · 90ms</span><span class="n">micro</span><span>Hover, press, focus, toggle — feedback on the control itself. Below perception as animation; reads as response.</span></div>
+      <div class="motion-row"><span class="n">--d-2 · 170ms</span><span class="n">structural</span><span>Panels, dialogs, tab content, rows entering — anything that changes the layout.</span></div>
+      <div class="motion-row"><span class="n">--ease</span><span class="n">one curve</span><span><code>cubic-bezier(0.2, 0, 0, 1)</code> — fast out, long settle. One curve for everything; variety of easing is how motion systems rot.</span></div>
+      <div class="motion-row"><span class="n">reduced</span><span class="n">1ms</span><span><code>prefers-reduced-motion</code> collapses both durations. Nothing in the system depends on seeing the transition.</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="a-idx"><b>06</b> DATA COLOUR</div>
+    <div class="a-glass pad">
+      <div class="a-legend">
+        <span class="a-viz-1"><span class="a-swatch"></span><span style="color:var(--text-secondary)">series 1 — the accent leads</span></span>
+        <span class="a-viz-2"><span class="a-swatch"></span><span style="color:var(--text-secondary)">series 2</span></span>
+        <span class="a-viz-3"><span class="a-swatch"></span><span style="color:var(--text-secondary)">series 3</span></span>
+        <span class="a-viz-4"><span class="a-swatch"></span><span style="color:var(--text-secondary)">series 4</span></span>
+        <span class="a-viz-5"><span class="a-swatch"></span><span style="color:var(--text-secondary)">series 5</span></span>
+        <span class="a-viz-6"><span class="a-swatch"></span><span style="color:var(--text-secondary)">series 6</span></span>
+      </div>
+      <div class="bars">
+        <i style="height:62%;background:var(--viz-1)"></i>
+        <i style="height:84%;background:var(--viz-2)"></i>
+        <i style="height:45%;background:var(--viz-3)"></i>
+        <i style="height:71%;background:var(--viz-4)"></i>
+        <i style="height:38%;background:var(--viz-5)"></i>
+        <i style="height:56%;background:var(--viz-6)"></i>
+      </div>
+      <div class="lineplot">
+        <svg viewBox="0 0 600 130" preserveAspectRatio="none" aria-hidden="true">
+          <line x1="0" y1="43" x2="600" y2="43" stroke="var(--viz-grid)"/>
+          <line x1="0" y1="86" x2="600" y2="86" stroke="var(--viz-grid)"/>
+          <line x1="0" y1="129" x2="600" y2="129" stroke="var(--viz-grid)"/>
+          <polyline points="0,95 75,80 150,88 225,60 300,66 375,40 450,48 525,22 600,30" fill="none" stroke="var(--viz-1)" stroke-width="2.5"/>
+          <polyline points="0,110 75,104 150,96 225,100 300,88 375,92 450,80 525,84 600,72" fill="none" stroke="var(--viz-2)" stroke-width="2" opacity="0.9"/>
+          <polyline points="0,70 75,86 150,78 225,92 300,98 375,90 450,104 525,98 600,108" fill="none" stroke="var(--viz-3)" stroke-width="2" opacity="0.9"/>
+        </svg>
+      </div>
+      <p class="demo-note">Six series tokens, re-derived per theme — every one clears 3:1 against its ground in
+      both themes. The order is fixed: series 1 is always the accent, and a chart never reorders the palette
+      to look nicer. Past six series, aggregate. Colour is never the only carrier — a legend names every
+      series, and lines differ in weight as well as hue.</p>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  (function () {
+    var KEY = "atlas.theme";
+    var bar = document.querySelector(".themebar");
+    function set(theme) {
+      document.documentElement.setAttribute("data-theme", theme);
+      Array.prototype.forEach.call(bar.children, function (b) {
+        b.setAttribute("aria-pressed", String(b.dataset.themeSet === theme));
+      });
+      try { localStorage.setItem(KEY, theme); } catch (e) {}
+    }
+    bar.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-theme-set]");
+      if (b) set(b.dataset.themeSet);
+    });
+    var saved = null;
+    try { saved = localStorage.getItem(KEY); } catch (e) {}
+    set(saved === "light" ? "light" : "dark");
+  })();
+</script>
+</body>
+</html>

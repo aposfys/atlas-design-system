@@ -350,3 +350,20 @@
 }
 .a-empty img { width: 190px; }
 .a-empty p { color: var(--text-tertiary); font-size: var(--t-13); max-width: 34ch; }
+
+/* ============ 11. density ============ */
+
+/* dense mode: for screens whose job is scanning hundreds of rows */
+.a-dense .a-table td { padding: var(--sp-2) var(--sp-3); }
+.a-dense .a-btn { height: var(--h-sm); font-size: var(--t-12); }
+.a-dense .a-input, .a-dense .a-select { height: var(--h-sm); font-size: var(--t-12); }
+.a-dense .a-kpi .v { font-size: var(--t-25); }
+
+/* ============ 12. data colour ============ */
+
+.a-viz-1 { color: var(--viz-1); } .a-viz-2 { color: var(--viz-2); }
+.a-viz-3 { color: var(--viz-3); } .a-viz-4 { color: var(--viz-4); }
+.a-viz-5 { color: var(--viz-5); } .a-viz-6 { color: var(--viz-6); }
+.a-swatch { width: 14px; height: 14px; border-radius: 4px; background: currentColor; display: inline-block; }
+.a-legend { display: flex; flex-wrap: wrap; gap: var(--sp-4); font-family: var(--f-num); font-size: var(--t-11); color: var(--text-secondary); }
+.a-legend span { display: inline-flex; align-items: center; gap: var(--sp-2); }
