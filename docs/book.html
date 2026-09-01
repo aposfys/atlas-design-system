@@ -8,301 +8,601 @@
 html,body{margin:0;padding:0}
 body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 body::before{content:none}
-.page{width:1123px;height:794px;box-sizing:border-box;position:relative;overflow:hidden;background:var(--bloom);color:var(--text-primary);padding:54px 62px 70px;page-break-after:always;break-after:page;font-family:var(--f-ui);font-size:var(--t-13);line-height:1.5}
-.folio{position:absolute;left:62px;right:62px;bottom:30px;display:flex;justify-content:space-between;font-family:var(--f-num);font-size:9px;letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--text-tertiary)}
-.head{margin-bottom:26px}
+.page{width:1123px;height:794px;box-sizing:border-box;position:relative;overflow:hidden;background:var(--bloom);color:var(--text-primary);padding:52px 62px 70px;page-break-after:always;break-after:page;font-family:var(--f-ui);font-size:var(--t-13);line-height:1.5}
+.folio{position:absolute;left:62px;right:62px;bottom:28px;display:flex;justify-content:space-between;font-family:var(--f-num);font-size:9px;letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--text-tertiary)}
+.head{margin-bottom:24px}
 h2{font-size:var(--t-33);margin-top:6px}
 p{color:var(--text-secondary);max-width:66ch;margin:0 0 10px}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:38px}
 .three{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
 .pad{padding:var(--sp-5)}
 .sw{display:grid;gap:10px}
-.sw .c{height:48px;border-radius:var(--r-sm);border:1px solid var(--border-subtle)}
+.sw .c{height:44px;border-radius:var(--r-sm);border:1px solid var(--border-subtle)}
 .sw .l{font-family:var(--f-num);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-tertiary);margin-top:5px}
 .sw .h{font-family:var(--f-num);font-size:9px;color:var(--text-placeholder)}
 .rl{list-style:none;margin:0;padding:0}
-.rl li{padding:10px 0;border-top:1px solid var(--border-subtle);color:var(--text-secondary);font-size:var(--t-12);max-width:58ch}
+.rl li{padding:9px 0;border-top:1px solid var(--border-subtle);color:var(--text-secondary);font-size:var(--t-12);max-width:58ch}
 .rl li:first-child{border-top:0}
 .rl b{display:block;color:var(--text-primary);font-weight:var(--w-600);font-size:var(--t-12);margin-bottom:2px}
 .rl b i{font-style:normal;color:var(--text-accent);font-family:var(--f-num);font-size:var(--t-10);margin-right:6px}
-.contents{list-style:none;margin:0;padding:0;max-width:46ch}
-.contents li{padding:9px 0;border-top:1px solid var(--border-subtle);display:flex;gap:14px;font-size:var(--t-13);color:var(--text-secondary)}
+.contents{list-style:none;margin:0;padding:0;max-width:48ch}
+.contents li{padding:8px 0;border-top:1px solid var(--border-subtle);display:flex;gap:14px;font-size:var(--t-13);color:var(--text-secondary)}
 .contents .n{font-family:var(--f-num);font-size:var(--t-10);color:var(--text-accent);width:22px;flex:none;padding-top:2px}
+.contents .pg{margin-left:auto;font-family:var(--f-num);font-size:var(--t-10);color:var(--text-placeholder)}
 .big{font-family:var(--f-num);font-variant-numeric:tabular-nums;letter-spacing:var(--ls-tight);color:var(--text-primary)}
 figure{margin:0}
 figcaption{font-family:var(--f-num);font-size:9px;letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--text-tertiary);margin-top:8px}
 .shot{border:1px solid var(--border);border-radius:var(--r-sm);width:100%;display:block}
+table.t{border-collapse:collapse;width:100%;font-size:var(--t-12)}
+table.t th{font-family:var(--f-num);font-size:var(--t-10);font-weight:var(--w-500);letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--text-tertiary);text-align:left;padding:7px 10px 5px;border-bottom:1px solid var(--border)}
+table.t td{padding:6px 10px;border-bottom:1px solid var(--border-subtle);color:var(--text-secondary);vertical-align:top}
+table.t td:first-child{color:var(--text-primary)}
+.num{font-family:var(--f-num);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.mono{font-family:var(--f-num)}
 </style></head><body>
 
-<!-- 01 · COVER -->
+<!-- p01 · COVER -->
 <div class="page" style="display:flex;flex-direction:column">
-  <div class="a-idx"><b>ATLAS</b> DESIGN LANGUAGE · FIRST EDITION · SEPTEMBER 2026</div>
-  <div style="flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:26px">
-    <img src="../assets/mark.svg" alt="" style="width:120px">
-    <div style="font-weight:var(--w-700);font-size:56px;letter-spacing:.14em;color:var(--text-primary)">ATLAS</div>
+  <div class="a-idx"><b>ATLAS</b> DESIGN LANGUAGE · SECOND EDITION · SEPTEMBER 2026</div>
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:24px">
+    <img src="../assets/mark.svg" alt="" style="width:116px">
+    <div style="font-weight:var(--w-700);font-size:54px;letter-spacing:.14em;color:var(--text-primary)">ATLAS</div>
     <p style="text-align:center;max-width:52ch">A dense, glass-based interface system in two
     themes. Rounded glass over navy light, one chartreuse for every action, 10px tracked
     labels against 46px tabular figures.</p>
   </div>
   <div style="display:flex;gap:34px;justify-content:center">
-    <div class="a-kpi"><span class="a-idx" style="font-size:10px">TOKENS</span><span class="v a-num" style="font-size:var(--t-25)">2 layers</span></div>
+    <div class="a-kpi"><span class="a-idx" style="font-size:10px">TOKEN LAYERS</span><span class="v a-num" style="font-size:var(--t-25)">2</span></div>
     <div class="a-kpi"><span class="a-idx" style="font-size:10px">THEMES</span><span class="v a-num" style="font-size:var(--t-25)">2</span></div>
     <div class="a-kpi"><span class="a-idx" style="font-size:10px">CONTRAST PAIRS GATED</span><span class="v a-num" style="font-size:var(--t-25)">34</span></div>
+    <div class="a-kpi"><span class="a-idx" style="font-size:10px">ELEVATION LEVELS</span><span class="v a-num" style="font-size:var(--t-25)">4</span></div>
     <div class="a-kpi"><span class="a-idx" style="font-size:10px">CASE SCREENS</span><span class="v a-num" style="font-size:var(--t-25)">3</span></div>
   </div>
   <div class="folio"><span>ATLAS — Design Language</span><span>Placeholder product data throughout</span></div>
 </div>
 
-<!-- 02 · CONTENTS -->
+<!-- p02 · CONTENTS -->
 <div class="page">
   <div class="head"><div class="a-idx"><b>00</b> CONTENTS</div><h2>What this book holds</h2></div>
   <div class="two">
     <ol class="contents">
-      <li><span class="n">01</span>Philosophy — the three devices the system is built on</li>
-      <li><span class="n">02</span>The mark — the system drawn small</li>
-      <li><span class="n">03</span>Colour — a semantic layer over per-theme primitives</li>
-      <li><span class="n">04</span>Typography — Gabarito and Spline Sans Mono</li>
-      <li><span class="n">05</span>Iconography — Phosphor regular, six rules</li>
-      <li><span class="n">06</span>Geometry &amp; density — the 1.75px unit, radii 6/10/14</li>
-      <li><span class="n">07</span>Glass — depth without shadow</li>
-      <li><span class="n">08</span>Data colour — six series, re-derived per theme</li>
-      <li><span class="n">09</span>Components &amp; behavior — the built layer</li>
-      <li><span class="n">10</span>In use — three case screens</li>
+      <li><span class="n">01</span>Philosophy — the three devices, the two laws<span class="pg">03 — 04</span></li>
+      <li><span class="n">02</span>The mark<span class="pg">05</span></li>
+      <li><span class="n">03</span>Colour — dark, light, the accent, the proof<span class="pg">06 — 09</span></li>
+      <li><span class="n">04</span>Typography — faces, the scale, numerics<span class="pg">10 — 11</span></li>
+      <li><span class="n">05</span>Iconography<span class="pg">12</span></li>
+      <li><span class="n">06</span>Grid, breakpoints, density, geometry<span class="pg">13 — 15</span></li>
+      <li><span class="n">07</span>Glass &amp; elevation — depth without shadow<span class="pg">16 — 17</span></li>
+      <li><span class="n">08</span>Data colour &amp; attention<span class="pg">18 — 19</span></li>
+      <li><span class="n">09</span>Components &amp; the behavior contract<span class="pg">20 — 22</span></li>
+      <li><span class="n">10</span>In use, and skinning another product<span class="pg">23 — 24</span></li>
     </ol>
     <div>
       <p>ATLAS is a product interface system, not a brand — there is no photography and no
       logotype beyond the mark. Its character lives in three structural devices: the index
-      label, the glass panel, and the rule.</p>
+      label, the glass panel, and the rule. Everything else in this book is the discipline
+      that keeps those three working at 12–14px, all day, in both themes.</p>
       <p>Two laws sit above everything. Components are built from the <b>semantic token
-      layer only</b> — any raw hex in the component layer is a bug. And every measured
-      claim is enforced: <span class="a-num">tools/check_contrast.py</span> re-measures all
-      34 declared colour pairs in both themes on every run.</p>
+      layer only</b> — any raw hex in the component layer is a bug. And every measured claim
+      is enforced: <span class="mono">tools/check_contrast.py</span> re-measures all 34
+      declared colour pairs in both themes on every run.</p>
+      <p>The book compresses; the repository is the authority.
+      <span class="mono">showcase.html</span>, <span class="mono">components.html</span> and
+      <span class="mono">foundations.html</span> carry every rule here as a working,
+      theme-switchable page.</p>
     </div>
   </div>
   <div class="folio"><span>ATLAS — Design Language</span><span>02</span></div>
 </div>
 
-<!-- 03 · THE THREE DEVICES -->
+<!-- p03 · THREE DEVICES -->
 <div class="page">
   <div class="head"><div class="a-idx"><b>01</b> PHILOSOPHY</div><h2>The three devices</h2></div>
   <div class="three">
-    <div>
-      <div class="a-glass pad">
-        <div class="a-idx"><b>01</b> THE INDEX LABEL</div>
-        <p style="margin-top:12px;font-size:var(--t-12)">A 10px tracked mono label with a
-        numbered accent prefix and a hairline running to the end of the column. Every block
-        of content opens with one.</p>
-      </div>
+    <div class="a-glass pad">
+      <div class="a-idx"><b>01</b> THE INDEX LABEL</div>
+      <p style="margin-top:12px;font-size:var(--t-12)">A 10px tracked mono label with a
+      numbered accent prefix and a hairline running to the end of the column. Every block of
+      content opens with one — it is the system's table of contents, printed in place.</p>
+      <div class="a-idx" style="margin-top:14px"><b>04.2</b> RECONCILIATION</div>
+      <div class="a-idx" style="margin-top:8px"><b>B</b> APPROVER</div>
     </div>
-    <div>
-      <div class="a-glass pad">
-        <div class="a-idx"><b>02</b> GLASS</div>
-        <p style="margin-top:12px;font-size:var(--t-12)">Panels are translucent white over
-        the navy with an 18px blur. A 1px sheen along the top edge stands in for elevation;
-        nothing casts a shadow downward.</p>
-      </div>
+    <div class="a-glass pad">
+      <div class="a-idx"><b>02</b> GLASS</div>
+      <p style="margin-top:12px;font-size:var(--t-12)">Panels are translucent white
+      (5.5–12.5%) over the navy with an 18px blur, 30px on the app frame. A 1px gradient
+      sheen along the top edge stands in for elevation; nothing casts a shadow downward.</p>
+      <p style="font-size:var(--t-12)">There is no box-shadow in the system except the
+      accent glow on a hovered primary button.</p>
     </div>
-    <div>
-      <div class="a-glass pad">
-        <div class="a-idx"><b>03</b> THE RULE</div>
-        <div style="margin-top:12px;display:flex;flex-direction:column">
-          <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border-subtle)"><span style="font-size:var(--t-12)">Ingest</span><span class="a-num" style="font-size:var(--t-12)">48,210</span></div>
-          <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border-subtle)"><span style="font-size:var(--t-12)">Query</span><span class="a-num" style="font-size:var(--t-12)">31,884</span></div>
-          <div style="display:flex;justify-content:space-between;padding:8px 0"><span style="font-size:var(--t-12)">Exports</span><span class="a-num" style="font-size:var(--t-12)">2,051</span></div>
-        </div>
+    <div class="a-glass pad">
+      <div class="a-idx"><b>03</b> THE RULE</div>
+      <div style="margin-top:10px;display:flex;flex-direction:column">
+        <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border-subtle)"><span style="font-size:var(--t-12)">Ingest</span><span class="a-num" style="font-size:var(--t-12)">48,210</span></div>
+        <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border-subtle)"><span style="font-size:var(--t-12)">Query</span><span class="a-num" style="font-size:var(--t-12)">31,884</span></div>
+        <div style="display:flex;justify-content:space-between;padding:7px 0"><span style="font-size:var(--t-12)">Exports</span><span class="a-num" style="font-size:var(--t-12)">2,051</span></div>
       </div>
+      <p style="font-size:var(--t-12);margin-top:8px">Inside glass, content separates with
+      hairlines, never with nested cards. Figures sit in one divided panel, not separate
+      tiles.</p>
     </div>
   </div>
-  <div class="two" style="margin-top:28px">
-    <p>Inside glass, content separates with hairlines, never with nested cards. Figures sit
-    in one divided panel, not in separate tiles. Tables are the primary surface, with an
-    accent-tint hover instead of striping.</p>
+  <div class="two" style="margin-top:24px">
+    <p>Tables are the primary surface, with an accent-tint hover instead of striping. The
+    system is dense on purpose: 12–14px carries the interface, and nothing is inflated to a
+    comfortable-looking 16px — a data product earns trust by showing more, legibly.</p>
     <p>Three things were inherited from the reference system and everything visual is new:
-    the 12–14px density, the 1.75px base grid, and mono numerics for every figure,
-    reference and identifier.</p>
+    the density, the 1.75px base grid, and mono numerics for every figure, reference and
+    identifier. The ice-blue, the cyan primary, the rounded chrome — all dropped.</p>
   </div>
   <div class="folio"><span>ATLAS — Design Language · Philosophy</span><span>03</span></div>
 </div>
 
-<!-- 04 · THE MARK -->
+<!-- p04 · TOKEN ARCHITECTURE -->
+<div class="page">
+  <div class="head"><div class="a-idx"><b>01</b> PHILOSOPHY</div><h2>Two layers, and the split is load-bearing</h2></div>
+  <div class="two">
+    <div>
+      <div class="a-glass pad" style="margin-bottom:12px">
+        <div class="a-idx"><b>1</b> PRIMITIVES · PER THEME</div>
+        <p style="font-size:var(--t-12);margin:10px 0 0">Raw values, declared per theme —
+        <span class="mono">--navy-900</span>, <span class="mono">--lime-400</span>,
+        <span class="mono">--slate-300</span>. <b>Never referenced by a component.</b></p>
+      </div>
+      <div style="display:flex;justify-content:center;color:var(--text-tertiary)">↓</div>
+      <div class="a-glass pad" style="margin:12px 0">
+        <div class="a-idx"><b>2</b> SEMANTIC · THE ONLY LAYER COMPONENTS USE</div>
+        <p style="font-size:var(--t-12);margin:10px 0 0"><span class="mono">--ground</span> ·
+        <span class="mono">--surface</span> · <span class="mono">--border</span> ·
+        <span class="mono">--text-primary</span> · <span class="mono">--fill-accent</span> ·
+        <span class="mono">--tint-success</span> — role names that survive the theme flip.</p>
+      </div>
+      <div style="display:flex;justify-content:center;color:var(--text-tertiary)">↓</div>
+      <div class="a-glass pad" style="margin-top:12px">
+        <div class="a-idx"><b>3</b> COMPONENTS · components.css</div>
+        <p style="font-size:var(--t-12);margin:10px 0 0">Buttons, fields, selection, tags,
+        the ledger table, tabs, segmented, dialog, flags, readouts, empty states. Any hex
+        here is a bug; the same markup flips themes untouched.</p>
+      </div>
+    </div>
+    <ul class="rl">
+      <li><b>Why the split is law</b>A component that reaches past the semantic layer breaks
+      when the theme flips. That is not hypothetical — it is what happened to the accent
+      before it was split into <span class="mono">--fill-accent</span> and
+      <span class="mono">--text-accent</span>.</li>
+      <li><b>Aliases are pointers</b>Short aliases (<span class="mono">--ink</span>,
+      <span class="mono">--ac</span>, <span class="mono">--glass</span>) keep older markup
+      working; every one is a pointer, never a value. New work uses the semantic names.</li>
+      <li><b>Machine-readable</b><span class="mono">tokens.json</span> carries every token —
+      colors, dimensions, durations, aliases as references — generated from
+      <span class="mono">tokens.css</span> by <span class="mono">tools/build_tokens.py</span>.
+      Edit the CSS, regenerate, never edit the JSON.</li>
+      <li><b>Enforced</b><span class="mono">tools/check_contrast.py</span> re-measures all 34
+      declared role pairs in both themes on every run and exits non-zero under the bar.</li>
+    </ul>
+  </div>
+  <div class="folio"><span>ATLAS — Design Language · Philosophy</span><span>04</span></div>
+</div>
+
+<!-- p05 · THE MARK -->
 <div class="page">
   <div class="head"><div class="a-idx"><b>02</b> IDENTITY</div><h2>The mark is the system drawn small</h2></div>
   <div class="two">
-    <div style="display:flex;gap:26px;align-items:flex-start">
-      <div class="a-glass pad" style="display:flex;gap:30px;align-items:center;flex:1;justify-content:center;padding:44px 20px">
+    <div>
+      <div class="a-glass pad" style="display:flex;gap:34px;align-items:center;justify-content:center;padding:40px 20px">
         <img src="../assets/mark.svg" style="width:96px" alt="">
         <div style="display:flex;gap:14px;align-items:center">
           <img src="../assets/mark.svg" style="width:34px" alt="">
           <span style="font-weight:var(--w-700);font-size:var(--t-19);letter-spacing:.14em">ATLAS</span>
         </div>
       </div>
+      <div style="display:flex;gap:22px;align-items:flex-end;margin-top:16px;justify-content:center">
+        <div style="text-align:center"><img src="../assets/mark.svg" style="width:64px" alt=""><div class="mono" style="font-size:9px;color:var(--text-tertiary);margin-top:6px">64 · HERO</div></div>
+        <div style="text-align:center"><img src="../assets/mark.svg" style="width:34px" alt=""><div class="mono" style="font-size:9px;color:var(--text-tertiary);margin-top:6px">34 · TOPBAR</div></div>
+        <div style="text-align:center"><img src="../assets/mark.svg" style="width:20px" alt=""><div class="mono" style="font-size:9px;color:var(--text-tertiary);margin-top:6px">20 · DENSE</div></div>
+        <div style="text-align:center"><img src="../assets/mark.svg" style="width:16px" alt=""><div class="mono" style="font-size:9px;color:var(--text-tertiary);margin-top:6px">16 · FAVICON</div></div>
+      </div>
     </div>
     <ul class="rl">
-      <li><b>Construction</b>A raised-navy tile at the frame radius, three contour
-      hairlines, and one chartreuse peak whose crossbar is the contour it crosses.</li>
-      <li><b>Two files</b><span class="a-num">mark.svg</span> is self-coloured and works on
-      any ground; <span class="a-num">mark-mono.svg</span> is currentColor, inline-only.</li>
-      <li><b>The lockup</b>Mark plus ATLAS in Gabarito 700 tracked 0.14em. The mark never
-      appears without the name except as a favicon.</li>
+      <li><b>Construction</b>A raised-navy tile at the frame radius (14px), three contour
+      hairlines, and one chartreuse peak whose crossbar is the contour it crosses — the
+      index label, the rule and the accent, drawn once.</li>
+      <li><b>Two files</b><span class="mono">mark.svg</span> is self-coloured and works on
+      any ground; <span class="mono">mark-mono.svg</span> is currentColor and inline-only —
+      it never ships as a standalone asset.</li>
+      <li><b>The lockup</b>Mark plus ATLAS in Gabarito 700 tracked 0.14em, the mark at cap
+      height × 1.9. The mark never appears without the name except as a favicon.</li>
+      <li><b>Grounds</b>The tile carries its own navy, so the mark holds on dark, light, and
+      any product surface — it is never recoloured to match a theme.</li>
     </ul>
   </div>
-  <div class="folio"><span>ATLAS — Design Language · Identity</span><span>04</span></div>
+  <div class="folio"><span>ATLAS — Design Language · Identity</span><span>05</span></div>
 </div>
 
-<!-- 05 · COLOUR DARK -->
+<!-- p06 · COLOUR DARK -->
 <div class="page">
   <div class="head"><div class="a-idx"><b>03</b> COLOUR</div><h2>Dark — the theme it was designed in</h2></div>
   <div class="sw" style="grid-template-columns:repeat(6,1fr)">
     <div class="s"><div class="c" style="background:#0A1A2F"></div><div class="l">ground</div><div class="h">#0A1A2F</div></div>
     <div class="s"><div class="c" style="background:#061220"></div><div class="l">ground-deep</div><div class="h">#061220</div></div>
-    <div class="s"><div class="c" style="background:rgba(255,255,255,.055);backdrop-filter:none"></div><div class="l">surface · glass 5.5%</div><div class="h">WHITE 5.5%</div></div>
-    <div class="s"><div class="c" style="background:rgba(255,255,255,.17)"></div><div class="l">border</div><div class="h">WHITE 17%</div></div>
-    <div class="s"><div class="c" style="background:#D4FF4F"></div><div class="l">fill-accent</div><div class="h">#D4FF4F</div></div>
-    <div class="s"><div class="c" style="background:#1B2405"></div><div class="l">text-on-accent</div><div class="h">#1B2405 · 14.0:1</div></div>
+    <div class="s"><div class="c" style="background:#0E2440"></div><div class="l">ground-raised · solid</div><div class="h">#0E2440</div></div>
+    <div class="s"><div class="c" style="background:rgba(255,255,255,.055)"></div><div class="l">surface · glass 5.5%</div><div class="h">WHITE 5.5%</div></div>
+    <div class="s"><div class="c" style="background:rgba(255,255,255,.085)"></div><div class="l">surface-hover · 8.5%</div><div class="h">WHITE 8.5%</div></div>
+    <div class="s"><div class="c" style="background:rgba(255,255,255,.17)"></div><div class="l">border · 17%</div><div class="h">WHITE 17%</div></div>
     <div class="s"><div class="c" style="background:#EEF3F8"></div><div class="l">text-primary</div><div class="h">#EEF3F8 · 15.7:1</div></div>
     <div class="s"><div class="c" style="background:#A9BACB"></div><div class="l">text-secondary</div><div class="h">#A9BACB · 8.8:1</div></div>
-    <div class="s"><div class="c" style="background:#8698AC"></div><div class="l">text-tertiary</div><div class="h">#8698AC · 5.9:1</div></div>
-    <div class="s"><div class="c" style="background:#4ADE80"></div><div class="l">success</div><div class="h">#4ADE80 · 10.0:1</div></div>
-    <div class="s"><div class="c" style="background:#FBBF24"></div><div class="l">warning</div><div class="h">#FBBF24 · 10.5:1</div></div>
-    <div class="s"><div class="c" style="background:#FF6B6B"></div><div class="l">danger</div><div class="h">#FF6B6B · 6.3:1</div></div>
+    <div class="s"><div class="c" style="background:#8698AC"></div><div class="l">text-tertiary · labels</div><div class="h">#8698AC · 5.9:1</div></div>
+    <div class="s"><div class="c" style="background:#74889D"></div><div class="l">placeholder</div><div class="h">#74889D · 4.8:1</div></div>
+    <div class="s"><div class="c" style="background:#D4FF4F"></div><div class="l">fill-accent · text-accent</div><div class="h">#D4FF4F · 15.2:1</div></div>
+    <div class="s"><div class="c" style="background:#1B2405"></div><div class="l">text-on-accent</div><div class="h">#1B2405 · 14.0:1</div></div>
   </div>
-  <p style="margin-top:24px">Every ratio is measured against the ground and enforced by the
-  gate. All four text roles clear AA for normal text at 10px — the size the signature
-  labels actually run at — with headroom kept for the light blooms beneath the glass.</p>
-  <div class="folio"><span>ATLAS — Design Language · Colour</span><span>05</span></div>
-</div>
-
-<!-- 06 · COLOUR LIGHT -->
-<div data-theme="light">
-<div class="page">
-  <div class="head"><div class="a-idx"><b>03</b> COLOUR</div><h2>Light — a remap, not an inversion</h2></div>
-  <div class="two">
-    <div class="sw" style="grid-template-columns:repeat(3,1fr)">
-      <div class="s"><div class="c" style="background:#F2F5F8"></div><div class="l">ground</div><div class="h">#F2F5F8</div></div>
-      <div class="s"><div class="c" style="background:rgba(255,255,255,.58);border:1px solid rgba(12,32,51,.16)"></div><div class="l">surface · frosted 58%</div><div class="h">WHITE 58%</div></div>
-      <div class="s"><div class="c" style="background:#C9F53C"></div><div class="l">fill-accent</div><div class="h">#C9F53C</div></div>
-      <div class="s"><div class="c" style="background:#0D1A26"></div><div class="l">text-primary</div><div class="h">#0D1A26 · 16.1:1</div></div>
-      <div class="s"><div class="c" style="background:#46596A"></div><div class="l">text-secondary</div><div class="h">#46596A · 6.6:1</div></div>
-      <div class="s"><div class="c" style="background:#4A6606"></div><div class="l">text-accent</div><div class="h">#4A6606 · 6.0:1</div></div>
+  <div class="two" style="margin-top:18px">
+    <div>
+      <div class="a-idx" style="margin-bottom:10px"><b>A</b> STATUS — TEXT · TINT · BORDER, IN THAT ORDER</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <span class="a-tag a-tag--ok"><span class="a-dot"></span>OK · 10.0:1</span>
+        <span class="a-tag a-tag--warn"><span class="a-dot"></span>WARN · 10.5:1</span>
+        <span class="a-tag a-tag--danger"><span class="a-dot"></span>DANGER · 6.3:1</span>
+        <span class="a-tag a-tag--info"><span class="a-dot"></span>INFO · 9.4:1</span>
+        <span class="a-tag a-tag--accent"><span class="a-dot"></span>ACCENT</span>
+      </div>
+      <p style="font-size:var(--t-12);margin-top:12px">Each status is three tokens — a text
+      tone, a background tint at 13%, a border at 34% — so a tag, a flag and a plain line of
+      status text all derive from one family.</p>
     </div>
-    <ul class="rl">
-      <li><b>Hairlines invert</b>On dark, lines are white at 10–26%; white-on-white has no
-      edge, so on light they become navy at 10–26%.</li>
-      <li><b>Glass opacity climbs</b>5.5% white over pale grey reads as nothing; light glass
-      sits at 52–90%, frosted rather than tinted.</li>
-      <li><b>The accent splits</b>Chartreuse works as a fill in both themes, but as type on
-      a pale ground it measures 1.3:1 — so <span class="a-num">--fill-accent</span> and
-      <span class="a-num">--text-accent</span> are separate tokens, and light drops the
-      text cut to deep lime at 6.0:1. In light, the primary button's boundary is carried by
-      <span class="a-num">--border-accent</span> — the fill alone is 1.16:1 against the
-      ground.</li>
-    </ul>
+    <p style="align-self:end">The blooms behind the glass raise background luminance under
+    the text, so every ratio above keeps headroom beyond its bar. All four text roles clear
+    AA for normal text at 10px — the size the signature labels actually run at.</p>
   </div>
   <div class="folio"><span>ATLAS — Design Language · Colour</span><span>06</span></div>
 </div>
+
+<!-- p07 · COLOUR LIGHT -->
+<div data-theme="light">
+<div class="page">
+  <div class="head"><div class="a-idx"><b>03</b> COLOUR</div><h2>Light — a remap, not an inversion</h2></div>
+  <div class="sw" style="grid-template-columns:repeat(6,1fr)">
+    <div class="s"><div class="c" style="background:#F2F5F8"></div><div class="l">ground</div><div class="h">#F2F5F8</div></div>
+    <div class="s"><div class="c" style="background:#E7ECF1"></div><div class="l">ground-deep</div><div class="h">#E7ECF1</div></div>
+    <div class="s"><div class="c" style="background:#FFFFFF"></div><div class="l">ground-raised · solid</div><div class="h">#FFFFFF</div></div>
+    <div class="s"><div class="c" style="background:rgba(255,255,255,.58);border:1px solid rgba(12,32,51,.16)"></div><div class="l">surface · frosted 58%</div><div class="h">WHITE 58%</div></div>
+    <div class="s"><div class="c" style="background:rgba(12,32,51,.16)"></div><div class="l">border · navy 16%</div><div class="h">NAVY 16%</div></div>
+    <div class="s"><div class="c" style="background:#C9F53C"></div><div class="l">fill-accent</div><div class="h">#C9F53C</div></div>
+    <div class="s"><div class="c" style="background:#0D1A26"></div><div class="l">text-primary</div><div class="h">#0D1A26 · 16.1:1</div></div>
+    <div class="s"><div class="c" style="background:#46596A"></div><div class="l">text-secondary</div><div class="h">#46596A · 6.6:1</div></div>
+    <div class="s"><div class="c" style="background:#56697E"></div><div class="l">text-tertiary · labels</div><div class="h">#56697E · 5.2:1</div></div>
+    <div class="s"><div class="c" style="background:#596B80"></div><div class="l">placeholder</div><div class="h">#596B80 · 5.0:1</div></div>
+    <div class="s"><div class="c" style="background:#4A6606"></div><div class="l">text-accent · deep lime</div><div class="h">#4A6606 · 6.0:1</div></div>
+    <div class="s"><div class="c" style="background:#1B2405"></div><div class="l">text-on-accent</div><div class="h">#1B2405 · 12.8:1</div></div>
+  </div>
+  <div class="two" style="margin-top:18px">
+    <ul class="rl">
+      <li><b>Hairlines invert</b>On dark, lines are white at 10–26%; white-on-white has no
+      edge, so on light they become navy at 10–26%.</li>
+      <li><b>Glass opacity climbs an order of magnitude</b>5.5% white over pale grey reads as
+      nothing; light glass sits at 52–90% — frosted rather than tinted — and a light panel
+      needs its hairline to define the edge.</li>
+    </ul>
+    <ul class="rl">
+      <li><b>Status re-derives</b>Success drops to #10794B (5.0:1), warning to #8A5B04
+      (5.4:1), danger to #C0271F (5.4:1) — the first pass failed at 4.35:1 and below, and
+      the gate now keeps it from regressing.</li>
+      <li><b>The boundary rule</b>The accent fill alone measures 1.16:1 against this ground,
+      so the primary button's boundary is carried by
+      <span class="mono">--border-accent</span> in both themes.</li>
+    </ul>
+  </div>
+  <div class="folio"><span>ATLAS — Design Language · Colour</span><span>07</span></div>
+</div>
 </div>
 
-<!-- 07 · TYPE -->
+<!-- p08 · THE ACCENT -->
+<div class="page">
+  <div class="head"><div class="a-idx"><b>03</b> COLOUR</div><h2>One chartreuse, split in two</h2></div>
+  <div class="two">
+    <div>
+      <div class="a-glass pad">
+        <div class="a-idx"><b>A</b> FILL — BACKGROUNDS, DARK INK ON TOP</div>
+        <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap">
+          <button class="a-btn a-btn--primary">Close month</button>
+          <span class="a-tag a-tag--accent"><span class="a-dot"></span>CLOSING</span>
+        </div>
+        <div class="a-progress" style="margin-top:14px;max-width:300px"><span style="width:71%"></span></div>
+        <p style="font-size:var(--t-12);margin-top:12px"><span class="mono">--fill-accent</span>
+        works as a fill in both themes — dark ink on it measures 14.0:1 dark, 12.8:1
+        light.</p>
+      </div>
+      <div class="a-glass pad" style="margin-top:14px">
+        <div class="a-idx"><b>B</b> TEXT — TYPE, ICONS, THE INDEX PREFIX</div>
+        <p style="margin-top:10px;font-size:var(--t-12)">The index prefix
+        <b style="color:var(--text-accent)" class="mono">04.2</b>, a
+        <a href="#">link like this one</a>, an accent icon — all take
+        <span class="mono">--text-accent</span>: chartreuse itself on dark (15.2:1), deep
+        lime on light (6.0:1). Chartreuse as type on a pale ground is 1.3:1 — the token
+        split exists because that failure shipped once.</p>
+      </div>
+    </div>
+    <ul class="rl">
+      <li><b>They are not interchangeable</b>Anything colouring type uses
+      <span class="mono">--text-accent</span>, never <span class="mono">--fill-accent</span>.
+      The one exception is ink sitting <em>on</em> the fill, which uses
+      <span class="mono">--text-on-accent</span>.</li>
+      <li><b>One accent, everywhere</b>Every action, link, active state, selected tab, focus
+      ring and series-1 chart line is the same chartreuse family. A second accent hue is not
+      a customisation — it is a different product (page 24).</li>
+      <li><b>The accent is the attention budget</b>One flagged item, one primary button per
+      view. Spending chartreuse twice halves what both purchases bought.</li>
+      <li><b>Focus</b>2px chartreuse outline at 2px offset on every interactive element,
+      following the element's own radius; light theme deepens it to lime-800 (7.2:1).</li>
+    </ul>
+  </div>
+  <div class="folio"><span>ATLAS — Design Language · Colour</span><span>08</span></div>
+</div>
+
+<!-- p09 · PROOF -->
+<div class="page">
+  <div class="head"><div class="a-idx"><b>03</b> COLOUR</div><h2>Proof — every role pair, measured, both themes</h2></div>
+  <div class="two">
+    <table class="t">
+      <thead><tr><th>Pair · vs ground</th><th class="num">Dark</th><th class="num">Light</th><th class="num">Bar</th></tr></thead>
+      <tbody>
+        <tr><td>text-primary</td><td class="num">15.65</td><td class="num">16.09</td><td class="num">4.5</td></tr>
+        <tr><td>text-secondary</td><td class="num">8.80</td><td class="num">6.62</td><td class="num">4.5</td></tr>
+        <tr><td>text-tertiary — the 10px labels</td><td class="num">5.91</td><td class="num">5.16</td><td class="num">4.5</td></tr>
+        <tr><td>text-placeholder</td><td class="num">4.79</td><td class="num">5.00</td><td class="num">4.5</td></tr>
+        <tr><td>text-accent</td><td class="num">15.16</td><td class="num">6.01</td><td class="num">4.5</td></tr>
+        <tr><td>text-on-accent · vs fill</td><td class="num">14.00</td><td class="num">12.77</td><td class="num">4.5</td></tr>
+        <tr><td>text-success</td><td class="num">10.03</td><td class="num">4.97</td><td class="num">4.5</td></tr>
+        <tr><td>text-warning</td><td class="num">10.47</td><td class="num">5.36</td><td class="num">4.5</td></tr>
+        <tr><td>text-danger</td><td class="num">6.30</td><td class="num">5.40</td><td class="num">4.5</td></tr>
+        <tr><td>text-info</td><td class="num">9.36</td><td class="num">7.01</td><td class="num">4.5</td></tr>
+      </tbody>
+    </table>
+    <div>
+      <table class="t">
+        <thead><tr><th>Pair · vs ground</th><th class="num">Dark</th><th class="num">Light</th><th class="num">Bar</th></tr></thead>
+        <tbody>
+          <tr><td>viz-1</td><td class="num">15.16</td><td class="num">3.45</td><td class="num">3.0</td></tr>
+          <tr><td>viz-2</td><td class="num">9.36</td><td class="num">7.01</td><td class="num">3.0</td></tr>
+          <tr><td>viz-3</td><td class="num">7.63</td><td class="num">4.52</td><td class="num">3.0</td></tr>
+          <tr><td>viz-4</td><td class="num">8.76</td><td class="num">5.42</td><td class="num">3.0</td></tr>
+          <tr><td>viz-5</td><td class="num">10.89</td><td class="num">4.57</td><td class="num">3.0</td></tr>
+          <tr><td>viz-6</td><td class="num">10.47</td><td class="num">5.36</td><td class="num">3.0</td></tr>
+          <tr><td>focus-ring</td><td class="num">15.16</td><td class="num">7.19</td><td class="num">3.0</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:12px;font-size:var(--t-12)">Thirty-four pairs, WCAG 2.x relative
+      luminance, re-measured by <span class="mono">tools/check_contrast.py</span> on every
+      run — the table above is the gate's own output, not a claim. Motion honours
+      <span class="mono">prefers-reduced-motion</span> (both durations collapse to 1ms);
+      forced-colors mode goes solid and hands the palette to the system; touch targets floor
+      at 44px.</p>
+    </div>
+  </div>
+  <div class="folio"><span>ATLAS — Design Language · Colour</span><span>09</span></div>
+</div>
+
+<!-- p10 · TYPE FACES -->
 <div class="page">
   <div class="head"><div class="a-idx"><b>04</b> TYPOGRAPHY</div><h2>The jump is the character</h2></div>
   <div class="two">
     <div>
-      <div class="a-idx" style="margin-bottom:10px"><b>A</b> SPLINE SANS MONO · THE LABEL</div>
-      <div class="big" style="font-size:96px;line-height:1">48,210</div>
-      <div class="a-idx" style="margin-top:6px"><b>PB-2216</b> MARCH · RECONCILED</div>
-      <p style="margin-top:18px;font-size:var(--t-12)">Everything numeric — figures,
-      references, identifiers — is Spline Sans Mono, tabular. The system's character is
-      the jump between 10px tracked labels and 46px tabular figures, with very little in
-      between.</p>
+      <div class="a-idx" style="margin-bottom:10px"><b>A</b> SPLINE SANS MONO · THE NUMBERS</div>
+      <div class="big" style="font-size:92px;line-height:1">48,210</div>
+      <div class="a-idx" style="margin-top:8px"><b>PB-2216</b> MARCH · RECONCILED</div>
+      <p style="margin-top:16px;font-size:var(--t-12)">Everything numeric — figures,
+      references, identifiers — is Spline Sans Mono, tabular, tracked −0.02em. The system's
+      character is the jump between 10px tracked labels and 46px tabular figures, with very
+      little in between.</p>
+      <div style="display:flex;gap:26px;margin-top:14px;align-items:baseline">
+        <span class="big" style="font-size:var(--t-46)">−1,240.00</span>
+        <span class="big" style="font-size:var(--t-19);color:var(--text-secondary)">99.96%</span>
+        <span class="mono" style="font-size:var(--t-11);color:var(--text-tertiary)">TRX-014021</span>
+      </div>
     </div>
     <div>
       <div class="a-idx" style="margin-bottom:10px"><b>B</b> GABARITO · THE INTERFACE</div>
       <div style="font-weight:var(--w-600);font-size:var(--t-33);letter-spacing:var(--ls-tight);color:var(--text-primary)">Close the month<br>with the numbers shown</div>
-      <p style="margin-top:18px;font-size:var(--t-12)">Gabarito carries headings, body and
-      controls at 12–14px — dense on purpose; nothing is inflated to a comfortable-looking
-      16px. Scale: 10 / 11 / 12 / 13 / 14 / 16 / 19 / 25 / 33 / 46.</p>
-      <p style="font-size:var(--t-12)">Weights 400–700; tight tracking (−0.03em) on display
-      sizes, 0.1em tracking on the 10px labels.</p>
+      <p style="margin-top:14px;font-size:var(--t-12)">Gabarito carries headings, body and
+      controls at 12–14px. Weights 400–700; tight tracking (−0.03em) on display sizes, 0.1em
+      on the 10px labels. Sentence case everywhere except the labels, which are always
+      uppercase and always mono.</p>
+      <ul class="rl" style="margin-top:8px">
+        <li><b>Labels are mono, headings are not</b>The two faces never trade jobs: Gabarito
+        never sets a figure, Spline never sets a sentence.</li>
+        <li><b>No third face</b>Icons are the only other glyph system on a surface.</li>
+      </ul>
     </div>
   </div>
-  <div class="folio"><span>ATLAS — Design Language · Typography</span><span>07</span></div>
+  <div class="folio"><span>ATLAS — Design Language · Typography</span><span>10</span></div>
 </div>
 
-<!-- 08 · ICONOGRAPHY -->
+<!-- p11 · TYPE SCALE -->
+<div class="page">
+  <div class="head"><div class="a-idx"><b>04</b> TYPOGRAPHY</div><h2>The scale, all ten steps</h2></div>
+  <div style="display:flex;flex-direction:column;gap:1px">
+    <div style="display:flex;align-items:baseline;gap:18px"><span class="mono" style="width:60px;flex:none;font-size:var(--t-10);color:var(--text-tertiary)">46</span><span class="big" style="font-size:46px">1,204,118</span><span class="mono" style="font-size:var(--t-10);color:var(--text-placeholder)">HERO READOUT</span></div>
+    <div style="display:flex;align-items:baseline;gap:18px"><span class="mono" style="width:60px;flex:none;font-size:var(--t-10);color:var(--text-tertiary)">33</span><span style="font-weight:var(--w-600);font-size:33px;letter-spacing:var(--ls-tight)">Page heading</span></div>
+    <div style="display:flex;align-items:baseline;gap:18px"><span class="mono" style="width:60px;flex:none;font-size:var(--t-10);color:var(--text-tertiary)">25</span><span style="font-weight:var(--w-600);font-size:25px;letter-spacing:var(--ls-tight)">Section heading · dense KPI</span></div>
+    <div style="display:flex;align-items:baseline;gap:18px"><span class="mono" style="width:60px;flex:none;font-size:var(--t-10);color:var(--text-tertiary)">19</span><span style="font-weight:var(--w-600);font-size:19px">Panel heading</span></div>
+    <div style="display:flex;align-items:baseline;gap:18px"><span class="mono" style="width:60px;flex:none;font-size:var(--t-10);color:var(--text-tertiary)">16</span><span style="font-size:16px">Standfirst — the largest body size</span></div>
+    <div style="display:flex;align-items:baseline;gap:18px"><span class="mono" style="width:60px;flex:none;font-size:var(--t-10);color:var(--text-tertiary)">14</span><span style="font-size:14px">Large control text, comfortable body</span></div>
+    <div style="display:flex;align-items:baseline;gap:18px"><span class="mono" style="width:60px;flex:none;font-size:var(--t-10);color:var(--text-tertiary)">13</span><span style="font-size:13px">The working size — tables, controls, body. Most of the interface is this line.</span></div>
+    <div style="display:flex;align-items:baseline;gap:18px"><span class="mono" style="width:60px;flex:none;font-size:var(--t-10);color:var(--text-tertiary)">12</span><span style="font-size:12px">Dense controls, nav items, secondary cells</span></div>
+    <div style="display:flex;align-items:baseline;gap:18px"><span class="mono" style="width:60px;flex:none;font-size:var(--t-10);color:var(--text-tertiary)">11</span><span style="font-size:11px">Help text, KPI deltas, legends</span></div>
+    <div style="display:flex;align-items:baseline;gap:18px"><span class="mono" style="width:60px;flex:none;font-size:var(--t-10);color:var(--text-tertiary)">10</span><span class="mono" style="font-size:10px;letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--text-tertiary)">THE INDEX LABEL — THE SYSTEM'S SIGNATURE, AND WHY EVERY TEXT ROLE CLEARS AA AT 10PX</span></div>
+  </div>
+  <p style="margin-top:18px">10 / 11 / 12 / 13 / 14 / 16 / 19 / 25 / 33 / 46. Density never
+  changes type — <span class="mono">.a-dense</span> tightens spacing and control heights and
+  leaves every size above exactly where it is.</p>
+  <div class="folio"><span>ATLAS — Design Language · Typography</span><span>11</span></div>
+</div>
+
+<!-- p12 · ICONOGRAPHY -->
 <div class="page">
   <div class="head"><div class="a-idx"><b>05</b> ICONOGRAPHY</div><h2>Phosphor, regular, and six rules</h2></div>
   <div class="two">
-    <div class="a-glass pad" style="display:flex;gap:26px;flex-wrap:wrap;align-items:center;justify-content:center;font-size:24px;color:var(--text-secondary)">
-      <i class="ph ph-receipt"></i><i class="ph ph-chart-line-up"></i><i class="ph ph-database"></i><i class="ph ph-bell"></i><i class="ph ph-check-circle"></i><i class="ph ph-warning"></i><i class="ph ph-magnifying-glass"></i><i class="ph ph-gear"></i><i class="ph ph-arrow-right"></i><i class="ph ph-download-simple"></i><i class="ph ph-lock"></i><i class="ph ph-pulse"></i>
+    <div>
+      <div class="a-glass pad" style="display:flex;gap:24px;flex-wrap:wrap;align-items:center;justify-content:center;font-size:24px;color:var(--text-secondary)">
+        <i class="ph ph-receipt"></i><i class="ph ph-chart-line-up"></i><i class="ph ph-database"></i><i class="ph ph-bell"></i><i class="ph ph-check-circle"></i><i class="ph ph-warning"></i><i class="ph ph-magnifying-glass"></i><i class="ph ph-gear"></i><i class="ph ph-arrow-right"></i><i class="ph ph-download-simple"></i><i class="ph ph-lock"></i><i class="ph ph-pulse"></i>
+      </div>
+      <div style="display:flex;gap:30px;align-items:flex-end;margin-top:18px;justify-content:center;color:var(--text-secondary)">
+        <div style="text-align:center"><i class="ph ph-bell" style="font-size:14px"></i><div class="mono" style="font-size:9px;color:var(--text-tertiary);margin-top:6px">14</div></div>
+        <div style="text-align:center"><i class="ph ph-bell" style="font-size:16px"></i><div class="mono" style="font-size:9px;color:var(--text-tertiary);margin-top:6px">16</div></div>
+        <div style="text-align:center"><i class="ph ph-bell" style="font-size:20px"></i><div class="mono" style="font-size:9px;color:var(--text-tertiary);margin-top:6px">20</div></div>
+        <div style="text-align:center"><i class="ph ph-bell" style="font-size:24px"></i><div class="mono" style="font-size:9px;color:var(--text-tertiary);margin-top:6px">24</div></div>
+      </div>
+      <div class="a-flag a-flag--warn" style="margin-top:18px"><i class="ph ph-warning a-icon" aria-hidden="true"></i><div><b>The icon repeats the copy.</b> Severity is in the words, never only in the glyph or the colour.</div></div>
     </div>
     <ul class="rl">
       <li><b><i>1</i>Regular weight only</b>Never mixed with bold, fill or duotone — the mix
-      is the fastest way to make a set look borrowed.</li>
-      <li><b><i>2</i>Sized in em</b>1.15em in line; standalone at 14 / 16 / 20 / 24px.</li>
+      is the fastest way to make an icon set look borrowed.</li>
+      <li><b><i>2</i>Sized in em</b><span class="mono">.a-icon</span> sets 1.15em so a glyph
+      tracks the label beside it; standalone sizes are 14 / 16 / 20 / 24px.</li>
       <li><b><i>3</i>currentColor</b>An icon takes the colour of the text it sits with,
       never its own.</li>
-      <li><b><i>4</i>Never alone</b>Icon-only controls carry aria-label; decorative glyphs
-      carry aria-hidden.</li>
-      <li><b><i>5</i>Never the sole carrier</b>A state is a tint plus a word; the icon
-      repeats what the copy says.</li>
-      <li><b><i>6</i>No emoji</b></li>
+      <li><b><i>4</i>Never alone</b>Icon-only controls carry
+      <span class="mono">aria-label</span>; decorative glyphs carry
+      <span class="mono">aria-hidden</span>.</li>
+      <li><b><i>5</i>Never the sole carrier</b>A state is a tint plus a word; icons in a flag
+      repeat what the copy already says.</li>
+      <li><b><i>6</i>No emoji</b>Anywhere. The system's warmth is chartreuse, not 🎉.</li>
     </ul>
   </div>
-  <div class="folio"><span>ATLAS — Design Language · Iconography</span><span>08</span></div>
+  <div class="folio"><span>ATLAS — Design Language · Iconography</span><span>12</span></div>
 </div>
 
-<!-- 09 · GEOMETRY & DENSITY -->
+<!-- p13 · GRID & BREAKPOINTS -->
 <div class="page">
-  <div class="head"><div class="a-idx"><b>06</b> GEOMETRY &amp; DENSITY</div><h2>The 1.75px unit, radii 6 / 10 / 14</h2></div>
+  <div class="head"><div class="a-idx"><b>06</b> GRID</div><h2>Twelve columns, four breakpoints</h2></div>
+  <div class="two">
+    <div>
+      <div class="a-idx" style="margin-bottom:10px"><b>A</b> THE CANONICAL SPLITS</div>
+      <div style="display:grid;grid-template-columns:2fr 1fr;gap:8px">
+        <div style="background:var(--tint-accent);border:1px solid var(--border-accent);border-radius:var(--r-sm);padding:8px;text-align:center" class="mono">SPAN 8 — PRIMARY</div>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--r-sm);padding:8px;text-align:center" class="mono">SPAN 4</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px">
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--r-sm);padding:8px;text-align:center" class="mono">3</div>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--r-sm);padding:8px;text-align:center" class="mono">3</div>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--r-sm);padding:8px;text-align:center" class="mono">3</div>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--r-sm);padding:8px;text-align:center" class="mono">3</div>
+      </div>
+      <p style="font-size:var(--t-12);margin-top:12px">Twelve columns, gutter
+      <span class="mono">--sp-4</span> (14px — the grid's own unit, ×8). Reading surfaces cap
+      at 1060px; application shells run to 1440px and stop — a ledger wider than 1440 stops
+      being scannable. A 6/6 split is a smell: usually two views pretending to be one.</p>
+    </div>
+    <div>
+      <div class="a-idx" style="margin-bottom:10px"><b>B</b> BREAKPOINTS</div>
+      <table class="t">
+        <thead><tr><th>From</th><th>Name</th><th>What changes</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">0</td><td>Stack</td><td>One column. Side panels become sections below; tables shed to three columns: identity, state, figure.</td></tr>
+          <tr><td class="mono">768</td><td>Split</td><td>Two columns. The 8/4 split arrives; KPI rows go 2×2.</td></tr>
+          <tr><td class="mono">1060</td><td>Full</td><td>The twelve-column grid, KPI rows in one line, side rail visible.</td></tr>
+          <tr><td class="mono">1440</td><td>Cap</td><td>Nothing new appears — margins absorb the rest. Density, not width, is how ATLAS scales up.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="folio"><span>ATLAS — Design Language · Grid</span><span>13</span></div>
+</div>
+
+<!-- p14 · DENSITY -->
+<div class="page">
+  <div class="head"><div class="a-idx"><b>06</b> DENSITY</div><h2>One switch, on the region</h2></div>
+  <div class="two">
+    <div class="a-glass pad">
+      <div class="a-idx"><b>A</b> COMFORTABLE — DEFAULT</div>
+      <table class="a-table" style="margin-top:10px">
+        <thead><tr><th>Entry</th><th>State</th><th class="num">Amount</th></tr></thead>
+        <tbody>
+          <tr><td class="a-num">TRX-014021</td><td><span class="a-tag a-tag--ok">Settled</span></td><td class="num a-num">−1,240.00</td></tr>
+          <tr><td class="a-num">TRX-014022</td><td><span class="a-tag a-tag--warn">Pending</span></td><td class="num a-num">−96.20</td></tr>
+          <tr><td class="a-num">TRX-014023</td><td><span class="a-tag a-tag--ok">Settled</span></td><td class="num a-num">−18,400.00</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="a-glass pad a-dense">
+      <div class="a-idx"><b>B</b> DENSE — .a-dense ON THE REGION</div>
+      <table class="a-table" style="margin-top:10px">
+        <thead><tr><th>Entry</th><th>State</th><th class="num">Amount</th></tr></thead>
+        <tbody>
+          <tr><td class="a-num">TRX-014021</td><td><span class="a-tag a-tag--ok">Settled</span></td><td class="num a-num">−1,240.00</td></tr>
+          <tr><td class="a-num">TRX-014022</td><td><span class="a-tag a-tag--warn">Pending</span></td><td class="num a-num">−96.20</td></tr>
+          <tr><td class="a-num">TRX-014023</td><td><span class="a-tag a-tag--ok">Settled</span></td><td class="num a-num">−18,400.00</td></tr>
+          <tr><td class="a-num">TRX-014024</td><td><span class="a-tag a-tag--ok">Settled</span></td><td class="num a-num">−512.75</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="two" style="margin-top:22px">
+    <p>One switch, applied to a region, never to a single control. Dense drops row padding
+    one step and controls to 28px. <b>Type sizes never change</b> — density is spacing, not
+    shrinking; a screen that needs smaller type needs a different screen.</p>
+    <p>Dense is for pointer surfaces; the 44px touch floor makes it unavailable on touch.
+    Control heights run 28 / 34 / 42px, and the 34px default is itself a pointer-surface
+    number.</p>
+  </div>
+  <div class="folio"><span>ATLAS — Design Language · Density</span><span>14</span></div>
+</div>
+
+<!-- p15 · GEOMETRY -->
+<div class="page">
+  <div class="head"><div class="a-idx"><b>06</b> GEOMETRY</div><h2>The 1.75px unit, radii 6 / 10 / 14</h2></div>
   <div class="three">
     <div>
       <div class="a-idx" style="margin-bottom:12px"><b>A</b> SPACE</div>
-      <div style="display:grid;gap:6px">
-        <div style="background:var(--fill-accent);height:8px;width:3.5px"></div>
-        <div style="background:var(--fill-accent);height:8px;width:7px"></div>
-        <div style="background:var(--fill-accent);height:8px;width:10.5px"></div>
-        <div style="background:var(--fill-accent);height:8px;width:14px"></div>
-        <div style="background:var(--fill-accent);height:8px;width:21px"></div>
-        <div style="background:var(--fill-accent);height:8px;width:28px"></div>
-        <div style="background:var(--fill-accent);height:8px;width:42px"></div>
-        <div style="background:var(--fill-accent);height:8px;width:56px"></div>
-        <div style="background:var(--fill-accent);height:8px;width:84px"></div>
+      <div style="display:grid;gap:5px">
+        <div style="display:flex;gap:10px;align-items:center"><div style="background:var(--fill-accent);height:8px;width:3.5px"></div><span class="mono" style="font-size:var(--t-10);color:var(--text-tertiary)">3.5</span></div>
+        <div style="display:flex;gap:10px;align-items:center"><div style="background:var(--fill-accent);height:8px;width:7px"></div><span class="mono" style="font-size:var(--t-10);color:var(--text-tertiary)">7</span></div>
+        <div style="display:flex;gap:10px;align-items:center"><div style="background:var(--fill-accent);height:8px;width:10.5px"></div><span class="mono" style="font-size:var(--t-10);color:var(--text-tertiary)">10.5</span></div>
+        <div style="display:flex;gap:10px;align-items:center"><div style="background:var(--fill-accent);height:8px;width:14px"></div><span class="mono" style="font-size:var(--t-10);color:var(--text-tertiary)">14 · the gutter</span></div>
+        <div style="display:flex;gap:10px;align-items:center"><div style="background:var(--fill-accent);height:8px;width:21px"></div><span class="mono" style="font-size:var(--t-10);color:var(--text-tertiary)">21 · panel pad</span></div>
+        <div style="display:flex;gap:10px;align-items:center"><div style="background:var(--fill-accent);height:8px;width:28px"></div><span class="mono" style="font-size:var(--t-10);color:var(--text-tertiary)">28</span></div>
+        <div style="display:flex;gap:10px;align-items:center"><div style="background:var(--fill-accent);height:8px;width:42px"></div><span class="mono" style="font-size:var(--t-10);color:var(--text-tertiary)">42</span></div>
+        <div style="display:flex;gap:10px;align-items:center"><div style="background:var(--fill-accent);height:8px;width:56px"></div><span class="mono" style="font-size:var(--t-10);color:var(--text-tertiary)">56</span></div>
+        <div style="display:flex;gap:10px;align-items:center"><div style="background:var(--fill-accent);height:8px;width:84px"></div><span class="mono" style="font-size:var(--t-10);color:var(--text-tertiary)">84</span></div>
       </div>
-      <p style="margin-top:12px;font-size:var(--t-11)">3.5 · 7 · 10.5 · 14 · 21 · 28 · 42 ·
-      56 · 84. Invisible, unusual, and it works.</p>
+      <p style="margin-top:12px;font-size:var(--t-11)">A 1.75px base unit instead of 4 or 8.
+      Invisible, unusual, and it works.</p>
     </div>
     <div>
       <div class="a-idx" style="margin-bottom:12px"><b>B</b> RADII</div>
-      <div style="display:flex;gap:14px;align-items:flex-end">
-        <div style="width:64px;height:64px;border:1px solid var(--border);border-radius:6px;display:grid;place-content:center" class="a-num">6</div>
-        <div style="width:64px;height:64px;border:1px solid var(--border);border-radius:10px;display:grid;place-content:center" class="a-num">10</div>
-        <div style="width:64px;height:64px;border:1px solid var(--border);border-radius:14px;display:grid;place-content:center" class="a-num">14</div>
-        <div style="width:64px;height:36px;border:1px solid var(--border);border-radius:999px;display:grid;place-content:center" class="a-num">pill</div>
+      <div style="display:flex;gap:14px;align-items:flex-end;flex-wrap:wrap">
+        <div style="width:60px;height:60px;border:1px solid var(--border);border-radius:6px;display:grid;place-content:center" class="mono">6</div>
+        <div style="width:60px;height:60px;border:1px solid var(--border);border-radius:10px;display:grid;place-content:center" class="mono">10</div>
+        <div style="width:60px;height:60px;border:1px solid var(--border);border-radius:14px;display:grid;place-content:center" class="mono">14</div>
+        <div style="width:60px;height:34px;border:1px solid var(--border);border-radius:999px;display:grid;place-content:center" class="mono">pill</div>
       </div>
-      <p style="margin-top:12px;font-size:var(--t-11)">Inner elements, panels and controls,
-      then the app frame. Pill is reserved for tags, progress tracks and avatars.</p>
+      <p style="margin-top:12px;font-size:var(--t-11)">Inner elements 6, panels and controls
+      10, the app frame 14. Pill is reserved for tags, progress tracks and avatars — a
+      pill-shaped button is a different design system.</p>
     </div>
     <div>
-      <div class="a-idx" style="margin-bottom:12px"><b>C</b> DENSITY &amp; TOUCH</div>
-      <p style="font-size:var(--t-11)">Controls run 28 / 34 / 42px. Touch surfaces floor
-      targets at 44px — the 34px height is for pointer surfaces only.</p>
-      <p style="font-size:var(--t-11)"><span class="a-num">.a-dense</span> is one switch on
-      a region: it tightens spacing, never type. Motion is 90ms and 170ms on one curve, and
-      reduced-motion collapses both to 1ms.</p>
+      <div class="a-idx" style="margin-bottom:12px"><b>C</b> MOTION</div>
+      <table class="t">
+        <tr><td class="mono">90ms</td><td>micro — hover, press, focus, toggle. Below perception as animation; reads as response.</td></tr>
+        <tr><td class="mono">170ms</td><td>structural — panels, dialogs, tab content, rows entering.</td></tr>
+        <tr><td class="mono">one curve</td><td><span class="mono">cubic-bezier(0.2, 0, 0, 1)</span> — fast out, long settle. Variety of easing is how motion systems rot.</td></tr>
+        <tr><td class="mono">1ms</td><td>reduced motion collapses both. Nothing depends on seeing the transition.</td></tr>
+      </table>
     </div>
   </div>
-  <div class="folio"><span>ATLAS — Design Language · Geometry</span><span>09</span></div>
+  <div class="folio"><span>ATLAS — Design Language · Geometry</span><span>15</span></div>
 </div>
 
-<!-- 10 · GLASS -->
+<!-- p16 · GLASS -->
 <div class="page">
   <div class="head"><div class="a-idx"><b>07</b> GLASS</div><h2>Depth without a single shadow</h2></div>
   <div class="two">
-    <div style="background:var(--demo-field);border-radius:var(--r-lg);padding:34px;display:grid;gap:16px">
+    <div style="background:var(--demo-field);border-radius:var(--r-lg);padding:30px;display:grid;gap:14px">
       <div class="a-glass pad">
         <div class="a-idx"><b>01</b> A PANEL OVER LIGHT</div>
         <p style="font-size:var(--t-12);margin-top:8px">The blur needs light behind it —
-        dropped onto a flat fill, glass reads as grey mush.</p>
+        <span class="mono">body::before</span> paints the blooms, and a glass panel dropped
+        onto a flat fill reads as grey mush.</p>
       </div>
       <div class="a-glass pad" style="display:flex;gap:20px;align-items:center">
         <div class="a-kpi"><span class="a-idx" style="font-size:10px">UPTIME</span><span class="v a-num" style="font-size:var(--t-25)">99.96<small>%</small></span></div>
@@ -310,122 +610,350 @@ figcaption{font-family:var(--f-num);font-size:9px;letter-spacing:var(--ls-label)
         <button class="a-btn a-btn--primary" style="margin-left:auto">Acknowledge</button>
       </div>
     </div>
-    <ul class="rl">
-      <li><b>The sheen is the elevation</b>A 1px gradient along the top edge stands in for a
-      shadow. The one box-shadow in the system is the glow on a hovered primary button.</li>
-      <li><b>The budget is a number</b>Six simultaneously visible blurred panels per view,
-      the app frame counted once. Beyond that, group under one panel with hairlines.</li>
-      <li><b>The one forbidden thing</b>Glass never nests inside glass. Controls that live
-      inside a glass panel — the theme toggle, the segmented control — are solid.</li>
-      <li><b>When blur is gone</b><span class="a-num">@supports</span> raises the fill
-      opacity; forced-colors mode drops the blooms, sets glass to solid Canvas and hands
-      the palette to the system.</li>
-    </ul>
+    <div>
+      <div class="a-idx" style="margin-bottom:10px"><b>A</b> ELEVATION — FOUR LEVELS, LIGHT DOES THE WORK</div>
+      <table class="t">
+        <tr><td class="mono">0</td><td>ground-deep — the page behind everything</td></tr>
+        <tr><td class="mono">1</td><td>glass — panels, 18px blur</td></tr>
+        <tr><td class="mono">2</td><td>glass-lg — the app frame, 30px blur</td></tr>
+        <tr><td class="mono">3</td><td>solid — dialogs and menus, opaque, readable over anything</td></tr>
+      </table>
+      <p style="font-size:var(--t-12);margin-top:10px">Each level catches more of the
+      top-edge sheen; none casts anything downward. <b>There is no level 4</b> — anything
+      above a dialog is a design error.</p>
+    </div>
   </div>
-  <div class="folio"><span>ATLAS — Design Language · Glass</span><span>10</span></div>
+  <div class="folio"><span>ATLAS — Design Language · Glass</span><span>16</span></div>
 </div>
 
-<!-- 11 · DATA COLOUR -->
+<!-- p17 · GLASS CAVEATS -->
+<div class="page">
+  <div class="head"><div class="a-idx"><b>07</b> GLASS</div><h2>The caveats are part of the spec</h2></div>
+  <div class="two">
+    <ul class="rl">
+      <li><b>The budget is a number</b>Six simultaneously visible blurred panels per view,
+      the app frame counted once. Blur is GPU work; beyond six, group content under one
+      panel with hairlines rather than adding panels.</li>
+      <li><b>The one forbidden thing</b>Glass never nests inside glass. Controls that live
+      inside a glass panel — the theme toggle, the segmented control — are solid
+      (<span class="mono">--ground-deep</span>), which is why the segmented control looks
+      the way it does.</li>
+      <li><b>The fragile theme</b>Light glass has far less contrast against its ground than
+      tinted white has against navy — a light panel needs its hairline to define the
+      edge.</li>
+    </ul>
+    <ul class="rl">
+      <li><b>No backdrop-filter</b><span class="mono">@supports</span> raises the fill to
+      <span class="mono">--surface-active</span>, trading translucency for legibility.</li>
+      <li><b>Forced colors</b>Windows High Contrast gets no translucency at all: blooms off,
+      glass solid to <span class="mono">Canvas</span>, borders to
+      <span class="mono">CanvasText</span> — the 1px borders every panel already carries are
+      what keeps the structure legible.</li>
+      <li><b>Print</b>Blur does not print. Paper surfaces use the solid register — this
+      book's own pages are the demonstration: every panel above sits on an opaque bloom
+      render, not a live blur.</li>
+    </ul>
+  </div>
+  <div class="folio"><span>ATLAS — Design Language · Glass</span><span>17</span></div>
+</div>
+
+<!-- p18 · DATA COLOUR -->
 <div class="page">
   <div class="head"><div class="a-idx"><b>08</b> DATA COLOUR</div><h2>Six series, re-derived per theme</h2></div>
   <div class="two">
     <div>
       <div class="a-idx" style="margin-bottom:12px"><b>A</b> DARK — ALL ≥ 3:1 ON THE GROUND</div>
       <div class="sw" style="grid-template-columns:repeat(6,1fr)">
-        <div class="s"><div class="c" style="background:#D4FF4F;height:36px"></div><div class="l">viz-1</div></div>
-        <div class="s"><div class="c" style="background:#7FC4FF;height:36px"></div><div class="l">viz-2</div></div>
-        <div class="s"><div class="c" style="background:#FF8A7A;height:36px"></div><div class="l">viz-3</div></div>
-        <div class="s"><div class="c" style="background:#C9A8FF;height:36px"></div><div class="l">viz-4</div></div>
-        <div class="s"><div class="c" style="background:#4FE3C1;height:36px"></div><div class="l">viz-5</div></div>
-        <div class="s"><div class="c" style="background:#FBBF24;height:36px"></div><div class="l">viz-6</div></div>
+        <div class="s"><div class="c" style="background:#D4FF4F;height:32px"></div><div class="l">1 · accent</div></div>
+        <div class="s"><div class="c" style="background:#7FC4FF;height:32px"></div><div class="l">2</div></div>
+        <div class="s"><div class="c" style="background:#FF8A7A;height:32px"></div><div class="l">3</div></div>
+        <div class="s"><div class="c" style="background:#C9A8FF;height:32px"></div><div class="l">4</div></div>
+        <div class="s"><div class="c" style="background:#4FE3C1;height:32px"></div><div class="l">5</div></div>
+        <div class="s"><div class="c" style="background:#FBBF24;height:32px"></div><div class="l">6</div></div>
       </div>
-      <div class="a-idx" style="margin:20px 0 12px"><b>B</b> LIGHT — SAME SIX JOBS</div>
+      <div class="a-idx" style="margin:18px 0 12px"><b>B</b> LIGHT — SAME SIX JOBS</div>
       <div class="sw" style="grid-template-columns:repeat(6,1fr)">
-        <div class="s"><div class="c" style="background:#6B8F0A;height:36px"></div><div class="l">viz-1</div></div>
-        <div class="s"><div class="c" style="background:#14568C;height:36px"></div><div class="l">viz-2</div></div>
-        <div class="s"><div class="c" style="background:#BE4B33;height:36px"></div><div class="l">viz-3</div></div>
-        <div class="s"><div class="c" style="background:#6D4FC1;height:36px"></div><div class="l">viz-4</div></div>
-        <div class="s"><div class="c" style="background:#0E7E68;height:36px"></div><div class="l">viz-5</div></div>
-        <div class="s"><div class="c" style="background:#8A5B04;height:36px"></div><div class="l">viz-6</div></div>
+        <div class="s"><div class="c" style="background:#6B8F0A;height:32px"></div><div class="l">1 · accent</div></div>
+        <div class="s"><div class="c" style="background:#14568C;height:32px"></div><div class="l">2</div></div>
+        <div class="s"><div class="c" style="background:#BE4B33;height:32px"></div><div class="l">3</div></div>
+        <div class="s"><div class="c" style="background:#6D4FC1;height:32px"></div><div class="l">4</div></div>
+        <div class="s"><div class="c" style="background:#0E7E68;height:32px"></div><div class="l">5</div></div>
+        <div class="s"><div class="c" style="background:#8A5B04;height:32px"></div><div class="l">6</div></div>
       </div>
+      <div style="display:flex;gap:6px;align-items:flex-end;height:110px;margin-top:20px;max-width:340px">
+        <div style="flex:1;height:64%;background:var(--viz-1);border-radius:2px 2px 0 0"></div>
+        <div style="flex:1;height:88%;background:var(--viz-1);border-radius:2px 2px 0 0"></div>
+        <div style="flex:1;height:52%;background:var(--viz-2);border-radius:2px 2px 0 0"></div>
+        <div style="flex:1;height:71%;background:var(--viz-2);border-radius:2px 2px 0 0"></div>
+        <div style="flex:1;height:38%;background:var(--viz-3);border-radius:2px 2px 0 0"></div>
+        <div style="flex:1;height:47%;background:var(--viz-3);border-radius:2px 2px 0 0"></div>
+      </div>
+      <div class="a-legend" style="margin-top:10px"><span><span class="a-swatch a-viz-1"></span>Ingest</span><span><span class="a-swatch a-viz-2"></span>Query</span><span><span class="a-swatch a-viz-3"></span>Exports</span></div>
     </div>
     <ul class="rl">
-      <li><b>Order is fixed</b>Series order never reorders per chart — a colour means the
-      same series everywhere in a product.</li>
-      <li><b>Colour is never the only carrier</b>Trend direction pairs the colour with a
-      sign; every series clears 3:1 against its ground, measured by the gate.</li>
-      <li><b>One signal per view</b>One flagged item, one primary button, one chartreuse
-      emphasis. Attention is a budget, and the accent spends it.</li>
+      <li><b>Order is fixed</b>Series 1 is always the accent, and a chart never reorders the
+      palette to look nicer — a colour means the same series everywhere in a product.</li>
+      <li><b>Past six, aggregate</b>A seventh series is a table, not a line.</li>
+      <li><b>Colour is never the only carrier</b>A legend names every series; lines differ
+      in weight as well as hue; trend direction pairs the colour with a sign.</li>
+      <li><b>The grid is quiet</b><span class="mono">--viz-grid</span> is white or navy at
+      8–9% — reference lines never compete with data.</li>
     </ul>
   </div>
-  <div class="folio"><span>ATLAS — Design Language · Data colour</span><span>11</span></div>
+  <div class="folio"><span>ATLAS — Design Language · Data colour</span><span>18</span></div>
 </div>
 
-<!-- 12 · COMPONENTS -->
+<!-- p19 · ATTENTION & EMPTY STATES -->
 <div class="page">
-  <div class="head"><div class="a-idx"><b>09</b> COMPONENTS &amp; BEHAVIOR</div><h2>Built from the semantic layer only</h2></div>
+  <div class="head"><div class="a-idx"><b>08</b> ATTENTION</div><h2>One signal per view, and the quiet states</h2></div>
   <div class="two">
-    <div class="a-glass pad" style="display:grid;gap:16px">
-      <div style="display:flex;gap:8px;flex-wrap:wrap">
-        <button class="a-btn a-btn--primary">Close month</button>
-        <button class="a-btn">Export</button>
-        <button class="a-btn a-btn--danger">Void entry</button>
-        <button class="a-btn a-btn--ghost">Cancel</button>
+    <div>
+      <div class="a-flag a-flag--danger"><i class="ph ph-warning a-icon" aria-hidden="true"></i><div><b>RG-2214 over threshold.</b> Flow 312 m³/h against a ceiling of 300. Acknowledge or reassign.</div></div>
+      <p style="font-size:var(--t-12);margin-top:12px">One flagged item, one primary button
+      per view. When everything is highlighted, nothing is — the danger flag above only
+      works because it is the only red on the page. A flag inserted in response to an action
+      carries <span class="mono">role="status"</span> or
+      <span class="mono">role="alert"</span> so it is announced, not just painted.</p>
+      <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap">
+        <span class="a-tag a-tag--ok"><span class="a-dot"></span>41 NOMINAL</span>
+        <span class="a-tag a-tag--warn"><span class="a-dot"></span>2 DRIFTING</span>
+        <span class="a-tag a-tag--danger"><span class="a-dot"></span>1 OVER</span>
+      </div>
+    </div>
+    <div>
+      <div class="a-idx" style="margin-bottom:12px"><b>B</b> THE FOUR EMPTY STATES — HAIRLINE SLATE, ONE CHARTREUSE ACCENT</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <figure style="text-align:center;background:var(--surface);border:1px solid var(--border-subtle);border-radius:var(--r);padding:14px"><img src="../assets/illustrations/empty-ledger.svg" style="width:130px" alt=""><figcaption>no entries</figcaption></figure>
+        <figure style="text-align:center;background:var(--surface);border:1px solid var(--border-subtle);border-radius:var(--r);padding:14px"><img src="../assets/illustrations/no-results.svg" style="width:130px" alt=""><figcaption>no results</figcaption></figure>
+        <figure style="text-align:center;background:var(--surface);border:1px solid var(--border-subtle);border-radius:var(--r);padding:14px"><img src="../assets/illustrations/signal-lost.svg" style="width:130px" alt=""><figcaption>feed interrupted</figcaption></figure>
+        <figure style="text-align:center;background:var(--surface);border:1px solid var(--border-subtle);border-radius:var(--r);padding:14px"><img src="../assets/illustrations/first-run.svg" style="width:130px" alt=""><figcaption>first run</figcaption></figure>
+      </div>
+    </div>
+  </div>
+  <div class="folio"><span>ATLAS — Design Language · Attention</span><span>19</span></div>
+</div>
+
+<!-- p20 · COMPONENTS I -->
+<div class="page">
+  <div class="head"><div class="a-idx"><b>09</b> COMPONENTS</div><h2>Actions, fields, selection</h2></div>
+  <div class="two">
+    <div class="a-glass pad" style="display:grid;gap:14px">
+      <div>
+        <div class="a-idx" style="margin-bottom:8px"><b>A</b> BUTTONS · DEFAULT / PRIMARY / DANGER / GHOST · SM / MD / LG</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+          <button class="a-btn">Export</button>
+          <button class="a-btn a-btn--primary">Close month</button>
+          <button class="a-btn a-btn--danger">Void entry</button>
+          <button class="a-btn a-btn--ghost">Cancel</button>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px">
+          <button class="a-btn a-btn--sm">Small · 28</button>
+          <button class="a-btn">Default · 34</button>
+          <button class="a-btn a-btn--lg">Large · 42</button>
+          <button class="a-btn a-btn--icon" aria-label="Settings"><i class="ph ph-gear"></i></button>
+        </div>
       </div>
       <div>
-        <label class="a-label" for="bx"><b>A</b> Approver</label>
-        <input class="a-input" id="bx" value="E. Papadaki — Controller">
+        <div class="a-idx" style="margin-bottom:8px"><b>B</b> FIELDS · LABEL, HELP, INVALID</div>
+        <label class="a-label" for="f1"><b>A</b> Approver</label>
+        <input class="a-input" id="f1" value="E. Papadaki — Controller">
+        <label class="a-label" for="f2" style="margin-top:10px"><b>B</b> Threshold</label>
+        <input class="a-input a-input--num" id="f2" value="300.00" aria-invalid="true">
+        <div class="a-error">Above the licensed ceiling of 250.00 — lower it or attach a variance.</div>
       </div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap">
-        <span class="a-tag a-tag--ok"><span class="a-dot"></span>Reconciled</span>
-        <span class="a-tag a-tag--warn"><span class="a-dot"></span>2 open</span>
-        <span class="a-tag a-tag--danger"><span class="a-dot"></span>Overdue</span>
-        <span class="a-tag a-tag--accent"><span class="a-dot"></span>Closing</span>
+      <div>
+        <div class="a-idx" style="margin-bottom:8px"><b>C</b> SELECTION</div>
+        <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap">
+          <label class="a-check"><input type="checkbox" checked> Reviewed</label>
+          <label class="a-radio"><input type="radio" name="r" checked> Monthly</label>
+          <label class="a-radio"><input type="radio" name="r"> Quarterly</label>
+          <input class="a-switch" type="checkbox" checked role="switch" aria-label="Auto-lock">
+        </div>
       </div>
-      <div class="a-flag a-flag--warn"><i class="ph ph-warning a-icon" aria-hidden="true"></i><div><b>Two exceptions open.</b> Approve or reassign before lock.</div></div>
     </div>
     <ul class="rl">
-      <li><b>Any hex here is a bug</b>The component layer touches only semantic tokens, so
-      the same markup flips themes untouched — proven by the case screens.</li>
-      <li><b>The contract is written down</b><span class="a-num">docs/BEHAVIOR.md</span>
-      fixes roles, states and keystrokes per component: tabs run roving tabindex with
-      arrow keys, dialogs trap focus and close on Escape, invalid fields carry
-      aria-invalid — the stylesheet keys its styling to those attributes, never to
-      classes.</li>
-      <li><b>Focus is never removed</b>A 2px chartreuse outline at 2px offset, on every
-      interactive element, following the element's own radius.</li>
+      <li><b>A button is a button</b>Native <span class="mono">&lt;button&gt;</span>, never a
+      styled div — Space and Enter come free and stay free. Icon-only buttons carry
+      <span class="mono">aria-label</span>.</li>
+      <li><b>Invalid is an attribute</b>The stylesheet keys the danger border and tint to
+      <span class="mono">aria-invalid="true"</span> — never to a class — and the error line
+      is wired in with <span class="mono">aria-describedby</span>. The error says how to fix
+      it.</li>
+      <li><b>State lives in :checked</b>Selection controls are native inputs inside their
+      labels; the label text is the accessible name; radios arrow-key within their
+      <span class="mono">name</span> group; the switch carries
+      <span class="mono">role="switch"</span>.</li>
+      <li><b>The numeric field</b><span class="mono">.a-input--num</span> is mono, tabular
+      and right-aligned — a figure is a figure even while it is being typed.</li>
     </ul>
   </div>
-  <div class="folio"><span>ATLAS — Design Language · Components</span><span>12</span></div>
+  <div class="folio"><span>ATLAS — Design Language · Components</span><span>20</span></div>
 </div>
 
-<!-- 13 · IN USE -->
+<!-- p21 · COMPONENTS II -->
+<div class="page">
+  <div class="head"><div class="a-idx"><b>09</b> COMPONENTS</div><h2>The ledger, tabs, dialog, readouts</h2></div>
+  <div class="two">
+    <div class="a-glass pad">
+      <div class="a-idx" style="margin-bottom:8px"><b>A</b> THE LEDGER TABLE — THE PRIMARY SURFACE</div>
+      <table class="a-table">
+        <thead><tr><th>Entry</th><th>Counterparty</th><th>State</th><th class="num">Amount</th></tr></thead>
+        <tbody>
+          <tr><td class="a-num">TRX-014021</td><td>Meridian Freight</td><td><span class="a-tag a-tag--ok">Settled</span></td><td class="num a-num">−1,240.00</td></tr>
+          <tr><td class="a-num">TRX-014022</td><td>Harbour Utilities</td><td><span class="a-tag a-tag--warn">Pending</span></td><td class="num a-num">−96.20</td></tr>
+          <tr><td class="a-num">TRX-014023</td><td>Aegis Payroll</td><td><span class="a-tag a-tag--ok">Settled</span></td><td class="num a-num">−18,400.00</td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:16px">
+        <div class="a-idx" style="margin-bottom:8px"><b>B</b> TABS &amp; SEGMENTED</div>
+        <div class="a-tabs">
+          <button class="a-tab" aria-selected="true">Statement</button>
+          <button class="a-tab">Exceptions</button>
+          <button class="a-tab">Audit</button>
+        </div>
+        <div class="a-seg" style="margin-top:12px" role="group" aria-label="Theme">
+          <button aria-pressed="true">Dark</button>
+          <button aria-pressed="false">Light</button>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="a-dialog" style="width:100%">
+        <h3>Void entry TRX-014022?</h3>
+        <p>The entry is reversed, the counterparty notified, and the audit trail keeps both
+        sides. This cannot be undone.</p>
+        <footer>
+          <button class="a-btn a-btn--ghost">Cancel</button>
+          <button class="a-btn a-btn--danger">Void entry</button>
+        </footer>
+      </div>
+      <div class="a-glass pad" style="margin-top:14px;display:flex;gap:26px;align-items:center">
+        <div class="a-kpi"><span class="a-idx" style="font-size:10px">NET POSITION</span><span class="v a-num" style="font-size:var(--t-25)">−41,298<small>EUR</small></span><span class="d down a-num">−4.2% vs Feb</span></div>
+        <div style="flex:1">
+          <div class="a-idx" style="font-size:10px;margin-bottom:6px"><b>71%</b> CLOSE PROGRESS</div>
+          <div class="a-progress"><span style="width:71%"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="folio"><span>ATLAS — Design Language · Components</span><span>21</span></div>
+</div>
+
+<!-- p22 · BEHAVIOR -->
+<div class="page">
+  <div class="head"><div class="a-idx"><b>09</b> BEHAVIOR</div><h2>The contract, written down</h2></div>
+  <div class="two">
+    <table class="t">
+      <thead><tr><th>Component</th><th>Roles &amp; states</th><th>Keys</th></tr></thead>
+      <tbody>
+        <tr><td>Button</td><td>native <span class="mono">&lt;button&gt;</span>; <span class="mono">aria-label</span> when icon-only</td><td class="mono">Space · Enter</td></tr>
+        <tr><td>Field</td><td><span class="mono">label[for]</span> · <span class="mono">aria-describedby</span> · <span class="mono">aria-invalid</span></td><td class="mono">—</td></tr>
+        <tr><td>Radio set</td><td>native inputs, shared <span class="mono">name</span></td><td class="mono">↑↓←→</td></tr>
+        <tr><td>Switch</td><td>checkbox + <span class="mono">role="switch"</span></td><td class="mono">Space</td></tr>
+        <tr><td>Tabs</td><td><span class="mono">tablist / tab / tabpanel</span>; roving tabindex; <span class="mono">aria-selected</span>, <span class="mono">aria-controls</span></td><td class="mono">←→ · Home · End</td></tr>
+        <tr><td>Segmented</td><td><span class="mono">role="group"</span> + <span class="mono">aria-pressed</span>; one pressed at all times</td><td class="mono">Space · Enter</td></tr>
+        <tr><td>Dialog</td><td><span class="mono">role="dialog"</span> · <span class="mono">aria-modal</span> · <span class="mono">aria-labelledby</span>; focus trapped, returned to opener</td><td class="mono">Esc · Tab cycles</td></tr>
+        <tr><td>Flag</td><td><span class="mono">role="status"</span> (ok/info) · <span class="mono">role="alert"</span> (danger) when inserted</td><td class="mono">—</td></tr>
+        <tr><td>Table</td><td><span class="mono">th[scope]</span>; sort buttons inside <span class="mono">th</span> with <span class="mono">aria-sort</span></td><td class="mono">Space · Enter</td></tr>
+        <tr><td>Nav</td><td><span class="mono">&lt;nav&gt;</span> + <span class="mono">aria-current="page"</span></td><td class="mono">—</td></tr>
+        <tr><td>Progress</td><td><span class="mono">role="progressbar"</span> + value min/max/now</td><td class="mono">—</td></tr>
+      </tbody>
+    </table>
+    <div>
+      <p>ATLAS ships as CSS, so the markup and the keyboard are the implementer's to build —
+      but not the implementer's to design. <span class="mono">docs/BEHAVIOR.md</span> is the
+      contract, one section per interactive component, and the stylesheet keys its styling
+      to these attributes (<span class="mono">aria-selected</span>,
+      <span class="mono">aria-pressed</span>, <span class="mono">aria-invalid</span>,
+      <span class="mono">aria-current</span>) — markup that honors the contract renders
+      correctly for free, and markup that skips it renders visibly wrong, which is the
+      point.</p>
+      <ul class="rl" style="margin-top:6px">
+        <li><b>Focus is never removed</b>2px accent outline at 2px offset, on every
+        interactive element, following the element's own radius.</li>
+        <li><b>Tab leaves the tablist</b>It never walks the tabs; arrow keys do. A panel
+        with no focusable content carries <span class="mono">tabindex="0"</span>.</li>
+        <li><b>The overlay click may close a dialog; it is never the only way out</b>The
+        footer always carries a real button.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="folio"><span>ATLAS — Design Language · Behavior</span><span>22</span></div>
+</div>
+
+<!-- p23 · IN USE -->
 <div class="page">
   <div class="head"><div class="a-idx"><b>10</b> IN USE</div><h2>Three products, one language</h2></div>
   <div class="three">
-    <figure><img class="shot" src="cases/console.png" alt=""><figcaption>Ops console · dark</figcaption></figure>
-    <figure><img class="shot" src="cases/close.png" alt=""><figcaption>Month close · light</figcaption></figure>
-    <figure><img class="shot" src="cases/status.png" alt=""><figcaption>Public status page · dark</figcaption></figure>
+    <figure><img class="shot" src="cases/console.png" alt=""><figcaption>Ops console · a sensor fleet · dark</figcaption></figure>
+    <figure><img class="shot" src="cases/close.png" alt=""><figcaption>Month close · a finance product · light</figcaption></figure>
+    <figure><img class="shot" src="cases/status.png" alt=""><figcaption>Status page · a public surface · dark</figcaption></figure>
   </div>
-  <p style="margin-top:24px">Deliberately different products — a sensor fleet, a finance
-  close, a public status page — every one composed from
-  <span class="a-num">components.css</span> alone. To reskin for a new product: change the
-  accent trio and the ground pairs, re-derive the text accent, run the gate. The semantic
-  layer and every component follow untouched.</p>
-  <div class="folio"><span>ATLAS — Design Language · In use</span><span>13</span></div>
+  <div class="two" style="margin-top:22px">
+    <p>Deliberately different products, every one composed from
+    <span class="mono">components.css</span> alone — no per-case stylesheet exists. The
+    console leans on the one-signal rule and the data series; the close leans on forms,
+    steps and the ledger; the status page leans on flags, uptime readouts and the solid
+    subscribe row.</p>
+    <p>Each case is also a proof of a specific claim: the console that the density scales,
+    the close that the same markup flips themes untouched, the status page that the language
+    holds on a public, low-chrome surface. A new case should stress a rule, not decorate
+    one.</p>
+  </div>
+  <div class="folio"><span>ATLAS — Design Language · In use</span><span>23</span></div>
 </div>
 
-<!-- 14 · BACK COVER -->
+<!-- p24 · SKINNING -->
+<div class="page">
+  <div class="head"><div class="a-idx"><b>10</b> SKINNING</div><h2>Making it another product's</h2></div>
+  <div class="two">
+    <div>
+      <table class="t">
+        <thead><tr><th>Step</th><th>What changes</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">1</td><td>The accent trio — <span class="mono">--lime-400 / 300 / 500</span> — becomes the new product's signal colour.</td></tr>
+          <tr><td class="mono">2</td><td>The ground pairs — <span class="mono">--navy-900/950</span> dark, <span class="mono">--pale-100/200</span> light.</td></tr>
+          <tr><td class="mono">3</td><td><span class="mono">--text-accent</span> is re-derived for the new accent against both grounds — the fill almost never works as type.</td></tr>
+          <tr><td class="mono">4</td><td><span class="mono">python3 tools/check_contrast.py</span> — all 34 pairs must clear before anything ships.</td></tr>
+          <tr><td class="mono">5</td><td>Nothing else. The semantic layer and every component follow untouched.</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:14px;font-size:var(--t-12)">The case screens were built exactly
+      this way. If a reskin wants a second accent, new radii or a friendlier 16px body, it
+      does not want ATLAS — it wants a different system, and that is a fine thing to
+      want.</p>
+    </div>
+    <div>
+      <div class="a-idx" style="margin-bottom:10px"><b>B</b> THE PIPELINE</div>
+      <div class="a-glass pad" style="font-family:var(--f-num);font-size:var(--t-11);line-height:1.9">
+        $ vi tokens.css<br>
+        $ python3 tools/build_tokens.py<br>
+        &nbsp;&nbsp;tokens.json regenerated<br>
+        $ python3 tools/check_contrast.py<br>
+        &nbsp;&nbsp;All 34 pairs clear. The gate is open.
+      </div>
+      <p style="font-size:var(--t-12);margin-top:12px">Edit the CSS, regenerate the JSON,
+      run the gate. <span class="mono">tokens.json</span> feeds design tools and code-gen;
+      the gate keeps the measured claims on pages 6–9 true forever. Self-host Gabarito,
+      Spline Sans Mono and Phosphor before production — the CDN links are a development
+      convenience, not a dependency.</p>
+    </div>
+  </div>
+  <div class="folio"><span>ATLAS — Design Language · Skinning</span><span>24</span></div>
+</div>
+
+<!-- p25 · BACK COVER -->
 <div class="page" style="display:flex;flex-direction:column">
   <div style="flex:1;display:flex;flex-direction:column;justify-content:center;max-width:62ch">
-    <img src="../assets/mark.svg" style="width:64px;margin-bottom:30px" alt="">
+    <img src="../assets/mark.svg" style="width:64px;margin-bottom:28px" alt="">
     <p>This book is generated from the living system — tokens, components and cases in the
-    repository are the source of truth, and the contrast gate re-measures every colour
-    claim on each run. All product data shown is invented placeholder.</p>
-    <p>Repository: <span class="a-num" style="color:var(--text-primary)">github.com/aposfys/atlas-design-system</span><br>
-    Source: <span class="a-num" style="color:var(--text-primary)">docs/book.html</span> — regenerate the PDF from it after any token change.</p>
+    repository are the source of truth, and the contrast gate re-measures every colour claim
+    on each run. All product data shown is invented placeholder.</p>
+    <p>Repository: <span class="mono" style="color:var(--text-primary)">github.com/aposfys/atlas-design-system</span><br>
+    Source: <span class="mono" style="color:var(--text-primary)">docs/book.html</span> — regenerate the PDF from it after any token change.<br>
+    Live pages: <span class="mono" style="color:var(--text-primary)">showcase.html · components.html · foundations.html</span> — every rule here, working, with the theme toggle.</p>
   </div>
-  <div class="folio"><span>ATLAS — Design Language · First edition</span><span>September 2026</span></div>
+  <div class="folio"><span>ATLAS — Design Language · Second edition</span><span>September 2026</span></div>
 </div>
 
 </body></html>
