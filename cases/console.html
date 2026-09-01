@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8"><title>ATLAS case — ops console</title>
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../styles.css" /><link rel="stylesheet" href="../components.css" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<style>
+html,body{width:1440px;height:900px;overflow:hidden}
+.app{display:flex;flex-direction:column;height:100%;padding:var(--sp-4);box-sizing:border-box;gap:var(--sp-4)}
+.main{display:grid;grid-template-columns:1fr 340px;gap:var(--sp-4);flex:1;min-height:0}
+.col{display:flex;flex-direction:column;gap:var(--sp-4);min-height:0}
+.pad{padding:var(--sp-5)}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr)}
+.kpis>div{padding:var(--sp-4) var(--sp-5)}
+.kpis>div+div{border-left:1px solid var(--border-subtle)}
+.grow{flex:1;min-height:0;display:flex;flex-direction:column}
+.grow .pad:last-child{flex:1}
+.side-list{display:flex;flex-direction:column}
+.side-list>div{display:flex;align-items:center;gap:var(--sp-3);padding:var(--sp-3) var(--sp-5)}
+.side-list>div+div{border-top:1px solid var(--border-subtle)}
+.side-list .n{font-family:var(--f-num);font-size:var(--t-12);color:var(--text-tertiary);margin-left:auto}
+.spark{height:34px;flex:1;display:flex;align-items:flex-end;gap:3px}
+.spark i{flex:1;background:var(--tint-accent);border-top:2px solid var(--fill-accent)}
+</style></head><body>
+
+<div class="app">
+  <header class="a-glass a-glass-frame a-topbar">
+    <span class="brand"><img src="../assets/mark.svg" alt="">ATLAS</span>
+    <nav class="a-nav">
+      <a href="#" aria-current="page">Fleet</a><a href="#">Routes</a><a href="#">Alerts</a><a href="#">Reports</a>
+    </nav>
+    <div class="a-seg" style="margin-left:auto"><button aria-pressed="false">7D</button><button aria-pressed="true">24H</button><button aria-pressed="false">1H</button></div>
+    <button class="a-btn a-btn--icon" aria-label="Account"><i class="ph ph-user a-icon" aria-hidden="true"></i></button>
+  </header>
+
+  <div class="a-flag a-flag--danger" style="flex:none">
+    <i class="ph ph-warning-octagon a-icon" aria-hidden="true"></i>
+    <span><b>Relay THN-04 unreachable since 06:42.</b> 118 sensors reporting through fallback; data is complete but delayed ~40s.</span>
+    <button class="a-btn a-btn--sm" style="margin-left:auto">Acknowledge</button>
+  </div>
+
+  <div class="main">
+    <div class="col">
+      <div class="a-glass kpis">
+        <div class="a-kpi"><div class="a-idx" style="margin:0"><b>01</b> SENSORS UP</div><div class="v">1,204<small>/1,218</small></div><div class="d up">99.1% availability</div></div>
+        <div class="a-kpi"><div class="a-idx" style="margin:0"><b>02</b> INGEST</div><div class="v">18.2<small>k/s</small></div><div class="d up">+4% vs yesterday</div></div>
+        <div class="a-kpi"><div class="a-idx" style="margin:0"><b>03</b> LAG P95</div><div class="v">1.8<small>s</small></div><div class="d down">fallback path</div></div>
+        <div class="a-kpi"><div class="a-idx" style="margin:0"><b>04</b> OPEN ALERTS</div><div class="v">3</div><div class="d down">1 critical</div></div>
+      </div>
+
+      <div class="a-glass grow">
+        <div class="pad" style="padding-bottom:0">
+          <div class="a-idx"><b>05</b> RELAYS — LAST 24H</div>
+          <div class="a-tabs" role="tablist" style="margin-top:var(--sp-2)">
+            <button class="a-tab" aria-selected="true">All 14</button>
+            <button class="a-tab" aria-selected="false">Degraded 2</button>
+            <button class="a-tab" aria-selected="false">Down 1</button>
+          </div>
+        </div>
+        <div class="pad">
+          <table class="a-table">
+            <thead><tr><th>Relay</th><th>Region</th><th>State</th><th class="num">Sensors</th><th class="num">Ingest /s</th><th class="num">Lag p95</th></tr></thead>
+            <tbody>
+              <tr><td>THN-01</td><td>Thermaikos N</td><td><span class="a-tag a-tag--ok"><span class="a-dot"></span>Healthy</span></td><td class="num">96</td><td class="num">1,420</td><td class="num">0.4s</td></tr>
+              <tr><td>THN-04</td><td>Thermaikos N</td><td><span class="a-tag a-tag--danger"><span class="a-dot"></span>Down</span></td><td class="num">118</td><td class="num">0</td><td class="num">—</td></tr>
+              <tr><td>KAV-02</td><td>Kavala Gulf</td><td><span class="a-tag a-tag--warn"><span class="a-dot"></span>Degraded</span></td><td class="num">84</td><td class="num">760</td><td class="num">3.1s</td></tr>
+              <tr><td>HER-01</td><td>Heraklion S</td><td><span class="a-tag a-tag--ok"><span class="a-dot"></span>Healthy</span></td><td class="num">122</td><td class="num">1,910</td><td class="num">0.3s</td></tr>
+              <tr><td>HER-03</td><td>Heraklion S</td><td><span class="a-tag a-tag--ok"><span class="a-dot"></span>Healthy</span></td><td class="num">102</td><td class="num">1,540</td><td class="num">0.5s</td></tr>
+              <tr><td>RHO-01</td><td>Rhodes E</td><td><span class="a-tag a-tag--warn"><span class="a-dot"></span>Degraded</span></td><td class="num">78</td><td class="num">640</td><td class="num">2.2s</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="a-glass">
+        <div class="pad" style="padding-bottom:var(--sp-3)"><div class="a-idx"><b>06</b> INGEST — 24H</div></div>
+        <div class="pad" style="padding-top:0">
+          <div class="spark">
+            <i style="height:40%"></i><i style="height:52%"></i><i style="height:47%"></i><i style="height:60%"></i><i style="height:66%"></i><i style="height:58%"></i><i style="height:72%"></i><i style="height:64%"></i><i style="height:30%"></i><i style="height:26%"></i><i style="height:58%"></i><i style="height:70%"></i><i style="height:78%"></i><i style="height:74%"></i><i style="height:82%"></i><i style="height:76%"></i>
+          </div>
+          <div style="display:flex;justify-content:space-between;margin-top:var(--sp-2)"><span class="a-idx" style="margin:0">00:00</span><span class="a-idx" style="margin:0">NOW</span></div>
+        </div>
+      </div>
+      <div class="a-glass grow">
+        <div class="pad" style="padding-bottom:var(--sp-3)"><div class="a-idx"><b>07</b> RECENT</div></div>
+        <div class="side-list">
+          <div><span class="a-tag a-tag--danger"><span class="a-dot"></span>Crit</span><span style="font-size:var(--t-12)">THN-04 unreachable</span><span class="n">06:42</span></div>
+          <div><span class="a-tag a-tag--warn"><span class="a-dot"></span>Warn</span><span style="font-size:var(--t-12)">KAV-02 lag above 3s</span><span class="n">06:31</span></div>
+          <div><span class="a-tag a-tag--ok"><span class="a-dot"></span>Ok</span><span style="font-size:var(--t-12)">RHO-01 back under 2.5s</span><span class="n">05:58</span></div>
+          <div><span class="a-tag a-tag--info"><span class="a-dot"></span>Info</span><span style="font-size:var(--t-12)">Nightly compaction done</span><span class="n">04:00</span></div>
+          <div><span class="a-tag a-tag--ok"><span class="a-dot"></span>Ok</span><span style="font-size:var(--t-12)">Statement day closed</span><span class="n">00:05</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body></html>
