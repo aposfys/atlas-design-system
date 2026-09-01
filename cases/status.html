@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8"><title>ATLAS case — status page</title>
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../styles.css" /><link rel="stylesheet" href="../components.css" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<style>
+html,body{width:1440px;height:900px;overflow:hidden}
+.app{display:flex;flex-direction:column;height:100%;padding:var(--sp-4);box-sizing:border-box;gap:var(--sp-4);max-width:1080px;margin:0 auto}
+.main{display:grid;grid-template-columns:1fr 340px;gap:var(--sp-4);flex:1;min-height:0}
+.col{display:flex;flex-direction:column;gap:var(--sp-4);min-height:0}
+.pad{padding:var(--sp-5)}
+.svc{display:flex;align-items:center;gap:var(--sp-3);padding:var(--sp-3) var(--sp-5)}
+.svc+.svc{border-top:1px solid var(--border-subtle)}
+.svc .nm{font-size:var(--t-13);color:var(--text-primary);width:190px}
+.days{display:flex;gap:2px;flex:1}
+.days i{display:block;width:6px;height:16px;background:var(--text-success);opacity:.75;border-radius:1px}
+.days i.dip{background:var(--text-warning)}
+.days i.out{background:var(--text-danger)}
+.pct{font-family:var(--f-num);font-size:var(--t-11);color:var(--text-tertiary);width:64px;text-align:right;font-variant-numeric:tabular-nums}
+.inc{padding:var(--sp-3) 0;border-top:1px solid var(--border-subtle);font-size:var(--t-12);color:var(--text-secondary)}
+.inc:first-of-type{border-top:0}
+.inc .t{font-family:var(--f-num);font-size:var(--t-10);letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--text-tertiary);margin-bottom:3px}
+.sub{display:flex;gap:var(--sp-2);margin-top:var(--sp-3)}
+</style></head><body>
+
+<div class="app">
+  <header class="a-glass a-glass-frame a-topbar">
+    <span class="brand"><img src="../assets/mark.svg" alt="">ATLAS STATUS</span>
+    <nav class="a-nav">
+      <a href="#" aria-current="page">Status</a><a href="#">History</a><a href="#">Maintenance</a>
+    </nav>
+    <span class="a-tag a-tag--ok" style="margin-left:auto"><span class="a-dot"></span>Operational</span>
+  </header>
+
+  <div class="a-flag a-flag--ok" role="status">
+    <i class="ph ph-check-circle a-icon" aria-hidden="true"></i>
+    <div><b>All systems operational.</b> Every service is answering normally. The last
+    incident was resolved 26 days ago; the full record is below.</div>
+  </div>
+
+  <div class="main">
+    <div class="col">
+      <div class="a-glass">
+        <div class="pad" style="padding-bottom:var(--sp-2)"><div class="a-idx"><b>01</b> SERVICES · LAST 30 DAYS</div></div>
+        <div class="svc"><span class="nm">Ingest API</span><span class="days"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="pct">99.99%</span><span class="a-tag a-tag--ok">ok</span></div>
+        <div class="svc"><span class="nm">Query &amp; dashboards</span><span class="days"><i></i><i></i><i></i><i></i><i class="dip"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="pct">99.94%</span><span class="a-tag a-tag--ok">ok</span></div>
+        <div class="svc"><span class="nm">Alert delivery</span><span class="days"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="out"></i><i class="dip"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="pct">99.71%</span><span class="a-tag a-tag--ok">ok</span></div>
+        <div class="svc"><span class="nm">Exports</span><span class="days"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="pct">100.00%</span><span class="a-tag a-tag--ok">ok</span></div>
+        <div class="svc"><span class="nm">Public API</span><span class="days"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="dip"></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="pct">99.96%</span><span class="a-tag a-tag--ok">ok</span></div>
+      </div>
+
+      <div class="a-glass pad grow" style="flex:1">
+        <div class="a-idx"><b>02</b> INCIDENT HISTORY</div>
+        <div class="inc" style="margin-top:var(--sp-3)">
+          <div class="t">6 Aug 2026 · 41 min · Alert delivery</div>
+          Webhook deliveries to one region queued behind a stuck consumer. Alerts delivered
+          late, none lost. Consumer restarted; a poison-message guard shipped the same week.
+        </div>
+        <div class="inc">
+          <div class="t">28 Jul 2026 · 12 min · Query &amp; dashboards</div>
+          Elevated latency during a cache node replacement. Reads served stale for the
+          window; no writes affected.
+        </div>
+        <div class="inc">
+          <div class="t">3 Jun 2026 · 18 min · Public API</div>
+          Rate limiter misconfigured after deploy, rejecting a slice of valid traffic.
+          Rolled back; limiter config is now validated in CI.
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="a-glass pad">
+        <div class="a-idx"><b>03</b> QUARTER TO DATE</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-5);margin-top:var(--sp-4)">
+          <div class="a-kpi"><span class="a-idx" style="font-size:var(--t-10)">UPTIME</span><span class="v a-num">99.96<small>%</small></span></div>
+          <div class="a-kpi"><span class="a-idx" style="font-size:var(--t-10)">INCIDENTS</span><span class="v a-num">3</span></div>
+          <div class="a-kpi"><span class="a-idx" style="font-size:var(--t-10)">P50 API</span><span class="v a-num">84<small>ms</small></span></div>
+          <div class="a-kpi"><span class="a-idx" style="font-size:var(--t-10)">MTTR</span><span class="v a-num">24<small>min</small></span></div>
+        </div>
+      </div>
+
+      <div class="a-glass pad">
+        <div class="a-idx"><b>04</b> NEXT MAINTENANCE</div>
+        <p style="margin-top:var(--sp-3);font-size:var(--t-12);color:var(--text-secondary)">
+        <span class="a-num" style="color:var(--text-primary)">14 Sep · 02:00–02:30 UTC</span><br>
+        Database minor-version upgrade. Ingest buffers; queries read-only for up to five
+        minutes inside the window.</p>
+        <span class="a-tag a-tag--info" style="margin-top:var(--sp-3)"><span class="a-dot"></span>Scheduled</span>
+      </div>
+
+      <div class="a-glass pad">
+        <div class="a-idx"><b>05</b> UPDATES</div>
+        <label class="a-label" for="em" style="margin-top:var(--sp-3)">Email, incidents only</label>
+        <div class="sub" style="margin-top:0">
+          <input class="a-input" id="em" type="email" placeholder="you@company.com">
+          <button class="a-btn a-btn--primary">Subscribe</button>
+        </div>
+        <p class="a-help">One mail when an incident opens, one when it resolves. Nothing else, ever.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body></html>
