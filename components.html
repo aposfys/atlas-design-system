@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ATLAS — components</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="components.css" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<style>
+  .wrap { max-width: 1060px; margin: 0 auto; padding: var(--sp-6) var(--sp-5) var(--sp-9); }
+  .mast { display: flex; align-items: center; gap: var(--sp-4); padding: var(--sp-5); margin-bottom: var(--sp-6); }
+  .mast img { width: 44px; height: 44px; }
+  .mast h1 { font-size: var(--t-25); letter-spacing: 0.16em; }
+  .mast p { color: var(--text-secondary); font-size: var(--t-12); margin-top: 2px; }
+  .mast .end { margin-left: auto; }
+  section { margin-top: var(--sp-7); }
+  .a-idx { margin-bottom: var(--sp-4); }
+  .row { display: flex; flex-wrap: wrap; gap: var(--sp-3); align-items: center; }
+  .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--sp-4); }
+  .pad { padding: var(--sp-5); }
+  .demo-note { margin-top: var(--sp-3); font-size: var(--t-11); color: var(--text-tertiary); }
+  .dialog-demo { position: relative; height: 300px; overflow: hidden; border-radius: var(--r); }
+  .dialog-demo .a-overlay { position: absolute; }
+  .empties { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-4); }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="mast a-glass a-glass-frame">
+    <img src="assets/mark.svg" alt="" aria-hidden="true">
+    <div>
+      <h1>ATLAS</h1>
+      <p>Components — the language, built. Semantic tokens only.</p>
+    </div>
+    <div class="end a-seg themebar" role="group" aria-label="Theme">
+      <button type="button" data-theme-set="dark" aria-pressed="true">Dark</button>
+      <button type="button" data-theme-set="light" aria-pressed="false">Light</button>
+    </div>
+  </header>
+
+  <section>
+    <div class="a-idx"><b>01</b> BUTTONS</div>
+    <div class="a-glass pad">
+      <div class="row">
+        <button class="a-btn a-btn--primary">Reconcile</button>
+        <button class="a-btn">Export</button>
+        <button class="a-btn a-btn--ghost">Dismiss</button>
+        <button class="a-btn a-btn--danger">Void entry</button>
+        <button class="a-btn" disabled>Locked</button>
+        <button class="a-btn a-btn--icon" aria-label="Settings"><i class="ph ph-gear a-icon" aria-hidden="true"></i></button>
+      </div>
+      <div class="row" style="margin-top: var(--sp-4)">
+        <button class="a-btn a-btn--primary a-btn--sm">Small</button>
+        <button class="a-btn a-btn--sm">Small</button>
+        <button class="a-btn a-btn--primary a-btn--lg">Large</button>
+        <button class="a-btn a-btn--lg"><i class="ph ph-download-simple a-icon" aria-hidden="true"></i>With icon</button>
+      </div>
+      <p class="demo-note">One primary per view. The hover glow on the primary is the only box-shadow in the system.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="a-idx"><b>02</b> FIELDS</div>
+    <div class="a-glass pad">
+      <div class="cols">
+        <div>
+          <label class="a-label" for="f1"><b>A</b> Account name</label>
+          <input class="a-input" id="f1" placeholder="e.g. Operating reserve">
+          <p class="a-help">Shown on every statement line.</p>
+        </div>
+        <div>
+          <label class="a-label" for="f2"><b>B</b> Amount</label>
+          <input class="a-input a-input--num" id="f2" value="12,480.00">
+        </div>
+        <div>
+          <label class="a-label" for="f3"><b>C</b> Currency</label>
+          <select class="a-select" id="f3"><option>EUR — Euro</option><option>USD — Dollar</option></select>
+        </div>
+        <div>
+          <label class="a-label" for="f4"><b>D</b> Reference</label>
+          <input class="a-input" id="f4" aria-invalid="true" value="TRX-∅">
+          <p class="a-error">Reference must match ^TRX-[0-9]{6}$ — a word beside the colour, always.</p>
+        </div>
+      </div>
+      <div style="margin-top: var(--sp-4)">
+        <label class="a-label" for="f5"><b>E</b> Note</label>
+        <textarea class="a-textarea" id="f5" placeholder="Optional. Appears in the audit trail."></textarea>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="a-idx"><b>03</b> SELECTION</div>
+    <div class="a-glass pad">
+      <div class="row" style="gap: var(--sp-5)">
+        <label class="a-check"><input type="checkbox" checked> Include drafts</label>
+        <label class="a-check"><input type="checkbox"> Only flagged</label>
+        <label class="a-radio"><input type="radio" name="r" checked> Accrual</label>
+        <label class="a-radio"><input type="radio" name="r"> Cash</label>
+        <label class="a-check"><input type="checkbox" class="a-switch" checked> Auto-reconcile</label>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="a-idx"><b>04</b> TAGS</div>
+    <div class="a-glass pad">
+      <div class="row">
+        <span class="a-tag"><span class="a-dot"></span>Draft</span>
+        <span class="a-tag a-tag--ok"><span class="a-dot"></span>Settled</span>
+        <span class="a-tag a-tag--warn"><span class="a-dot"></span>Pending</span>
+        <span class="a-tag a-tag--danger"><span class="a-dot"></span>Failed</span>
+        <span class="a-tag a-tag--info"><span class="a-dot"></span>Imported</span>
+        <span class="a-tag a-tag--accent"><span class="a-dot"></span>Reviewing</span>
+      </div>
+      <p class="demo-note">A state is a tint plus a word. The dot repeats the tint; the word carries the meaning.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="a-idx"><b>05</b> THE LEDGER TABLE</div>
+    <div class="a-glass pad">
+      <table class="a-table">
+        <thead><tr><th>Entry</th><th>Counterparty</th><th>State</th><th class="num">Amount</th><th class="num">Balance</th></tr></thead>
+        <tbody>
+          <tr><td>TRX-014021</td><td>Harbour Freight</td><td><span class="a-tag a-tag--ok"><span class="a-dot"></span>Settled</span></td><td class="num">−1,240.00</td><td class="num">84,116.40</td></tr>
+          <tr><td>TRX-014022</td><td>Meridian Power</td><td><span class="a-tag a-tag--warn"><span class="a-dot"></span>Pending</span></td><td class="num">−96.20</td><td class="num">84,020.20</td></tr>
+          <tr><td>TRX-014023</td><td>Vantage Payroll</td><td><span class="a-tag a-tag--ok"><span class="a-dot"></span>Settled</span></td><td class="num">−18,400.00</td><td class="num">65,620.20</td></tr>
+          <tr><td>TRX-014024</td><td>Kestrel Ltd</td><td><span class="a-tag a-tag--danger"><span class="a-dot"></span>Failed</span></td><td class="num">+2,150.00</td><td class="num">65,620.20</td></tr>
+        </tbody>
+      </table>
+      <p class="demo-note">Rows separate with hairlines, never stripes. Hover is the accent tint. Figures are mono, tabular, right-aligned.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="a-idx"><b>06</b> TABS &amp; SEGMENTED</div>
+    <div class="a-glass pad">
+      <div class="a-tabs" role="tablist">
+        <button class="a-tab" role="tab" aria-selected="true">Statement</button>
+        <button class="a-tab" role="tab" aria-selected="false">Entries</button>
+        <button class="a-tab" role="tab" aria-selected="false">Rules</button>
+        <button class="a-tab" role="tab" aria-selected="false">Audit</button>
+      </div>
+      <div class="row" style="margin-top: var(--sp-5)">
+        <div class="a-seg" role="group" aria-label="Range">
+          <button aria-pressed="false">7D</button><button aria-pressed="true">30D</button><button aria-pressed="false">90D</button><button aria-pressed="false">YTD</button>
+        </div>
+      </div>
+      <p class="demo-note">Tabs navigate; the segmented control filters. The segmented control is solid — never glass in glass.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="a-idx"><b>07</b> FLAGS</div>
+    <div class="a-glass pad" style="display:grid;gap:var(--sp-3)">
+      <div class="a-flag a-flag--danger"><i class="ph ph-warning-octagon a-icon" aria-hidden="true"></i><span><b>Reconciliation failed.</b> Entry TRX-014024 exceeds the approval threshold — a second signature is required.</span></div>
+      <div class="a-flag a-flag--warn"><i class="ph ph-clock a-icon" aria-hidden="true"></i><span><b>3 entries pending</b> for longer than 48 hours.</span></div>
+      <div class="a-flag a-flag--ok"><i class="ph ph-check-circle a-icon" aria-hidden="true"></i><span><b>Statement closed.</b> March is locked and archived.</span></div>
+      <div class="a-flag a-flag--info"><i class="ph ph-info a-icon" aria-hidden="true"></i><span><b>Import ready.</b> 240 rows parsed from bank feed.</span></div>
+      <p class="demo-note" style="margin:0">One flagged item per view in production. All four states shown here for the specimen only.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="a-idx"><b>08</b> DIALOG</div>
+    <div class="a-glass dialog-demo">
+      <div class="a-overlay">
+        <div class="a-dialog" role="dialog" aria-modal="true" aria-labelledby="dlg-t">
+          <h3 id="dlg-t">Void entry TRX-014024?</h3>
+          <p>The entry stays in the audit trail, marked void. The balance recalculates from TRX-014023.</p>
+          <footer>
+            <button class="a-btn a-btn--ghost">Cancel</button>
+            <button class="a-btn a-btn--danger">Void entry</button>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <p class="demo-note">The dialog is solid, not glass — it must be readable over anything.</p>
+  </section>
+
+  <section>
+    <div class="a-idx"><b>09</b> READOUTS</div>
+    <div class="a-glass pad">
+      <div class="cols" style="grid-template-columns:repeat(4,1fr)">
+        <div class="a-kpi"><div class="a-idx" style="margin:0"><b>A</b> CLEARED</div><div class="v">84,116<small>.40</small></div><div class="d up">+2.4% vs Feb</div></div>
+        <div class="a-kpi"><div class="a-idx" style="margin:0"><b>B</b> PENDING</div><div class="v">3</div><div class="d down">−1 today</div></div>
+        <div class="a-kpi"><div class="a-idx" style="margin:0"><b>C</b> FAILED</div><div class="v">1</div><div class="d down">needs signature</div></div>
+        <div class="a-kpi"><div class="a-idx" style="margin:0"><b>D</b> CLOSE</div><div class="v">92<small>%</small></div><div class="a-progress" style="margin-top:var(--sp-2)"><span style="width:92%"></span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="a-idx"><b>10</b> EMPTY STATES</div>
+    <div class="empties">
+      <div class="a-glass a-empty">
+        <img src="assets/illustrations/empty-ledger.svg" alt="">
+        <p><b>No entries yet.</b> Connect a feed or add the first entry by hand.</p>
+        <button class="a-btn a-btn--primary a-btn--sm">Add entry</button>
+      </div>
+      <div class="a-glass a-empty">
+        <img src="assets/illustrations/no-results.svg" alt="">
+        <p><b>Nothing matches.</b> Clear a filter or widen the range.</p>
+        <button class="a-btn a-btn--sm">Clear filters</button>
+      </div>
+      <div class="a-glass a-empty">
+        <img src="assets/illustrations/signal-lost.svg" alt="">
+        <p><b>Feed interrupted.</b> Last row received 14:02. Retrying every 30s.</p>
+        <button class="a-btn a-btn--sm">Retry now</button>
+      </div>
+      <div class="a-glass a-empty">
+        <img src="assets/illustrations/first-run.svg" alt="">
+        <p><b>First run.</b> Import the opening balance to begin the ledger.</p>
+        <button class="a-btn a-btn--primary a-btn--sm">Import</button>
+      </div>
+    </div>
+    <p class="demo-note">Hairline drawings in the slate of the interface, one chartreuse accent each. Never photographic, never emoji.</p>
+  </section>
+
+</div>
+
+<script>
+  (function () {
+    var KEY = "atlas.theme";
+    var bar = document.querySelector(".themebar");
+    function set(theme) {
+      document.documentElement.setAttribute("data-theme", theme);
+      Array.prototype.forEach.call(bar.children, function (b) {
+        b.setAttribute("aria-pressed", String(b.dataset.themeSet === theme));
+      });
+      try { localStorage.setItem(KEY, theme); } catch (e) {}
+    }
+    bar.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-theme-set]");
+      if (b) set(b.dataset.themeSet);
+    });
+    var saved = null;
+    try { saved = localStorage.getItem(KEY); } catch (e) {}
+    set(saved === "light" ? "light" : "dark");
+  })();
+</script>
+</body>
+</html>

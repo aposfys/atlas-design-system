@@ -52,10 +52,10 @@ a:hover { color: var(--text-link-hover); text-decoration-color: currentColor; }
 
 ::selection { background: var(--fill-accent); color: var(--text-on-accent); }
 
-/* ============ the three devices VANE is built on ============ */
+/* ============ the three devices ATLAS is built on ============ */
 
 /* 1. The index label. Mono, tiny, tracked, with a running hairline. */
-.v-idx {
+.a-idx {
   display: flex;
   align-items: center;
   gap: var(--sp-3);
@@ -67,12 +67,12 @@ a:hover { color: var(--text-link-hover); text-decoration-color: currentColor; }
   color: var(--text-tertiary);
   white-space: nowrap;
 }
-.v-idx b { color: var(--text-accent); font-weight: var(--w-500); }
-.v-idx::after { content: ""; flex: 1; height: 1px; background: var(--border-subtle); }
+.a-idx b { color: var(--text-accent); font-weight: var(--w-500); }
+.a-idx::after { content: ""; flex: 1; height: 1px; background: var(--border-subtle); }
 
 /* 2. Glass. Translucent, blurred, with a 1px top sheen standing in for a
       shadow — the light catches the top edge, nothing is cast below. */
-.v-glass {
+.a-glass {
   position: relative;
   background: var(--surface);
   backdrop-filter: var(--blur);
@@ -80,7 +80,7 @@ a:hover { color: var(--text-link-hover); text-decoration-color: currentColor; }
   border: 1px solid var(--border-subtle);
   border-radius: var(--r);
 }
-.v-glass::before {
+.a-glass::before {
   content: "";
   position: absolute;
   inset: 0 0 auto;
@@ -89,25 +89,25 @@ a:hover { color: var(--text-link-hover); text-decoration-color: currentColor; }
   border-radius: inherit;
   pointer-events: none;
 }
-.v-glass-lg {
+.a-glass-lg {
   backdrop-filter: var(--blur-lg);
   -webkit-backdrop-filter: var(--blur-lg);
 }
-.v-glass-frame { border-radius: var(--r-lg); }
+.a-glass-frame { border-radius: var(--r-lg); }
 
 /* 3. The rule. Hairlines separate; nothing is boxed unless it is glass. */
-.v-rule { height: 1px; background: var(--border-subtle); border: 0; }
+.a-rule { height: 1px; background: var(--border-subtle); border: 0; }
 
 /* numerics are always mono + tabular */
-.v-num {
+.a-num {
   font-family: var(--f-num);
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.02em;
 }
 
 /* icons: Phosphor regular, sized in em so they track their label */
-.v-icon { font-size: 1.15em; line-height: 1; display: inline-flex; }
+.a-icon { font-size: 1.15em; line-height: 1; display: inline-flex; }
 
 @supports not (backdrop-filter: blur(1px)) {
-  .v-glass { background: var(--surface-active); }
+  .a-glass { background: var(--surface-active); }
 }

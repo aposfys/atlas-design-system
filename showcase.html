@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>VANE</title>
+<title>ATLAS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -173,9 +173,9 @@
 </template>
 <div class="wrap">
 
-  <header class="mast v-glass v-glass-lg v-glass-frame">
+  <header class="mast a-glass a-glass-lg a-glass-frame">
     <div style="display:flex;flex-direction:column;gap:var(--sp-3)">
-      <span class="mark">VANE<s>.</s></span>
+      <span class="mark">ATLAS<s>.</s></span>
       <p>A dense, rounded interface language built on glass, in two themes. Panels are translucent and blurred; the light catches their top edge instead of casting a shadow. One chartreuse carries every action.</p>
     </div>
     <div style="margin-left:auto;display:flex;flex-direction:column;align-items:flex-end;gap:var(--sp-3)">
@@ -192,7 +192,7 @@
   </header>
 
   <section class="block">
-    <span class="v-idx"><b>01</b> Palette</span>
+    <span class="a-idx"><b>01</b> Palette</span>
     <p class="note">These are the semantic roles, not the raw values &mdash; every swatch is a <code style="font-family:var(--f-num);font-size:var(--t-11)">var()</code> that repoints when the theme flips. Components may only use this layer. Each chip sits on a light/dark split substrate, so translucent tokens read as translucent instead of vanishing into the panel. The accent is deliberately two tokens: <code style="font-family:var(--f-num);font-size:var(--t-11)">--fill-accent</code> for backgrounds and <code style="font-family:var(--f-num);font-size:var(--t-11)">--text-accent</code> for type, because chartreuse as type on a pale ground measures 1.3:1.</p>
     <div class="ramp">
       <div><i style="--sw:var(--ground)"></i><b>ground</b><span>page</span></div>
@@ -217,10 +217,10 @@
   </section>
 
   <section class="block">
-    <span class="v-idx"><b>02</b> Type</span>
+    <span class="a-idx"><b>02</b> Type</span>
     <p class="note">Gabarito at 12&ndash;14px carries the interface; the density is inherited, not softened. Spline Sans Mono handles every number, label and identifier. The character of the system is the jump between 10px tracked labels and 46px tabular figures, with very little in between.</p>
     <dl class="spec">
-      <div><dt>46 / 500</dt><dd class="v-num" style="font-size:var(--t-46);font-weight:500">1,284.00</dd></div>
+      <div><dt>46 / 500</dt><dd class="a-num" style="font-size:var(--t-46);font-weight:500">1,284.00</dd></div>
       <div><dt>33 / 600</dt><dd style="font-size:var(--t-33)">Rounded, dense, lit</dd></div>
       <div><dt>19 / 600</dt><dd style="font-size:var(--t-19)">Section heading</dd></div>
       <div><dt>13 / 400</dt><dd style="font-size:var(--t-13);letter-spacing:-0.01em;line-height:1.6;color:var(--ink-2);max-width:56ch">Body copy sits at 13px with 1.6 leading. It is small on purpose &mdash; this is an interface language for screens that hold a lot at once, not a reading environment.</dd></div>
@@ -229,9 +229,9 @@
   </section>
 
   <section class="block">
-    <span class="v-idx"><b>03</b> Readout</span>
+    <span class="a-idx"><b>03</b> Readout</span>
     <p class="note">Figures sit in one glass panel divided by hairlines, not in separate tiles. Trend direction is carried by the sign and the colour together.</p>
-    <dl class="readout v-glass">
+    <dl class="readout a-glass">
       <div><dt>Volume</dt><dd>1,284</dd><em class="up">+12.4%</em></div>
       <div><dt>Median</dt><dd>1:08</dd><em class="up">&minus;9s</em></div>
       <div><dt>Failure</dt><dd>0.42<span style="font-size:var(--t-14);color:var(--ink-3)">%</span></dd><em class="dn">+0.1pt</em></div>
@@ -240,17 +240,17 @@
   </section>
 
   <section class="block">
-    <span class="v-idx"><b>04</b> Glass depth</span>
+    <span class="a-idx"><b>04</b> Glass depth</span>
     <p class="note">Two panels over a lit field, overlapping. Blur is 18px at panel level and 30px on the app frame; the 1px top sheen is the only highlight, and nothing casts a shadow downward.</p>
     <div class="stack">
       <div class="bg"></div>
-      <div class="p1 v-glass"><b>Panel &mdash; 18px</b><span>Refracts the field beneath it</span><small>surface &middot; border-subtle</small></div>
-      <div class="p2 v-glass v-glass-lg"><b>Frame &mdash; 30px</b><span>Overlaps and stays legible</span><small>surface &middot; sheen</small></div>
+      <div class="p1 a-glass"><b>Panel &mdash; 18px</b><span>Refracts the field beneath it</span><small>surface &middot; border-subtle</small></div>
+      <div class="p2 a-glass a-glass-lg"><b>Frame &mdash; 30px</b><span>Overlaps and stays legible</span><small>surface &middot; sheen</small></div>
     </div>
   </section>
 
   <section class="block">
-    <span class="v-idx"><b>05</b> Controls</span>
+    <span class="a-idx"><b>05</b> Controls</span>
     <div class="row">
       <button class="btn btn-p">Confirm</button>
       <button class="btn btn-s">Save draft</button>
@@ -276,9 +276,9 @@
   </section>
 
   <section class="block">
-    <span class="v-idx"><b>06</b> Ledger</span>
+    <span class="a-idx"><b>06</b> Ledger</span>
     <p class="note">The table is the primary surface and it lives inside glass. Rows are ruled, numeric columns are right-aligned tabular mono, and hover washes the row in accent tint.</p>
-    <div class="ledger v-glass">
+    <div class="ledger a-glass">
       <table>
         <thead>
           <tr><th>Entry</th><th>Reference</th><th class="r">Amount</th><th class="r">Balance</th><th>State</th></tr>
@@ -297,9 +297,9 @@
   </section>
 
   <section class="block">
-    <span class="v-idx"><b>07</b> Attention</span>
+    <span class="a-idx"><b>07</b> Attention</span>
     <p class="note">One flagged item per view, at most. A 2px left edge in the status colour on a glass panel &mdash; no tinted fill, no icon in a circle.</p>
-    <div class="flag v-glass">
+    <div class="flag a-glass">
       <i class="ph ph-warning-octagon"></i>
       <div>
         <strong>Reversal RB-4482-19 is unmatched</strong>
@@ -309,7 +309,7 @@
   </section>
 
   <section class="block">
-    <span class="v-idx"><b>08</b> Iconography</span>
+    <span class="a-idx"><b>08</b> Iconography</span>
     <p class="note">Phosphor, regular weight only &mdash; never mixed with bold, fill or duotone. Icons inherit <code style="font-family:var(--f-num);font-size:var(--t-11)">currentColor</code> and are sized in em so they track the label beside them. They never appear alone without an accessible name, and they never carry meaning on their own: a state is a tag plus a word, not a glyph.</p>
     <div class="icons">
       <div><i class="ph ph-house"></i><span>house</span></div>
@@ -350,8 +350,8 @@
       <div style="display:flex;flex-direction:column;gap:var(--sp-3)">
         <span class="stamp">In use</span>
         <div class="ipair">
-          <div class="v-glass"><i class="ph ph-wallet"></i> Ledger</div>
-          <div class="v-glass" style="color:var(--ac-text);border-color:var(--ac-line);background:var(--ac-tint)"><i class="ph ph-chart-line"></i> Reserves</div>
+          <div class="a-glass"><i class="ph ph-wallet"></i> Ledger</div>
+          <div class="a-glass" style="color:var(--ac-text);border-color:var(--ac-line);background:var(--ac-tint)"><i class="ph ph-chart-line"></i> Reserves</div>
           <button class="btn btn-p"><i class="ph ph-plus" style="font-size:1.15em"></i> New entry</button>
           <button class="btn btn-s"><i class="ph ph-download-simple" style="font-size:1.15em"></i> Export</button>
         </div>
@@ -361,7 +361,7 @@
 
   <div class="duo">
     <section class="block">
-      <span class="v-idx"><b>09</b> Geometry</span>
+      <span class="a-idx"><b>09</b> Geometry</span>
       <p class="note">Rounded. Panels and controls at 10px, inner elements at 6px, the app frame at 14px. Pill is reserved for progress tracks and avatars.</p>
       <div class="swatchrow">
         <div><i style="border-radius:6px"></i><span>6</span></div>
@@ -372,7 +372,7 @@
     </section>
 
     <section class="block">
-      <span class="v-idx"><b>10</b> Motion</span>
+      <span class="a-idx"><b>10</b> Motion</span>
       <p class="note">Two durations and one curve. Nothing bounces, nothing loops, nothing scales. Reduced-motion collapses both to 1ms.</p>
       <div class="bars">
         <div><span>90ms</span><i style="animation-duration:2.4s"></i><span>hover, press</span></div>
@@ -385,7 +385,7 @@
 
 <script>
   (function () {
-    var KEY = "vane.theme";
+    var KEY = "atlas.theme";
     var bar = document.querySelector(".themebar");
     function set(theme) {
       document.documentElement.setAttribute("data-theme", theme);

@@ -1,11 +1,11 @@
 # The language
 
-VANE is a fresh system — the Condos DS was the starting reference, not the model. Three
+ATLAS is a fresh system — the Condos DS was the starting reference, not the model. Three
 things were taken from it and everything visual is new.
 
 ## Coverage
 
-VANE is a product interface system, not a brand, so two of the sections a brand book carries
+ATLAS is a product interface system, not a brand, so two of the sections a brand book carries
 do not apply to it — there is no logotype and no photography. Measured against the rest:
 
 | | Section | Status |
@@ -95,7 +95,7 @@ forbids, and the toggle sits inside the glass masthead.
 - **Regular weight only.** Never mixed with bold, fill or duotone — the mix is the fastest
   way to make an icon set look borrowed.
 - **Sized in em**, so a glyph tracks the label beside it. Standalone sizes are
-  14 / 16 / 20 / 24px. `.v-icon` sets 1.15em, which is the in-line default.
+  14 / 16 / 20 / 24px. `.a-icon` sets 1.15em, which is the in-line default.
 - **Inherit `currentColor`.** An icon is never given its own colour; it takes the colour of
   the text it sits with.
 - **Never alone without an accessible name.** Icon-only controls carry `aria-label`;

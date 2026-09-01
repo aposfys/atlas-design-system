@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8"><title>ATLAS case — month close</title>
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../styles.css" /><link rel="stylesheet" href="../components.css" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<style>
+html,body{width:1440px;height:900px;overflow:hidden}
+.app{display:flex;flex-direction:column;height:100%;padding:var(--sp-4);box-sizing:border-box;gap:var(--sp-4)}
+.main{display:grid;grid-template-columns:380px 1fr;gap:var(--sp-4);flex:1;min-height:0}
+.col{display:flex;flex-direction:column;gap:var(--sp-4);min-height:0}
+.pad{padding:var(--sp-5)}
+.grow{flex:1;min-height:0}
+.steps{display:flex;flex-direction:column}
+.steps>div{display:flex;gap:var(--sp-3);align-items:center;padding:var(--sp-3) var(--sp-5)}
+.steps>div+div{border-top:1px solid var(--border-subtle)}
+.steps .s{width:20px;height:20px;border-radius:var(--r-pill);display:grid;place-content:center;font-family:var(--f-num);font-size:var(--t-10);font-weight:var(--w-500)}
+.done .s{background:var(--fill-accent);color:var(--text-on-accent)}
+.now .s{border:1px solid var(--border-accent);color:var(--text-accent)}
+.todo .s{border:1px solid var(--border);color:var(--text-placeholder)}
+.todo span{color:var(--text-tertiary)}
+</style></head><body>
+
+<div class="app">
+  <header class="a-glass a-glass-frame a-topbar">
+    <span class="brand"><img src="../assets/mark.svg" alt="">ATLAS</span>
+    <nav class="a-nav">
+      <a href="#">Statement</a><a href="#" aria-current="page">Close</a><a href="#">Rules</a><a href="#">Audit</a>
+    </nav>
+    <span class="a-tag a-tag--accent" style="margin-left:auto"><span class="a-dot"></span>March · closing</span>
+    <button class="a-btn a-btn--primary a-btn--sm">Close month</button>
+  </header>
+
+  <div class="main">
+    <div class="col">
+      <div class="a-glass">
+        <div class="pad" style="padding-bottom:var(--sp-3)">
+          <div class="a-idx"><b>01</b> CLOSE CHECKLIST</div>
+          <div class="a-progress" style="margin-top:var(--sp-3)"><span style="width:71%"></span></div>
+          <p style="margin-top:var(--sp-2);font-size:var(--t-11);color:var(--text-tertiary)">5 of 7 steps complete</p>
+        </div>
+        <div class="steps">
+          <div class="done"><span class="s">✓</span><span style="font-size:var(--t-13)">Bank feeds imported</span></div>
+          <div class="done"><span class="s">✓</span><span style="font-size:var(--t-13)">Payroll reconciled</span></div>
+          <div class="done"><span class="s">✓</span><span style="font-size:var(--t-13)">FX revalued</span></div>
+          <div class="done"><span class="s">✓</span><span style="font-size:var(--t-13)">Accruals posted</span></div>
+          <div class="done"><span class="s">✓</span><span style="font-size:var(--t-13)">Intercompany matched</span></div>
+          <div class="now"><span class="s">6</span><span style="font-size:var(--t-13)"><b>Approve exceptions</b> — 2 open</span></div>
+          <div class="todo"><span class="s">7</span><span style="font-size:var(--t-13)">Lock &amp; archive</span></div>
+        </div>
+      </div>
+
+      <div class="a-glass pad grow">
+        <div class="a-idx"><b>02</b> SIGN-OFF</div>
+        <label class="a-label" for="s1" style="margin-top:var(--sp-4)"><b>A</b> Approver</label>
+        <select class="a-select" id="s1"><option>E. Papadaki — Controller</option><option>A. Fysekidis — CFO</option></select>
+        <label class="a-label" for="s2" style="margin-top:var(--sp-4)"><b>B</b> Note to auditors</label>
+        <textarea class="a-textarea" id="s2" placeholder="Optional. Filed with the archive."></textarea>
+        <label class="a-check" style="margin-top:var(--sp-4)"><input type="checkbox" checked> I confirm the exceptions below are reviewed</label>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="a-flag a-flag--warn" style="flex:none">
+        <i class="ph ph-clock a-icon" aria-hidden="true"></i>
+        <span><b>2 exceptions block the close.</b> Both exceed the €2,000 auto-approval threshold.</span>
+      </div>
+
+      <div class="a-glass grow">
+        <div class="pad" style="padding-bottom:0"><div class="a-idx"><b>03</b> EXCEPTIONS — MARCH</div></div>
+        <div class="pad">
+          <table class="a-table">
+            <thead><tr><th>Entry</th><th>Counterparty</th><th>Reason</th><th>State</th><th class="num">Amount</th><th></th></tr></thead>
+            <tbody>
+              <tr>
+                <td>TRX-014024</td><td>Kestrel Ltd</td><td>Duplicate reference</td>
+                <td><span class="a-tag a-tag--danger"><span class="a-dot"></span>Blocked</span></td>
+                <td class="num">+2,150.00</td>
+                <td class="num"><button class="a-btn a-btn--sm">Review</button></td>
+              </tr>
+              <tr>
+                <td>TRX-013980</td><td>Meridian Power</td><td>Missing PO</td>
+                <td><span class="a-tag a-tag--warn"><span class="a-dot"></span>Waiting</span></td>
+                <td class="num">−4,320.00</td>
+                <td class="num"><button class="a-btn a-btn--sm">Review</button></td>
+              </tr>
+              <tr>
+                <td>TRX-013875</td><td>Harbour Freight</td><td>Rounding</td>
+                <td><span class="a-tag a-tag--ok"><span class="a-dot"></span>Approved</span></td>
+                <td class="num">−0.02</td>
+                <td class="num"><button class="a-btn a-btn--ghost a-btn--sm">Log</button></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-4);margin-top:var(--sp-6);border-top:1px solid var(--border-subtle);padding-top:var(--sp-5)">
+            <div class="a-kpi"><div class="a-idx" style="margin:0"><b>04</b> CLEARED</div><div class="v">312<small> entries</small></div><div class="d up">100% matched</div></div>
+            <div class="a-kpi"><div class="a-idx" style="margin:0"><b>05</b> NET</div><div class="v">−41,208<small>.60</small></div><div class="d">vs budget −38,900</div></div>
+            <div class="a-kpi"><div class="a-idx" style="margin:0"><b>06</b> DAYS TO CLOSE</div><div class="v">4<small>.2</small></div><div class="d up">best this year</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body></html>

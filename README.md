@@ -1,14 +1,32 @@
-# VANE
-The interface language for Atlas — a dense, glass-based token system in two themes.
+# ATLAS
+A dense, glass-based design system in two themes — language, tokens, components, and the cases that prove it.
 
-**[Open the showcase →](showcase.html)** — the language applied across palette, type, readout, glass depth, controls, ledger, attention, iconography, geometry and motion, with a theme toggle. `showcase-standalone.html` is the same page with fonts and icons inlined; it opens offline with no network.
+**[Open the showcase →](showcase.html)** — the language applied across palette, type, readout, glass depth, controls, ledger, attention, iconography, geometry and motion, with a theme toggle. **[components.html](components.html)** is the component layer built on it. `showcase-standalone.html` is the showcase with fonts and icons inlined; it opens offline.
 
-![VANE, dark theme](docs/showcase-dark.png)
-![VANE, light theme](docs/showcase-light.png)
-
-> **Status: language and tokens only.** The component set — buttons, fields, table, tags, dialog, nav — is the next pass and is not built.
+![ATLAS, dark theme](docs/showcase-dark.png)
+![ATLAS, light theme](docs/showcase-light.png)
 
 **Rounded glass, two themes.** Dark is navy (#0A1A2F over #061220) with soft chartreuse and blue light blooms behind it, so the blur has something real to refract. Light runs the same device at lower amplitude. One chartreuse (#D4FF4F) carries every action, link and active state. Type is **Gabarito** for the interface and **Spline Sans Mono** for anything numeric; the system's character is the jump between 10px tracked labels and 46px tabular figures with very little in between.
+
+### Identity
+
+<img src="assets/mark.svg" width="60" alt="The ATLAS mark">
+
+The mark is the system drawn small: a raised-navy tile at the frame radius, three contour hairlines, and one chartreuse peak whose crossbar is the contour it crosses. `assets/mark.svg` is self-coloured and works on any ground; `assets/mark-mono.svg` is currentColor, inline-only. Lockup: mark plus ATLAS in Gabarito 700 tracked 0.14em; the mark never appears without the name except as a favicon.
+
+### Components
+
+Built from the semantic tokens only — any hex in `components.css` is a bug. Buttons, fields, selection, tags, the ledger table, tabs, segmented, dialog, flags, readouts and empty states. The same markup flips themes untouched.
+
+![Components, dark](docs/components-dark.png)
+![Components, light](docs/components-light.png)
+
+### In use
+
+Two case screens from deliberately different products, both composed only from `components.css` — the language is not product-specific. Four empty-state illustrations (`assets/illustrations/`) — hairline slate, one chartreuse accent each — cover no-entries, no-results, feed-interrupted and first-run.
+
+![Ops console case — dark](docs/cases/console.png)
+![Month close case — light](docs/cases/close.png)
 
 ### Using it
 
@@ -16,9 +34,10 @@ The interface language for Atlas — a dense, glass-based token system in two th
 <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
 <link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="components.css" />
 ```
 
-Set `data-theme="dark"` or `"light"` on `<html>`. `styles.css` pulls in `tokens.css` then `base.css`; nothing else is required.
+Set `data-theme="dark"` or `"light"` on `<html>`. `styles.css` pulls in `tokens.css` then `base.css`; add `components.css` for the component layer.
 
 Five rules worth keeping in front of you:
 
@@ -34,9 +53,13 @@ Five rules worth keeping in front of you:
 | --- | --- |
 | `styles.css` | Entry point. Imports the two token files. |
 | `tokens.css` | Colour, type, spacing, geometry, motion. |
-| `base.css` | Resets, type defaults, and the `.v-idx` / `.v-panel` / `.v-num` utilities. |
+| `base.css` | Resets, type defaults, and the `.a-idx` / `.a-glass` / `.a-num` utilities. |
+| `components.css` | The component layer. Semantic tokens only. |
+| `components.html` | The component specimen, with the theme toggle. |
 | `showcase.html` | The language applied, with the theme toggle. |
 | `showcase-standalone.html` | The showcase as one self-contained file. Compiled output; edit `showcase.html`, never this. |
+| `assets/` | The mark and the four empty-state illustrations. |
+| `cases/` | The two case screens; captures in `docs/`. |
 
 ### More
 
