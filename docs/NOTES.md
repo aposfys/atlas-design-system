@@ -44,17 +44,15 @@ raises the fill opacity where blur is unavailable.
 
 ## Open
 
-- **Content is placeholder.** The showcase is shaped like a ledger because that is the
-  component structure carried over from the reference. The personal project has no name or
-  description on record, so copy, navigation and screens can't be made real yet.
-- **No components built.** This is the language and the token system. The component set
-  (buttons, fields, table, tags, dialog, nav) and the screens are the next pass.
+- **Content is placeholder.** The showcase, the component specimen and both case screens
+  use invented product data — a ledger, a sensor fleet, a month close. None of it is a
+  factual statement about any real business.
 - **Fonts are CDN-linked.** Gabarito and Spline Sans Mono load from Google Fonts; Phosphor
   from unpkg. Self-host them before production.
-- **Known nit.** `base.css` sets `border-radius: var(--r-sm)` inside the shared
-  `:focus-visible` rule, which snaps pill and frame-radius elements to 6px while focused.
-  The rule uses `:where()` so any component can override it, but the focus style should be
-  moved to `outline` alone when the component layer lands.
+- **Resolved.** The old focus-ring nit — `border-radius: var(--r-sm)` inside the shared
+  `:focus-visible` rule, which snapped pill and frame-radius elements to 6px while
+  focused — was fixed when the component layer landed: the rule now sets the outline
+  alone, and outlines follow the element's own radius.
 
 ## Not carried over
 
