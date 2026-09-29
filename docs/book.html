@@ -289,7 +289,8 @@ table.t td:first-child{color:var(--text-primary)}
       the gate now keeps it from regressing.</li>
       <li><b>The boundary rule</b>The accent fill alone measures 1.16:1 against this ground,
       so the primary button's boundary is carried by
-      <span class="mono">--border-accent</span> in both themes.</li>
+      <span class="mono">--border-primary</span>, which is
+      <span class="mono">--lime-700</span> here, 6.01:1 on the ground and 6.35:1 on glass.</li>
     </ul>
   </div>
   <div class="folio"><span>ATLAS — Design Language · Colour</span><span>07</span></div>
@@ -369,9 +370,11 @@ table.t td:first-child{color:var(--text-primary)}
           <tr><td>viz-5</td><td class="num">10.89</td><td class="num">4.57</td><td class="num">3.0</td></tr>
           <tr><td>viz-6</td><td class="num">10.47</td><td class="num">5.36</td><td class="num">3.0</td></tr>
           <tr><td>focus-ring</td><td class="num">15.16</td><td class="num">7.19</td><td class="num">3.0</td></tr>
+          <tr><td>border-primary · light only</td><td class="num">n/a</td><td class="num">6.01</td><td class="num">3.0</td></tr>
+          <tr><td>border-primary · vs glass</td><td class="num">n/a</td><td class="num">6.35</td><td class="num">3.0</td></tr>
         </tbody>
       </table>
-      <p style="margin-top:12px;font-size:var(--t-12)">Thirty-four pairs, WCAG 2.x relative
+      <p style="margin-top:12px;font-size:var(--t-12)">Thirty-six pairs, WCAG 2.x relative
       luminance, re-measured by <span class="mono">tools/check_contrast.py</span> on every
       run — the table above is the gate's own output, not a claim. Motion honours
       <span class="mono">prefers-reduced-motion</span> (both durations collapse to 1ms);
@@ -914,7 +917,7 @@ table.t td:first-child{color:var(--text-primary)}
           <tr><td class="mono">1</td><td>The accent trio — <span class="mono">--lime-400 / 300 / 500</span> — becomes the new product's signal colour.</td></tr>
           <tr><td class="mono">2</td><td>The ground pairs — <span class="mono">--navy-900/950</span> dark, <span class="mono">--pale-100/200</span> light.</td></tr>
           <tr><td class="mono">3</td><td><span class="mono">--text-accent</span> is re-derived for the new accent against both grounds — the fill almost never works as type.</td></tr>
-          <tr><td class="mono">4</td><td><span class="mono">python3 tools/check_contrast.py</span> — all 34 pairs must clear before anything ships.</td></tr>
+          <tr><td class="mono">4</td><td>Run <span class="mono">python3 tools/check_contrast.py</span>. All 36 pairs must clear before anything ships.</td></tr>
           <tr><td class="mono">5</td><td>Nothing else. The semantic layer and every component follow untouched.</td></tr>
         </tbody>
       </table>
@@ -930,7 +933,7 @@ table.t td:first-child{color:var(--text-primary)}
         $ python3 tools/build_tokens.py<br>
         &nbsp;&nbsp;tokens.json regenerated<br>
         $ python3 tools/check_contrast.py<br>
-        &nbsp;&nbsp;All 34 pairs clear. The gate is open.
+        &nbsp;&nbsp;All 36 gated pairs clear. The gate is open.
       </div>
       <p style="font-size:var(--t-12);margin-top:12px">Edit the CSS, regenerate the JSON,
       run the gate. <span class="mono">tokens.json</span> feeds design tools and code-gen;
