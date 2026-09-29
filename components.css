@@ -28,14 +28,15 @@
 
 .a-btn--primary {
   background: var(--fill-accent);
-  /* the fill alone measures 1.16:1 against the light ground. The border adds
-     an edge, but in light it measures only 1.50:1 (see docs/NOTES.md) */
-  border-color: var(--border-accent);
+  /* the fill alone measures 1.16:1 against the light ground, so the border
+     carries the edge. In light it measures 6.01:1 on the ground and 6.35:1 on
+     glass, and the contrast gate holds it there (see docs/NOTES.md) */
+  border-color: var(--border-primary);
   color: var(--text-on-accent);
 }
 .a-btn--primary:hover {
   background: var(--fill-accent-hover);
-  border-color: var(--border-accent);
+  border-color: var(--border-primary);
   /* the one box-shadow in the system */
   box-shadow: 0 0 0 4px var(--tint-accent), 0 0 18px var(--glow-accent);
 }

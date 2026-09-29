@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """The contrast gate. Run from the repository root; exits 1 if any declared
 role pair falls under its bar, so the measured claims in NOTES.md cannot
-quietly rot. The gated pairs are solid hex. Translucent tokens are composited
-over the backdrop they sit on (a "+"-joined stack, bottom first) before they
-are measured. MEASURED pairs are reported on every run but do not close the
+quietly rot. A pair's background may be a single token or a "+"-joined stack,
+bottom first, and translucent tokens are composited over the backdrop they sit
+on before they are measured. MEASURED pairs are reported on every run but do not close the
 gate, so a value that falls short is on record instead of being claimed."""
 import re, sys
 
 CSS = "tokens.css"
 
-# (theme, foreground token, background token, minimum, what the pair is)
+# (theme, foreground token, background token or stack, minimum, what the pair is)
 PAIRS = [
     ("dark",  "text-primary",     "ground",       4.5, "primary text"),
     ("dark",  "text-secondary",   "ground",       4.5, "secondary text"),
@@ -45,18 +45,19 @@ PAIRS = [
     ("light", "viz-5", "ground", 3.0, "data series 5"),
     ("light", "viz-6", "ground", 3.0, "data series 6"),
     ("light", "focus-ring", "ground", 3.0, "the focus ring"),
+    ("light", "border-primary", "ground",         3.0, "primary button border on the ground"),
+    ("light", "border-primary", "ground+surface", 3.0, "primary button border on glass"),
 ]
 
 # (theme, foreground token, backdrop stack, what the pair is). Reported, not
-# gated. The primary button's fill and border against what it sits on. The
-# light border does not reach 3:1, so it is recorded here rather than claimed.
+# gated. The primary button's fill against what it sits on, and the dark
+# border, which is not what carries the dark boundary (the fill is 15:1 there).
+# The light border is gated in PAIRS above.
 MEASURED = [
-    ("dark",  "fill-accent",   "ground",         "primary button fill on the ground"),
-    ("dark",  "border-accent", "ground",         "primary button border on the ground"),
-    ("dark",  "border-accent", "ground+surface", "primary button border on glass"),
-    ("light", "fill-accent",   "ground",         "primary button fill on the ground"),
-    ("light", "border-accent", "ground",         "primary button border on the ground"),
-    ("light", "border-accent", "ground+surface", "primary button border on glass"),
+    ("dark",  "fill-accent",    "ground",         "primary button fill on the ground"),
+    ("dark",  "border-primary", "ground",         "primary button border on the ground"),
+    ("dark",  "border-primary", "ground+surface", "primary button border on glass"),
+    ("light", "fill-accent",    "ground",         "primary button fill on the ground"),
 ]
 
 def theme_blocks(css):
@@ -74,16 +75,8 @@ def theme_blocks(css):
     light.update(toks(light_m.group(1)) if light_m else {})
     return {"dark": dark, "light": light}
 
-def resolve(name, toks, depth=0):
-    if depth > 12 or name not in toks:
-        return None
-    v = toks[name]
-    if v.startswith("var("):
-        return resolve(v[4:-1].strip()[2:], toks, depth + 1)
-    return v if re.fullmatch(r'#[0-9a-fA-F]{6}', v) else None
-
 def resolve_rgba(name, toks, depth=0):
-    """Like resolve, but also accepts rgba(); returns (r, g, b, alpha)."""
+    """Follow var() aliases to a hex or rgba() value; returns (r, g, b, alpha)."""
     if depth > 12 or name not in toks:
         return None
     v = toks[name]
@@ -123,31 +116,39 @@ def ratio(a, b):
     hi, lo = max(la, lb), min(la, lb)
     return (hi + 0.05) / (lo + 0.05)
 
+def measure(fg, stack, toks):
+    """Contrast of fg composited over the backdrop stack, or None if a token is
+    missing or unresolvable. For an opaque fg on one opaque token this is the
+    plain ratio of the two hex values."""
+    c, bg = resolve_rgba(fg, toks), backdrop(stack, toks)
+    if c is None or bg is None:
+        return None
+    return ratio(to_hex(over(c, bg)), to_hex(bg))
+
+def label(stack):
+    return "+".join("--" + name for name in stack.split("+"))
+
 def main():
     with open(CSS, encoding="utf-8") as f:
         themes = theme_blocks(f.read())
     failed = 0
     for theme, fg, bg, minimum, why in PAIRS:
-        toks = themes[theme]
-        a, b = resolve(fg, toks), resolve(bg, toks)
-        if a is None or b is None:
-            print(f"FAIL  [{theme:5}] --{fg} / --{bg}: token missing or not a resolvable hex")
+        r = measure(fg, bg, themes[theme])
+        if r is None:
+            print(f"FAIL  [{theme:5}] --{fg} / {label(bg)}: token missing or not resolvable")
             failed += 1
             continue
-        r = ratio(a, b)
         mark = "ok  " if r >= minimum else "FAIL"
         if r < minimum:
             failed += 1
-        print(f"{mark}  [{theme:5}] {r:5.2f}:1  (needs {minimum})  --{fg} on --{bg} — {why}")
+        print(f"{mark}  [{theme:5}] {r:5.2f}:1  (needs {minimum})  --{fg} on {label(bg)} ({why})")
     print("\nMeasured, not gated:")
     for theme, fg, stack, why in MEASURED:
-        toks = themes[theme]
-        c, bg = resolve_rgba(fg, toks), backdrop(stack, toks)
-        if c is None or bg is None:
+        r = measure(fg, stack, themes[theme])
+        if r is None:
             print(f"FAIL  [{theme:5}] --{fg} / {stack}: token missing or not resolvable")
             failed += 1
             continue
-        r = ratio(to_hex(over(c, bg)), to_hex(bg))
         print(f"info  [{theme:5}] {r:5.2f}:1  --{fg} on {stack} ({why})")
     if failed:
         print(f"\n{failed} pair(s) under the bar. The gate is closed.")
