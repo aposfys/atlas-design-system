@@ -28,8 +28,8 @@
 
 .a-btn--primary {
   background: var(--fill-accent);
-  /* the fill alone measures 1.16:1 against the light ground — the border
-     carries the control's boundary (1.4.11) in both themes */
+  /* the fill alone measures 1.16:1 against the light ground. The border adds
+     an edge, but in light it measures only 1.50:1 (see docs/NOTES.md) */
   border-color: var(--border-accent);
   color: var(--text-on-accent);
 }

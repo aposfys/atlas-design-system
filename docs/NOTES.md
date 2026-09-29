@@ -58,14 +58,18 @@ raises the fill opacity where blur is unavailable.
   `:focus-visible` rule, which snapped pill and frame-radius elements to 6px while
   focused — was fixed when the component layer landed: the rule now sets the outline
   alone, and outlines follow the element's own radius.
-- **Resolved.** The light-theme primary button had no perceivable boundary — the accent
-  fill measures 1.16:1 against the pale ground. `.a-btn--primary` now carries
-  `--border-accent` in both themes, and the boundary clears 3:1.
+- **Open.** The light-theme primary button has a faint boundary. The accent fill measures
+  1.16:1 against the pale ground, so `.a-btn--primary` carries `--border-accent` in both
+  themes. In light that border is translucent and composites to 1.50:1 on the ground and
+  1.53:1 on glass, well under 3:1. The label still identifies the control (ink on the fill
+  measures 12.8:1). `tools/check_contrast.py` reports these pairs on every run without
+  gating them. A darker light border would clear 3:1, but `--border-accent` also edges the
+  accent tag, the grid demo and the close case, so that change needs its own design pass.
 - **Resolved.** The keyboard and ARIA contract the CSS always assumed is now written
   down in [BEHAVIOR.md](BEHAVIOR.md), one section per interactive component.
 - **Resolved.** The measured claims above are now enforced: `tools/check_contrast.py`
-  re-measures every declared role pair in both themes and fails the build if a token
-  edit puts one under its bar.
+  re-measures every declared role pair in both themes and exits non-zero if a token edit
+  puts one under its bar. The CI workflow runs it on every push.
 
 ## Not carried over
 

@@ -2,3 +2,4 @@
 *.thumbnail
 .thumbnail
 node_modules/
+__pycache__/
