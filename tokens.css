@@ -263,7 +263,7 @@
   --text-tertiary: var(--slate-600);
   --text-placeholder: var(--slate-550);
   --text-inverse: var(--pale-50);
-  --text-accent: var(--lime-700);       /* 6.0:1 — chartreuse itself is 1.3:1 */
+  --text-accent: var(--lime-700);       /* 6.0:1, chartreuse itself is 1.3:1 */
   --text-on-accent: var(--lime-950);
   --text-link: var(--lime-700);
   --text-link-hover: var(--lime-800);

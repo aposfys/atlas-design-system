@@ -17,7 +17,7 @@ not apply to it. There is no photography. Measured against the rest:
 | 05 | Photography / illustration | Illustration only. Four empty-state illustrations in `assets/illustrations/`, no photography |
 | 06 | Iconography — Phosphor regular, six rules | Documented |
 | 07 | Grid & layout — the 1.75px unit, radii 6/10/14 | Documented |
-| 08 | Application — the component set | Built — `components.css`, proven in the three case screens; behavior contract in [BEHAVIOR.md](BEHAVIOR.md) |
+| 08 | Application, the component set | Built in `components.css`, proven in the three case screens; behavior contract in [BEHAVIOR.md](BEHAVIOR.md) |
 
 ## Taken from the reference
 
@@ -72,7 +72,7 @@ is a remap, not an inversion, and three things had to change beyond luminance:
 - **Hairlines invert.** On dark, lines are white at 10–26%. On light, white-on-white has no
   edge, so they become navy at 10–26%.
 - **Glass opacity climbs.** 5.5% white over navy reads as glass; 5.5% white over pale grey
-  reads as nothing. Light glass sits at 52–90% — frosted rather than tinted.
+  reads as nothing. Light glass sits at 52–90%, frosted rather than tinted.
 - **The accent splits in two.** Chartreuse works as a *fill* in both themes with dark ink on
   it, but as *text* on a pale ground it measures 1.3:1. So `--fill-accent` (backgrounds) and
   `--text-accent` (type, icons, the index prefix) are separate tokens; light drops

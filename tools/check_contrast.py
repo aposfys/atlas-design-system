@@ -148,7 +148,7 @@ def main():
             failed += 1
             continue
         r = ratio(to_hex(over(c, bg)), to_hex(bg))
-        print(f"info  [{theme:5}] {r:5.2f}:1  --{fg} on {stack} — {why}")
+        print(f"info  [{theme:5}] {r:5.2f}:1  --{fg} on {stack} ({why})")
     if failed:
         print(f"\n{failed} pair(s) under the bar. The gate is closed.")
         sys.exit(1)
