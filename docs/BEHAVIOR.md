@@ -8,7 +8,7 @@ styling to these attributes (`aria-selected`, `aria-pressed`, `aria-invalid`,
 `aria-current`), so markup that honors the contract gets the correct rendering
 for free — and markup that skips it renders visibly wrong, which is the point.
 
-Two rules from the README apply everywhere and are not repeated below: the
+Two rules apply everywhere and are not repeated below: the
 focus ring (2px accent outline, 2px offset) is never removed, and an icon never
 appears without an accessible name.
 

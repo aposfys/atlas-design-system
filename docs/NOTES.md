@@ -49,7 +49,7 @@ raises the fill opacity where blur is unavailable.
 
 ## Open
 
-- **Content is placeholder.** The showcase, the component specimen and both case screens
+- **Content is placeholder.** The showcase, the component specimen and the three case screens
   use invented product data — a ledger, a sensor fleet, a month close. None of it is a
   factual statement about any real business.
 - **Fonts are CDN-linked.** Gabarito and Spline Sans Mono load from Google Fonts; Phosphor

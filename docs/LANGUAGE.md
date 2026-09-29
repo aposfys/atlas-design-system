@@ -5,19 +5,19 @@ things were taken from it and everything visual is new.
 
 ## Coverage
 
-ATLAS is a product interface system, not a brand, so two of the sections a brand book carries
-do not apply to it — there is no logotype and no photography. Measured against the rest:
+ATLAS is a product interface system, not a brand, so one section a brand book carries does
+not apply to it. There is no photography. Measured against the rest:
 
 | | Section | Status |
 |---|---|---|
 | 01 | Philosophy — the three devices the system is built on | Documented |
-| 02 | Logotype | Not applicable |
+| 02 | Logotype | Documented. The mark and the lockup, in [OVERVIEW.md](OVERVIEW.md) and `assets/` |
 | 03 | Colour — semantic layer over per-theme primitives | Documented |
 | 04 | Typography — Gabarito and Spline Sans Mono | Documented |
-| 05 | Photography / illustration | Not applicable |
+| 05 | Photography / illustration | Illustration only. Four empty-state illustrations in `assets/illustrations/`, no photography |
 | 06 | Iconography — Phosphor regular, six rules | Documented |
 | 07 | Grid & layout — the 1.75px unit, radii 6/10/14 | Documented |
-| 08 | Application — the component set | Built — `components.css`, proven in the two case screens; behavior contract in [BEHAVIOR.md](BEHAVIOR.md) |
+| 08 | Application — the component set | Built — `components.css`, proven in the three case screens; behavior contract in [BEHAVIOR.md](BEHAVIOR.md) |
 
 ## Taken from the reference
 
@@ -72,7 +72,7 @@ is a remap, not an inversion, and three things had to change beyond luminance:
 - **Hairlines invert.** On dark, lines are white at 10–26%. On light, white-on-white has no
   edge, so they become navy at 10–26%.
 - **Glass opacity climbs.** 5.5% white over navy reads as glass; 5.5% white over pale grey
-  reads as nothing. Light glass sits at 58–90% — frosted rather than tinted.
+  reads as nothing. Light glass sits at 52–90% — frosted rather than tinted.
 - **The accent splits in two.** Chartreuse works as a *fill* in both themes with dark ink on
   it, but as *text* on a pale ground it measures 1.3:1. So `--fill-accent` (backgrounds) and
   `--text-accent` (type, icons, the index prefix) are separate tokens; light drops

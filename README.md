@@ -3,9 +3,9 @@
 A dense, glass-based design system in two themes. Rounded glass over navy light blooms,
 one chartreuse for every action, 10px tracked labels against 46px tabular figures.
 
-![ATLAS, dark theme](docs/showcase-dark.png)
+![ATLAS components, dark theme](docs/components-dark.png)
 
-**[Brand book (PDF)](docs/atlas-brand-book.pdf)** · [showcase](showcase.html) · [language](docs/LANGUAGE.md) · [behavior](docs/BEHAVIOR.md) · [notes](docs/NOTES.md) · [overview](docs/OVERVIEW.md) · [Figma library](https://www.figma.com/design/ayWVXqf7MA50EShkOda7IF)
+**[Brand book (PDF)](docs/atlas-brand-book.pdf)** · [showcase](showcase.html) · [language](docs/LANGUAGE.md) · [behavior](docs/BEHAVIOR.md) · [notes](docs/NOTES.md) · [overview](docs/OVERVIEW.md) · [Figma library](https://www.figma.com/design/ayWVXqf7MA50EShkOda7IF) (access on request)
 
 ```html
 <link rel="stylesheet" href="styles.css" />

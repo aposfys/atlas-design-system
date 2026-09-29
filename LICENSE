@@ -33,8 +33,8 @@ which this notice does not attempt to relicense:
     Fonts under the SIL Open Font License. They are referenced by the showcase
     and inlined in showcase-standalone.html under that licence, not relicensed
     here.
-  - Phosphor Icons is a third-party icon set used under the MIT License and
-    loaded from a CDN.
+  - Phosphor Icons is a third-party icon set used under the MIT License. It is
+    loaded from a CDN by the showcase and inlined in showcase-standalone.html.
 
 NO WARRANTY
 
